@@ -1,8 +1,6 @@
 # Changelog
 All notable changes to KORSiOS Tweaks will be documented in this file.
 
-The format is based on Keep a Changelog and this project follows semantic versioning.
-
 ---
 
 ## [1.0.0] - 2026-02-01
@@ -26,10 +24,8 @@ The format is based on Keep a Changelog and this project follows semantic versio
 - Some tweaks may require a system restart to fully apply.
 
 
-# Journal des modifications
+# Changelog 🇫🇷
 Toutes les modifications notables de KORSiOS Tweaks sont documentées dans ce fichier.
-
-Le format s’inspire de *Keep a Changelog* et le projet suit le versioning sémantique.
 
 ---
 
@@ -52,3 +48,4 @@ Le format s’inspire de *Keep a Changelog* et le projet suit le versioning sém
 ### Notes
 - Première version stable du logiciel
 - Certains tweaks peuvent nécessiter un redémarrage du système pour être pleinement appliqués
+
