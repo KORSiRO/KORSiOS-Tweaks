@@ -15,6 +15,8 @@
 
 ![EtatRegistre](docs/screenshots/KORSiOS_Tweaks_registre.png)
 
+![AppUWP](docs/screenshots/KORSiOS_UWP.png)
+
 Le projet met l’accent sur :
 - la **stabilité**
 - la **lisibilité des actions**
