@@ -108,10 +108,13 @@ KORSiOS Tweaks modifie des paramètres avancés de Windows.
 - 💡 Une suggestion ?
 - ❓ Une question ?
 
-👉 Utilisez l’onglet **Issues** du dépôt GitHub pour :
-- signaler un problème
-- proposer une amélioration
-- discuter d’une fonctionnalité
+👉 Utilisez le bouton **Signaler un bug/suggestion** depuis l'application :
+- Cliquez sur le bouton **Signaler un bug/suggestion**
+- Validez la pop-up
+- Une fenêtre s'ouvre pour donner accès au fichier **BugReport_XXXXXXXX.zip**
+- Pour **signaler un bug**, uploader le fichier **BugReport_XXXXXXXX.zip sur Drive/OneDrive/Wetransfer etc.
+- Copiez le lien en bas du formulaire
+- Envoyez la demande
 
 ---
 
