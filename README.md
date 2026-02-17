@@ -48,7 +48,7 @@ Un bloc dédié pour chaque tweak permet d'afficher :
   - Risques potentiels
   - Notes importantes
 
-- 💾 **Système de sauvegarde / restauration**<br><br>
+- 💾 **Système de sauvegarde / restauration**<br>
   - États du registre avant modification
   - Rollback des scripts
   - Restauration possible en cas de problème
