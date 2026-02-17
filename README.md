@@ -39,7 +39,7 @@ Le projet met l’accent sur :
 ## ✨ Fonctionnalités principales
 
 - ⚙️ **Tweaks système**
- - Organisés par catégories : Alimentation, Barre des Tâches, Explorateur, Performance etc.<br><br>
+ - Organisés par catégories : Alimentation, Barre des Tâches, Explorateur, Performance etc.<br>
 
 - 🧠 **Descriptions claires pour chaque tweak**<br><br>
 Un bloc dédié pour chaque tweak permet d'afficher :
