@@ -13,7 +13,7 @@
 
 ![ScriptsAppliqués](docs/screenshots/KORSiOS_Tweaks_scripts.png)
 
-![EtatRegistre](docs/screenshots/KORSiOS_Tweaks_etat_du_registre.png)
+![EtatRegistre](docs/screenshots/KORSiOS_Tweaks_registre.png)
 
 Le projet met l’accent sur :
 - la **stabilité**
