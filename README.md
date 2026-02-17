@@ -1,6 +1,7 @@
 # 🧩 KORSiOS Tweaks 
-<p align="left">
-  <a href="README.fr.md">Français</a> | <strong>English</strong>
+
+<p align="right">
+  <strong>Français</strong> | <a href="README.en.md">English</a>
 </p>
 
 
