@@ -17,6 +17,8 @@
 
 ![AppUWP](docs/screenshots/KORSiOS_Tweaks_AppsUWP.png)
 
+![Settings](docs/screenshots/KORSiOS_Tweaks_Settings.png)
+
 Le projet met l’accent sur :
 - la **stabilité**
 - la **lisibilité des actions**
