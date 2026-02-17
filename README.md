@@ -11,7 +11,7 @@
 
 ![Tweaks](docs/screenshots/KORSiOS_Tweaks_tweaks_détails.png)
 
-![TweaksAppliqués](docs/screenshots/KORSiOS_Tweaks_appliqués.png)
+![ScriptsAppliqués](docs/screenshots/KORSiOS_Tweaks_scripts.png)
 
 ![EtatRegistre](docs/screenshots/KORSiOS_Tweaks_etat_du_registre.png)
 
