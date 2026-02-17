@@ -38,26 +38,39 @@ Le projet met l’accent sur :
 
 ## ✨ Fonctionnalités principales
 
-- ⚙️ **Tweaks système**
+### ⚙️ Tweaks système
  - Organisés par catégories : Alimentation, Barre des Tâches, Explorateur, Performance etc.
+ - Les tweaks sont exécutés de deux façons différentes : Registre .reg ou Scripts .ps1<br>
 
-- 🧠 **Descriptions claires pour chaque tweak**<br><br>
-Un bloc dédié pour chaque tweak permet d'afficher :
+Un bloc **Détails** dédié pour chaque tweak permet d'afficher :
   - Description
   - Impact attendu
   - Risques potentiels
-  - Notes importantes
+  - Notes importantes<br>
 
-- 💾 **Système de sauvegarde / restauration**<br>
-  - États du registre avant modification
-  - Rollback des scripts
-  - Restauration possible en cas de problème
+Afin de savoir exactement sont utilité et ce qu'il apporte avant validation.
 
-- 🖥️ **Interface graphique moderne**
+### 💾 Scripts appliqués / État du registre<br>
+Permet de réaliser une restauration des valeurs précédentes (avant application du/des tweaks)
+  - **Scripts appliqués** : restauration des tweaks Scripts (.ps1)
+  - **État du registre** : restauration des tweaks Registe (.reg)
+
+### 🧠 Apps UWP<br>
+Permet de supprimer les Applications UWP présentes dans l'OS
+  - Cliquez sur le bouton **Rafraîchir** pour analyser les applications
+  - Une fois chargées, vous pouvez les supprimer
+
+### 🛠️ Paramètres
+  - Permet d'effectuer la mise à jour de l'application quand une nouvelle est disponible (vérification au lancement possible)
+  - Permet de modifier la langue de l'application (Fr/En)
+ 
+### ↩️ **Création de point de restauration système directement intégré**
+  - Créez un point de restauration système avant toutes modifications
+
+### 🖥️ **Interface graphique moderne**
   - Simple, lisible et orientée efficacité
-  - Aucune ligne de commande requise
 
-- 🔒 **Aucune modification silencieuse**
+### 🔒 **Aucune modification silencieuse**
   - L’utilisateur garde le contrôle total
   - Aucun tweak n’est appliqué sans action explicite
 
@@ -65,9 +78,9 @@ Un bloc dédié pour chaque tweak permet d'afficher :
 
 ## 🚀 Installation
 
-1. Rendez-vous dans l’onglet **Releases** du dépôt GitHub
+1. Rendez-vous dans les **Releases**
 2. Téléchargez la **dernière version stable**
-3. Lancez l’installateur
+3. Lancez l’installateur (Fr/En)
 4. Lancez **KORSiOS Tweaks** en mode **Administrateur**
 
 > ⚠️ **Droits administrateur requis**  
