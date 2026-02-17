@@ -68,7 +68,7 @@ Un bloc dédié pour chaque tweak permet d'afficher :
 1. Rendez-vous dans l’onglet **Releases** du dépôt GitHub
 2. Téléchargez la **dernière version stable**
 3. Lancez l’installateur
-4. Lancez **KORSiOS Tweaks**
+4. Lancez **KORSiOS Tweaks** en mode **Administrateur**
 
 > ⚠️ **Droits administrateur requis**  
 > Certaines modifications système nécessitent des privilèges élevés.
