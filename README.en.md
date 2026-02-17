@@ -78,6 +78,7 @@ Allows you to remove UWP Apps present in the OS
 
 ### ↩️ **Integrated System Restore Point Creation**
   - Create a system restore point before any changes
+  - Displays the last restore point created from the application
 
 ### 🖥️ **Interface Modern graphical interface**
   - Simple, readable, and efficiency-oriented
