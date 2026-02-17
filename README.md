@@ -1,8 +1,8 @@
-# 🧩 KORSiOS Tweaks 
-
+# 🧩 KORSiOS Tweaks
+<br>
 <p align="right">
   <strong>🇫🇷 Français</strong> | <a href="README.en.md">🇬🇧 English</a>
-</p>
+</p><br><br>
 
 
 ![GitHub release](https://img.shields.io/github/v/release/KORSiRO/KORSiOS-Tweaks?style=flat-square) ![Platform](https://img.shields.io/badge/platform-Windows-blue?style=flat-square) ![Architecture](https://img.shields.io/badge/arch-x64-lightgrey?style=flat-square) ![License](https://img.shields.io/badge/license-Proprietary-red?style=flat-square) ![Status](https://img.shields.io/badge/status-Stable-brightgreen?style=flat-square) ![Type](https://img.shields.io/badge/type-Desktop%20Application-informational?style=flat-square) ![System](https://img.shields.io/badge/system%20changes-Yes-orange?style=flat-square) ![Admin](https://img.shields.io/badge/admin%20rights-Required-critical?style=flat-square) ![Backup](https://img.shields.io/badge/registry%20backup-Supported-success?style=flat-square) ![Control](https://img.shields.io/badge/user%20controlled-Yes-success?style=flat-square) ![Source](https://img.shields.io/badge/source-Closed--source-black?style=flat-square) ![Telemetry](https://img.shields.io/badge/telemetry-None-success?style=flat-square) ![Data](https://img.shields.io/badge/data%20collection-None-success?style=flat-square)
