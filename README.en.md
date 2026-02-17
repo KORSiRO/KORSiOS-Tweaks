@@ -25,19 +25,19 @@
 
 ## 🖥️ Interface Preview
 
-![Welcome](docs/screenshots/KORSiOS_Tweaks_Welcome.png)
+![Welcome](docs/screenshots/KORSiOS_Tweaks_welcom.png)
 
-![Tweaks](docs/screenshots/KORSiOS_Tweaks_tweaks_détails.png)
+![Tweaks](docs/screenshots/KORSiOS_Tweaks_détails.png)
 
-![ScriptsAppliqués](docs/screenshots/KORSiOS_Tweaks_scripts.png)
+![ScriptsAppliqués](docs/screenshots/KORSiOS_appscripts.png)
 
-![EtatRegistre](docs/screenshots/KORSiOS_Tweaks_registre.png)
+![EtatRegistre](docs/screenshots/KORSiOS_Tweaks_registry.png)
 
-![AppUWP](docs/screenshots/KORSiOS_Tweaks_AppsUWP.png)
+![AppUWP](docs/screenshots/KORSiOS_Tweaks_uwp.png)
 
-![Settings](docs/screenshots/KORSiOS_Tweaks_Settings.png)
+![Settings](docs/screenshots/KORSiOS_Tweaks_sett.png)
 
-![RestorePoint](docs/screenshots/KORSiOS_Tweaks_RestorePoint.png)
+![RestorePoint](docs/screenshots/KORSiOS_Tweaks_restorep.png)
 
 The project focuses on :
 
