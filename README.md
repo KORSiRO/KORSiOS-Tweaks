@@ -19,6 +19,9 @@
 
 ![Settings](docs/screenshots/KORSiOS_Tweaks_Settings.png)
 
+![RestorePoint](docs/screenshots/KORSiOS_Tweaks_RestorePoint.png)
+
+
 Le projet met l’accent sur :
 - la **stabilité**
 - la **lisibilité des actions**
