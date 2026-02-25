@@ -13,20 +13,21 @@
 
 ## 🖥️ Aperçu de l’interface
 
-![Welcome](docs/screenshots/KORSiOS_Tweaks_Welcome.png)
+![Welcome](screenshots/KORSiOS_Tweaks_Welcome.png)
 
-![Tweaks](docs/screenshots/KORSiOS_Tweaks_tweaks_détails.png)
+![Tweaks](screenshots/KORSiOS_Tweaks_tweaks_détails.png)
 
-![ScriptsAppliqués](docs/screenshots/KORSiOS_Tweaks_scripts.png)
+![ScriptsAppliqués](screenshots/KORSiOS_Tweaks_scripts.png)
 
-![EtatRegistre](docs/screenshots/KORSiOS_Tweaks_registre.png)
+![EtatRegistre](screenshots/KORSiOS_Tweaks_registre.png)
 
-![AppUWP](docs/screenshots/KORSiOS_Tweaks_AppsUWP.png)
+![AppUWP](screenshots/KORSiOS_Tweaks_AppsUWP.png)
 
-![Settings](docs/screenshots/KORSiOS_Tweaks_Settings.png)
+![RestorePoint](screenshots/KORSiOS_Tweaks_RestorePoint.png)
 
-![RestorePoint](docs/screenshots/KORSiOS_Tweaks_RestorePoint.png)
+![Settings](screenshots/KORSiOS_Tweaks_Settings.png)
 
+![InfoSystem](screenshots/KORSiOS_Tweaks_InfoSystem.png)
 
 Le projet met l’accent sur :
 - la **stabilité**
