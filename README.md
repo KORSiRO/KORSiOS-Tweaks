@@ -13,7 +13,7 @@
 
 ## 🖥️ Aperçu de l’interface
 
-<img width="1506" height="973" alt="KORSiOS_Tweaks_Welcome_en" src="https://github.com/user-attachments/assets/080bc580-bdb2-4779-86cb-ff48da519bef" />
+![Welcome](screenshots/KORSiOS_Tweaks_Welcom.png)
 
 ![Tweaks](screenshots/KORSiOS_Tweaks_tweaks_détails.png)
 
