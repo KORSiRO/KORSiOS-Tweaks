@@ -25,6 +25,8 @@
 
 ## 🖥️ Interface Preview
 
+![Welcome](screenshots/KORSiOS_Tweaks_Welcome_en.png)
+
 ![Tweaks](screenshots/KORSiOS_Tweaks_tweaks_détails_en.png)
 
 ![ScriptsAppliqués](screenshots/KORSiOS_Tweaks_scripts_en.png)
@@ -38,8 +40,6 @@
 ![Settings](screenshots/KORSiOS_Tweaks_Settings_en.png)
 
 ![InfoSystem](screenshots/KORSiOS_Tweaks_InfoSystem_en.png)
-
-![Welcome](screenshots/KORSiOS_Tweaks_Welcom_en.png)
 
 The project focuses on :
 
