@@ -39,7 +39,7 @@
 
 ![Settings](screenshots/KORSiOS_Tweaks_Settings_en.png)
 
-![InfoSystem](screenshots/KORSiOS_Tweaks_InfoSystem_en.png)
+![InfosSystem](screenshots/KORSiOS_Tweaks_InfosSystem_en.png)
 
 The project focuses on :
 
