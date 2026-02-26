@@ -82,6 +82,9 @@ Allows you to remove UWP Apps present in the OS
   - Create a system restore point before any changes
   - Displays the last restore point created from the application
 
+### 💻 **System Info**
+- Quick access to your system information (Windows Version/CPU/GPU/Memory etc.)
+
 ### 🖥️ **Interface Modern graphical interface**
   - Simple, readable, and efficiency-oriented
 
