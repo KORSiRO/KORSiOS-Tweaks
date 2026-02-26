@@ -15,7 +15,7 @@
 
 ![Welcome](screenshots/KORSiOS_Tweaks_Welcom.png)
 
-![Tweaks](screenshots/KORSiOS_Tweaks_tweaks_détails.png)
+![Tweaks](screenshots/KORSiOS_Tweaks_tweaks_détail.png)
 
 ![ScriptsAppliqués](screenshots/KORSiOS_Tweaks_scripts.png)
 
