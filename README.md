@@ -69,6 +69,9 @@ Permet de supprimer les Applications UWP présentes dans l'OS
   - Créez un point de restauration système avant toutes modifications
   - Affiche le dernier point de restauration créé depuis l'application
 
+### 💻 **Info système**
+  - Accès rapide aux informations de votre système (Version Windows/CPU/GPU/Mémoire etc.)
+
 ### 🖥️ **Interface graphique moderne**
   - Simple, lisible et orientée efficacité
 
