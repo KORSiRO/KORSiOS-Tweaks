@@ -25,7 +25,7 @@
 
 ![RestorePoint](screenshots/KORSiOS_Tweaks_RestorePoint.png)
 
-![Settings](screenshots/KORSiOS_Tweaks_Settings.png)
+![Settings](screenshots/KORSiOS_Tweaks_Setting.png)
 
 ![InfoSystem](screenshots/KORSiOS_Tweaks_InfoSystem.png)
 
