@@ -14,7 +14,6 @@
 ![Admin](https://img.shields.io/badge/admin%20rights-Required-critical?style=flat-square) 
 ![Backup](https://img.shields.io/badge/registry%20backup-Supported-success?style=flat-square) 
 ![Control](https://img.shields.io/badge/user%20controlled-Yes-success?style=flat-square) 
-![Source](https://img.shields.io/badge/source-Closed--source-black?style=flat-square) 
 ![Telemetry](https://img.shields.io/badge/telemetry-None-success?style=flat-square) 
 ![Data](https://img.shields.io/badge/data%20collection-None-success?style=flat-square)
 
