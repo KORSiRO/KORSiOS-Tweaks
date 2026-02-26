@@ -24,22 +24,23 @@
 - Mise à jour de l'application
 
 ### 🛡️ Sécurité :  
-• Les actions nécessitant des droits administrateur sont confirmées et visibles.
-• Les scripts PowerShell peuvent sauvegarder l’état avant modification.
-• Les tweaks “à risque” sont clairement indiqués.
+• Les actions nécessitant des droits administrateur sont confirmées et visibles.  
+• Les scripts PowerShell peuvent sauvegarder l’état avant modification.  
+• Les tweaks “à risque” sont clairement indiqués.  
 
 ### 💡 Recommandation :  
 • Avant d’appliquer des tweaks avancés, il est conseillé de créer un point de restauration système.
 
 ### 🖼️ Interface :  
-• Page de "Bienvenue" détaillant le logiciel & vérification Administrateur (bas de fenêtre)
-• Interface graphique pour l’application de tweaks système Windows.
-• Tweaks organisés par catégories avec descriptions détaillées
-• Système de sauvegarde du registre avant modification
+• Page de "Bienvenue" détaillant le logiciel & vérification Administrateur (bas de fenêtre)  
+• Interface graphique pour l’application de tweaks système Windows.  
+• Tweaks organisés par catégories avec descriptions détaillées  
+• Système de sauvegarde du registre avant modification  
 • Possibilité de restauration des paramètres appliqués
 
 ### 📥 Installation :  
 • Téléchargez l’installateur ci-dessous  
 • Lancez l’installation  
 • Exécutez KORSiOS Tweaks avec les droits administrateur
+
 
