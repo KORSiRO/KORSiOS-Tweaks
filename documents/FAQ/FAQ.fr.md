@@ -41,7 +41,7 @@ KORSiOS Tweks apporte :
 
 Il privilégie le contrôle et la transparence plutôt qu’un script global.
 
-## 🔍 Ce que KORSiOS ne fait PAS :
+## 🔍 Ce que KORSiOS Tweaks ne fait PAS :
 
 - Aucune télémétrie
 - Aucune communication réseau
@@ -52,4 +52,5 @@ Il privilégie le contrôle et la transparence plutôt qu’un script global.
 
 
 Tout fonctionne localement.
+
 
