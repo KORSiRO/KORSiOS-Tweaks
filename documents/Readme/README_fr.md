@@ -13,7 +13,7 @@
 
 ## 🖥️ Aperçu de l’interface
 
-![Welcome](screenshots/KORSiOS_Tweaks_Welcom.png)
+![Welcome](../../screenshots/KORSiOS_Tweaks_Welcom.png)
 
 ![Tweaks](screenshots/KORSiOS_Tweaks_tweaks_détail.png)
 
