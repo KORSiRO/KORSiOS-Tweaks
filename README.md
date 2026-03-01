@@ -141,7 +141,7 @@ Allows you to remove UWP Apps present in the OS
 KORSiOS Tweaks modifies advanced Windows settings.
 
 - Some options may :
-  - affect stability
+  - affect stability (explicitly detailed)
   - change system behavior
   - disable Windows features
   - Use of the software is **at your own risk**
