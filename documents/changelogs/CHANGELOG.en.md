@@ -1,44 +1,23 @@
-## KORSiOS Tweaks is a Windows 11 configurator focused on performance, privacy and stability.  
+# 📦 v1.0 – First Stable Release
 
-## ✨ Features:
+First stable version of KORSiOS Tweaks.
 
-### 🔧 Tweaks (Registry/Scripts) :
-- Applies Windows settings via registry keys, organized by category.
-- Runs advanced scripts with logic, backup, and rollback.
+## ✨ Included in this version:
 
-### 📜 Applied Scripts :
-- Allows you to quickly check active scripts and restore previous values ​​if needed.
+- Complete and structured interface
+- System tweaks (registry .reg & scripts .ps1)
+- Individual rollback system per tweak
+- Automatic saving of values ​​before application
+- UWP application management
+- Integrated system restore point creation
+- System Info module
+- Settings (French/English language + update check)
+- Bug Report generation system (.zip)
 
-### 💻 UWP Apps :
-- Scans installed Windows applications and displays only those in the catalog.
+## 🔐 Security & Transparency:
 
-### 🗃️ Registry Status :
-- Displays applied registry tweaks
-- Restores the registry to a previous state (snapshot)
-- Information & creation date
-
-### ♻️ System Restore Point : Creates a Windows restore point.
-
-### ⚙️ Settings :
-- Language management (FR/EN)
-- Application update
-
-### 🛡️ Security:  
-• Actions requiring administrator privileges are confirmed and visible.  
-• PowerShell scripts can save the state before modification.  
-• "Riskful" tweaks are clearly indicated.
-
-### 💡 Recommendation :  
-• Before applying advanced tweaks, it is advisable to create a system restore point.
-
-### 🖼️ Interface :  
-• "Welcome" page detailing the software & verification if launched as Administrator (bottom of window)  
-• Graphical interface for applying Windows system tweaks.  
-• Tweaks organized by category with detailed descriptions  
-• Registry backup system before modification  
-• Ability to restore applied settings  
-
-### 📥 Installation :  
-• Download the installer below  
-• Run the installer  
-• Run KORSiOS Tweaks with administrator privileges
+- Local execution only
+- No telemetry
+- No persistent services
+- Administrator rights required
+- Internet connection not required (except for application updates)
