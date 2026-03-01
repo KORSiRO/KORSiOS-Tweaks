@@ -15,19 +15,19 @@
 
 ![Welcome](../../screenshots/KORSiOS_Tweaks_Welcom.png)
 
-![Tweaks](screenshots/KORSiOS_Tweaks_tweaks_détail.png)
+![Tweaks](../../screenshots/KORSiOS_Tweaks_tweaks_détail.png)
 
-![ScriptsAppliqués](screenshots/KORSiOS_Tweaks_scripts.png)
+![ScriptsAppliqués](../../screenshots/KORSiOS_Tweaks_scripts.png)
 
-![EtatRegistre](screenshots/KORSiOS_Tweaks_registre.png)
+![EtatRegistre](../../screenshots/KORSiOS_Tweaks_registre.png)
 
-![AppUWP](screenshots/KORSiOS_Tweaks_AppsUWP.png)
+![AppUWP](../../screenshots/KORSiOS_Tweaks_AppsUWP.png)
 
-![RestorePoint](screenshots/KORSiOS_Tweaks_RestorePoint.png)
+![RestorePoint](../../screenshots/KORSiOS_Tweaks_RestorePoint.png)
 
-![Settings](screenshots/KORSiOS_Tweaks_Setting.png)
+![Settings](../../screenshots/KORSiOS_Tweaks_Setting.png)
 
-![InfoSystem](screenshots/KORSiOS_Tweaks_InfoSystem.png)
+![InfoSystem](../../screenshots/KORSiOS_Tweaks_InfoSystem.png)
 
 ## 🎤 Présentation
 
