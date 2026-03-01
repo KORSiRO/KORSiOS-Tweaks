@@ -161,6 +161,10 @@ Personal project focused on performance, system mastery, and Windows optimizatio
 
 ---
 
+## [❓ FAQ](../FAQ/FAQ.en.md#FAQ)
+
+---
+
 ## ⭐ Thanks
 
 Thank you to everyone who tests, reports bugs, and contributes to improving the stability and quality of KORSiOS Tweaks.
