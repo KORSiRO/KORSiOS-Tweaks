@@ -157,7 +157,7 @@ KORSiOS Tweaks modifie des paramètres avancés de Windows.
 
 ---
 
-## [❓ FAQ](../FAQ/FAQ.fr.md#faq)
+## ❓ FAQ
 
 <details>
   <summary> ✔️ Comment fonctionne le rollback ?</summary>
