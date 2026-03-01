@@ -1,110 +1,110 @@
 # KORSiOS Tweaks – Contrat de Licence Utilisateur Final (EULA)
 
-Copyright (c) 2026 KORSiRO
-
+Copyright (c) 2026 KORSiRO  
 Tous droits réservés.
 
+1. Propriété
 
-## 1. Propriété
-
-KORSiOS Tweaks ainsi que l’ensemble des fichiers, scripts, ressources et éléments associés sont la propriété exclusive de KORSiRO.
+KORSiOS Tweaks, son code source, son architecture interne, son interface utilisateur, son système de snapshot/rollback ainsi que tous les éléments associés sont la propriété exclusive de KORSiRO.
 
 Ce logiciel est concédé sous licence et n’est pas vendu.
 
+Le code source de l’application n’est pas publiquement disponible.
 
-## 2. Utilisation autorisée
+2. Distribution
+
+Ce dépôt GitHub distribue uniquement des versions compilées (.exe).
+
+Les versions officielles sont disponibles exclusivement via :
+https://github.com/KORSiRO/KORSiOS-Tweaks
+
+3. Utilisation autorisée
 
 Vous êtes autorisé à :
 
 - Télécharger et utiliser KORSiOS Tweaks à titre personnel
-- Partager la version officielle non modifiée distribuée via GitHub
+- Partager la version officielle non modifiée
 
-
-## 3. Restrictions
+4. Restrictions
 
 Il est strictement interdit de :
 
-- Modifier, décompiler, désassembler ou rétro-concevoir le logiciel
+- Modifier, adapter ou créer des œuvres dérivées du logiciel
+- Décompiler, désassembler, analyser ou rétro-concevoir le logiciel
 - Redistribuer une version modifiée
 - Reconditionner ou réhéberger le logiciel
 - Vendre ou exploiter commercialement le logiciel
-- Revendiquer la propriété du logiciel ou de ses composants
+- Utiliser le nom "KORSiOS" pour un projet dérivé
 
+5. Absence de garantie
 
-## 4. Absence de garantie
-
-Ce logiciel est fourni "en l’état", sans aucune garantie, explicite ou implicite.
+Ce logiciel est fourni "en l’état", sans aucune garantie.
 
 L’auteur ne pourra être tenu responsable :
 
 - D’une instabilité système
 - D’une perte de données
-- D’un dysfonctionnement résultant de l’application de tweaks
+- De dommages résultant de l’application de modifications système
 
-L’utilisateur applique les modifications à ses propres risques.
+L’utilisateur applique les tweaks à ses propres risques.
+
+6. Limitation de responsabilité
+
+En aucun cas l’auteur ne pourra être tenu responsable de dommages directs, indirects ou consécutifs liés à l’utilisation du logiciel.
 
 
-## 5. Limitation de responsabilité
-
-En aucun cas l’auteur ne pourra être tenu responsable de dommages directs ou indirects résultant de l’utilisation du logiciel.
-
-
-## 6. Distribution officielle
-
-Les versions officielles sont uniquement disponibles sur :
-
-https://github.com/KORSiRO/KORSiOS-Tweaks
 
 
 # KORSiOS Tweaks – End User License Agreement (EULA)
 
-Copyright (c) 2026 KORSiRO
-
+Copyright (c) 2026 KORSiRO  
 All rights reserved.
 
+1. Ownership
 
-## 1. Ownership
-
-KORSiOS Tweaks and all associated files, scripts, assets, and branding are the exclusive property of KORSiRO.
+KORSiOS Tweaks, including its source code, internal architecture, user interface, snapshot/rollback system, and all associated components, are the exclusive property of KORSiRO.
 
 This software is licensed, not sold.
 
+The source code of the application is not publicly available.
 
-## 2. Permitted Use
+2. Distribution
 
-You are granted permission to:
+This GitHub repository distributes compiled release binaries (.exe) only.
+
+Official versions are exclusively available via:
+https://github.com/KORSiRO/KORSiOS-Tweaks
+
+3. Permitted Use
+
+You are permitted to:
 
 - Download and use KORSiOS Tweaks for personal use
-- Share the official, unmodified release version
+- Share the official unmodified release version
 
-
-## 3. Restrictions
+4. Restrictions
 
 You may NOT:
 
-- Modify, reverse engineer, decompile, or redistribute modified versions
-- Repackage the software
-- Sell or commercially distribute the software
-- Claim ownership of the software or its components
+- Modify, adapt, or create derivative works based on the software
+- Reverse engineer, decompile, disassemble, or analyze the software
+- Redistribute modified versions
+- Repackage or rehost the software
+- Sell or commercially exploit the software
+- Use the name "KORSiOS" for any derivative or competing project
 
+5. Disclaimer of Warranty
 
-## 4. No Warranty
+This software is provided "as is", without any warranty, express or implied.
 
-This software is provided "as is", without warranty of any kind.
-
-The author is not responsible for:
+The author shall not be held responsible for:
 
 - System instability
 - Data loss
-- Misuse of system tweaks
+- Any damages resulting from system modifications
 
-Users apply tweaks at their own risk.
+Users apply system tweaks at their own risk.
 
+6. Limitation of Liability
 
-## 5. Liability
-
-In no event shall the author be liable for any damages arising from the use of this software.
-
-
-For official releases and updates:
-https://github.com/KORSiRO/KORSiOS-Tweaks
+Under no circumstances shall the author be liable for any direct, indirect, incidental, or consequential damages arising from the use of this software.
