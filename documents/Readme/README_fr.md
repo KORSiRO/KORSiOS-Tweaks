@@ -157,13 +157,6 @@ KORSiOS Tweaks modifie des paramètres avancés de Windows.
 
 ---
 
-## 👤 Auteur
-
-Développé par **KORSiRO**  
-Projet personnel axé performance, maîtrise système et optimisation Windows.
-
----
-
 ## [❓ FAQ](../FAQ/FAQ.fr.md#faq)
 
 <details>
@@ -292,6 +285,15 @@ C’est pourquoi KORSiOS Tweaks :
 - Aucun auto-update (l'utilisateur choisis de mettre à jour l'application ou non)
 - Aucun processus persistant
 </details><br>
+
+---
+
+## 👤 Auteur
+
+Développé par **KORSiRO**  
+Projet personnel axé performance, maîtrise système et optimisation Windows.
+
+---
 
 ## ⭐ Remerciements
 
