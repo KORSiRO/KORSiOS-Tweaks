@@ -164,7 +164,7 @@ Projet personnel axé performance, maîtrise système et optimisation Windows.
 
 ---
 
-## [❓ FAQ](../FAQ/FAQ.fr.md#FAQ)
+## [❓ FAQ](../FAQ/FAQ.fr.md#faq)
 
 ## ⭐ Remerciements
 
