@@ -18,9 +18,8 @@
 ![Data](https://img.shields.io/badge/data%20collection-None-success?style=flat-square)
 
 <br><br>
-### KORSiOS Tweaks is an advanced Windows configuration and optimization tool.
-
-### Designed to quickly and cleanly apply targeted system tweaks (registry, Windows features, components, system behaviors).<br><br>
+### KORSiOS Tweaks is a customization tool for Windows 11 designed for advanced configuration and optimization.
+### Designed to cleanly apply targeted system tweaks (registry, Windows features, components, system behaviors), this tool is focused on transparency for the user.<br><br>
 
 ## 🖥️ Interface Preview
 
@@ -40,33 +39,58 @@
 
 ![InfosSystem](screenshots/KORSiOS_Tweaks_InfosSystem_en.png)
 
-The project focuses on :
+## 🎤 Introduction
 
-- **stability**
-- **readability of actions**
-- **reversibility**
-- and a **clear user experience**, even for advanced tweaks.
+KORSiOS Tweaks is designed for users who want control over Windows 11 behavior without running massive and questionable debloat scripts.
+
+It offers:
+
+- A clear and structured user interface
+- Registry-based tweaks
+- Script-based tweaks
+- A local snapshot system per tweak
+- Documentation of the impact and risk level before application
+- No background services
+- Does not create any scheduled tasks
+- No telemetry
+- An integrated application update system
+
+## 🎯 Philosophy
+
+KORSiOS Tweaks prioritizes:
+
+- Transparency over blind automation
+- Reversible modifications
+- Clear documentation
+- Precise control
+- No hidden behavior
+- It is not an aggressive "one-click" debloat tool.
 
 ---
 
 ## ✨ Main Features
 
-### ⚙️ System Tweaks
-  - Organized by category: Power, Taskbar, File Explorer, Performance, etc.
-  - Tweaks are executed in two different ways: Registry .reg or Scripts .ps1<br>
-
-A dedicated **Details** block for each tweak displays:
-  - Description
-  - Expected impact
-  - Potential risks
-  - Important notes<br>
+### ⚙️ System Tweaks<br>
+- Organized by category: Power, Taskbar, File Explorer, Performance, UI, etc.
+- Tweaks are executed in two different ways: Registry .reg or Scripts .ps1<br>
+- Each tweak includes a dedicated **Details** block that displays :
+- Description
+- Expected impact
+- Potential risks
+- Important notes<br>
 
 So you know exactly what it does and what it offers before you commit.
 
 ### 💾 Applied Scripts / Registry State<br>
 Allows you to restore previous values ​​(before applying the tweak(s))
   - **Applied Scripts**: restores tweaks Scripts (.ps1)
-  - **Registry State**: restores tweaks Regist (.reg)
+  - **Registry State**: restores tweaks Regist (.reg)<br>
+
+Before applying a tweak :
+- The original values ​​are saved locally.
+- The snapshot is associated only with that tweak.
+- The rollback restores only the modified elements.
+- No dependency on a global restore point is required.
 
 ### 🧠 UWP Apps<br>
 Allows you to remove UWP Apps present in the OS
@@ -86,10 +110,6 @@ Allows you to remove UWP Apps present in the OS
 
 ### 🖥️ **Interface Modern graphical interface**
   - Simple, readable, and efficiency-oriented
-
-### 🔒 **No silent modifications**
-  - The user retains complete control
-  - No tweaks are applied without explicit action
 
 ---
 
