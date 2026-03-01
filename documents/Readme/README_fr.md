@@ -164,6 +164,8 @@ Projet personnel axé performance, maîtrise système et optimisation Windows.
 
 ---
 
+## [❓ FAQ](../FAQ/FAQ.fr.md#FAQ)
+
 ## ⭐ Remerciements
 
 Merci à toutes les personnes qui testent, remontent des bugs et contribuent à améliorer la stabilité et la qualité de KORSiOS Tweaks.
