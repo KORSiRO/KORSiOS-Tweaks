@@ -297,4 +297,10 @@ Projet personnel axé performance, maîtrise système et optimisation Windows.
 
 ## ⭐ Remerciements
 
-Merci à toutes les personnes qui testent, remontent des bugs et contribuent à améliorer la stabilité et la qualité de KORSiOS Tweaks.
+Merci à toutes les personnes qui testent, remontent des bugs et contribuent à améliorer la stabilité et la qualité de cet outil.
+
+KORSiOS Tweaks est développé de manière indépendante.
+
+Si l’application vous est utile et que vous souhaitez soutenir son développement, vous pouvez le faire de manière totalement optionnelle.
+
+<a href="https://www.paypal.me/korsiro" target="_blank"> <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" /> </a>
