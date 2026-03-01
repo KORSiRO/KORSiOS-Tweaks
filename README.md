@@ -175,8 +175,8 @@ KORSiOS Tweaks modifies advanced Windows settings.
 ---
 
 <details>
-<summary> ✔️ How does rollback work?</summary>
-<br>
+<summary> ✔️ How does rollback work?</summary><br>
+
 KORSiOS Tweaks uses a system of local snapshots per tweak.
 
 Before application:
@@ -193,8 +193,9 @@ It does not depend on:
 
 </details>
 <details>
-<summary> ✔️ Is rollback 100% guaranteed?</summary>
-<br> The rollback restores the values ​​saved at the time the tweak was applied.
+<summary> ✔️ Is rollback 100% guaranteed?</summary><br> 
+
+The rollback restores the values ​​saved at the time the tweak was applied.
 
 However:
 
@@ -205,8 +206,8 @@ The result may vary.
 
 </details>
 <details>
-<summary> ✔️ Does KORSiOS Tweaks remove system applications?</summary>
-<br>
+<summary> ✔️ Does KORSiOS Tweaks remove system applications?</summary><br>
+
 Depending on the tweaks selected, some features may be disabled or removed.
 
 KORSiOS Tweaks does not:
@@ -217,8 +218,8 @@ KORSiOS Tweaks does not:
 - Touch protected system files
 </details>
 <details>
-<summary> ✔️ Why use KORSiOS Tweaks?</summary>
-<br>
+<summary> ✔️ Why use KORSiOS Tweaks?</summary><br>
+
 KORSiOS Tweaks provides:
 
 - A structured interface
@@ -230,8 +231,8 @@ It prioritizes control and transparency over a blanket script.
 
 </details>
 <details>
-<summary> ✔️ Does the application require an internet connection?</summary>
-<br>
+<summary> ✔️ Does the application require an internet connection?</summary><br>
+
 KORSiOS runs entirely locally:
 
 - No network connection is required
@@ -239,8 +240,8 @@ KORSiOS runs entirely locally:
 - No remote servers are contacted. You can block the application via firewall if you wish: its operation will not be affected (except for the update system).
 </details>
 <details>
-<summary> ✔️ Are logs generated?</summary>
-<br>
+<summary> ✔️ Are logs generated?</summary><br>
+
 Actions taken can be logged locally in order to:
 
 - Facilitate debugging
@@ -250,8 +251,8 @@ Actions taken can be logged locally in order to:
 
 </details>
 <details>
-<summary> ✔️ What happens if a tweak is applied twice?</summary>
-<br>
+<summary> ✔️ What happens if a tweak is applied twice?</summary><br>
+
 Tweaks are designed to be:
 
 - Without further modification upon re-execution
@@ -260,8 +261,8 @@ Tweaks are designed to be:
 
 </details>
 <details>
-<summary> ✔️ Can it make the system unstable?</summary>
-<br>
+<summary> ✔️ Can it make the system unstable?</summary><br>
+
 Any system modification can have an impact.
 
 Each tweak indicates:
@@ -274,8 +275,8 @@ High-risk tweaks should be applied with caution.
 
 </details>
 <details>
-<summary> ✔️ Does KORSiOS Tweaks permanently modify Windows?</summary>
-<br>
+<summary> ✔️ Does KORSiOS Tweaks permanently modify Windows?</summary><br>
+
 The modifications persist until they are undone.
 
 However:
@@ -284,8 +285,8 @@ However:
 - No irreversible changes are intentionally applied.
 </details>
 <details>
-<summary> ✔️ Why should I trust this tool?</summary>
-<br>
+<summary> ✔️ Why should I trust this tool?</summary><br>
+
 You should never blindly trust a system tool.
 
 This is why KORSiOS Tweaks:
@@ -295,9 +296,10 @@ This is why KORSiOS Tweaks:
 - Doesn't communicate with the internet (except for an application update via the dedicated section)
 - Allows individual rollbacks
 </details>
+
 <details>
-<summary> ✔️ What does KORSiOS Tweaks NOT do?</summary>
-<br>
+<summary> ✔️ What does KORSiOS Tweaks NOT do?</summary><br>
+
 - No telemetry
 - No network communication
 - No hidden services
