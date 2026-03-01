@@ -34,7 +34,7 @@ The application:
 
 ## ❓ Why use it rather than scripts found on the web?
 
-KORSiOS Tweks provides:
+KORSiOS Tweaks provides:
 
 - A structured interface
 - Clear categorization
@@ -129,4 +129,5 @@ That's why KORSiOS Tweaks:
 - No persistent processes
 
 Everything runs locally.
+
 
