@@ -174,6 +174,8 @@ KORSiOS Tweaks modifies advanced Windows settings.
 
 ---
 
+## ❓ FAQ
+
 <details>
 <summary> ✔️ How does rollback work?</summary><br>
 
@@ -308,14 +310,12 @@ This is why KORSiOS Tweaks:
 - No persistent processes
 </details><br>
 
+---
+
 ## 👤 Author
 
 Developed by **KORSiRO**
 Personal project focused on performance, system mastery, and Windows optimization.
-
----
-
-## [❓ FAQ](documents/FAQ/FAQ.en.md#faq)
 
 ---
 
