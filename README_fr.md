@@ -8,8 +8,8 @@
 ![GitHub release](https://img.shields.io/github/v/release/KORSiRO/KORSiOS-Tweaks?style=flat-square) ![Platform](https://img.shields.io/badge/platform-Windows-blue?style=flat-square) ![Architecture](https://img.shields.io/badge/arch-x64-lightgrey?style=flat-square) ![License](https://img.shields.io/badge/license-Proprietary-red?style=flat-square) ![Status](https://img.shields.io/badge/status-Stable-brightgreen?style=flat-square) ![Type](https://img.shields.io/badge/type-Desktop%20Application-informational?style=flat-square) ![System](https://img.shields.io/badge/system%20changes-Yes-orange?style=flat-square) ![Admin](https://img.shields.io/badge/admin%20rights-Required-critical?style=flat-square) ![Backup](https://img.shields.io/badge/registry%20backup-Supported-success?style=flat-square) ![Control](https://img.shields.io/badge/user%20controlled-Yes-success?style=flat-square) ![Telemetry](https://img.shields.io/badge/telemetry-None-success?style=flat-square) ![Data](https://img.shields.io/badge/data%20collection-None-success?style=flat-square)
 
 <br><br>
-### KORSiOS Tweaks est un outil Windows de configuration et d’optimisation avancée.
-### Conçu pour appliquer rapidement et proprement des réglages système ciblés (registre, fonctionnalités Windows, composants, comportements système).<br><br>
+### KORSiOS Tweaks est un outil de personnalisation pour Windows 11 destiné à la configuration et l’optimisation avancée.
+### Conçu pour appliquer proprement des réglages système ciblés (registre, fonctionnalités Windows, composants, comportements système), cet outil est axé sur la transparance pour l'utilisateur.<br><br>
 
 ## 🖥️ Aperçu de l’interface
 
@@ -29,32 +29,58 @@
 
 ![InfoSystem](screenshots/KORSiOS_Tweaks_InfoSystem.png)
 
-Le projet met l’accent sur :
-- la **stabilité**
-- la **lisibilité des actions**
-- la **réversibilité**
-- et une **expérience utilisateur claire**, même pour des tweaks avancés.
+## 🎤 Présentation
+
+KORSiOS Tweaks est conçu pour les utilisateurs souhaitant un contrôle du comportement de Windows 11, sans exécuter de scripts de debloat massifs et douteux.
+
+Il propose :
+
+- Interface utilisateur claire et structurée
+- Tweaks basés sur le registre
+- Tweaks basés sur des scripts
+- Système de snapshot local par tweak
+- Documentation de l’impact et du niveau de risque avant application
+- Aucun service en arrière-plan
+- Ne crée aucune tâche planifiée
+- Aucune télémétrie
+- Un système de mise à jour de l'application intégré
+
+## 🎯 Philosophie
+
+KORSiOS Tweaks privilégie :
+
+- La transparence plutôt que l’automatisation aveugle
+- Des modifications réversibles
+- Une documentation claire
+- Un contrôle précis
+- Aucun comportement caché
+- Ce n’est pas un outil de debloat agressif “en un clic”.
 
 ---
 
 ## ✨ Fonctionnalités principales
 
 ### ⚙️ Tweaks système
- - Organisés par catégories : Alimentation, Barre des Tâches, Explorateur, Performance etc.
+ - Organisés par catégories : Alimentation, Barre des Tâches, Explorateur, Performance, Interface UI etc.
  - Les tweaks sont exécutés de deux façons différentes : Registre .reg ou Scripts .ps1<br>
-
-Un bloc **Détails** dédié pour chaque tweak permet d'afficher :
-  - Description
-  - Impact attendu
-  - Risques potentiels
-  - Notes importantes<br>
+ - Chaque tweak inclut un bloc **Détails** dédié qui permet d'afficher :
+    - Description
+    - Impact attendu
+    - Risques potentiels
+    - Notes importantes<br>
 
 Afin de savoir exactement sont utilité et ce qu'il apporte avant validation.
 
 ### 💾 Scripts appliqués / État du registre<br>
-Permet de réaliser une restauration des valeurs précédentes (avant application du/des tweaks)
+Système de rollback par tweak (restaure les valeurs précédentes (avant application du/des tweaks)
   - **Scripts appliqués** : restauration des tweaks Scripts (.ps1)
-  - **État du registre** : restauration des tweaks Registe (.reg)
+  - **État du registre** : restauration des tweaks Registe (.reg)<br>
+  
+Avant l’application d’un tweak :
+- Les valeurs originales sont sauvegardées localement
+- Le snapshot est associé uniquement à ce tweak
+- Le rollback restaure uniquement les éléments modifiés
+- Aucune dépendance à un point de restauration global n’est requise.
 
 ### 🧠 Apps UWP<br>
 Permet de supprimer les Applications UWP présentes dans l'OS
@@ -75,10 +101,6 @@ Permet de supprimer les Applications UWP présentes dans l'OS
 ### 🖥️ **Interface graphique moderne**
   - Simple, lisible et orientée efficacité
 
-### 🔒 **Aucune modification silencieuse**
-  - L’utilisateur garde le contrôle total
-  - Aucun tweak n’est appliqué sans action explicite
-
 ---
 
 ## 🚀 Installation
@@ -97,9 +119,9 @@ Permet de supprimer les Applications UWP présentes dans l'OS
 
 - Les mises à jour sont distribuées via les **Releases GitHub**
 - Chaque version est :
-  - testée
-  - versionnée
-  - accompagnée d’un changelog clair
+    - testée
+    - versionnée
+    - accompagnée d’un changelog clair
 
 ---
 
@@ -108,10 +130,9 @@ Permet de supprimer les Applications UWP présentes dans l'OS
 KORSiOS Tweaks modifie des paramètres avancés de Windows.
 
 - Certaines options peuvent :
-  - affecter la stabilité
-  - modifier le comportement du système
-  - désactiver des fonctionnalités Windows
-- L’utilisation du logiciel se fait **à vos propres risques**
+    - affecter la stabilité (explicitement détaillé)
+    - modifier le comportement du système
+    - désactiver des fonctionnalités Windows
 
 👉 **Il est fortement recommandé de :**
 - créer un point de restauration système
