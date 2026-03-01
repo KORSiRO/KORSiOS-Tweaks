@@ -2,7 +2,7 @@
 
 ## ❓ Comment fonctionne le rollback ?
 
-KORSiOS utilise un système de snapshots locaux par tweak.
+KORSiOS Tweaks utilise un système de snapshots locaux par tweak.
 
 Avant l’application :
 - La valeur originale est sauvegardée localement
@@ -52,3 +52,4 @@ Il privilégie le contrôle et la transparence plutôt qu’un script global.
 
 
 Tout fonctionne localement.
+
