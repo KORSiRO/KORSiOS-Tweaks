@@ -1,7 +1,7 @@
 # 🧩 KORSiOS Tweaks
 <br>
 <p align="right">
-  <strong>🇫🇷 Français</strong> | <a href="README.md">🇬🇧 English</a>
+  <strong>🇫🇷 Français</strong> | <a href="main\README.md">🇬🇧 English</a>
 </p><br><br>
 
 
