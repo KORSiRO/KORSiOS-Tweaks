@@ -161,7 +161,7 @@ Personal project focused on performance, system mastery, and Windows optimizatio
 
 ---
 
-## [❓ FAQ](../FAQ/FAQ.en.md#FAQ)
+## [❓ FAQ](documents/FAQ/FAQ.en.md#FAQ)
 
 ---
 
