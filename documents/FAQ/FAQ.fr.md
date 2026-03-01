@@ -43,7 +43,7 @@ L’application :
 
 ## ❓ Pourquoi l’utiliser plutôt que des scripts trouvés sur la toile ?
 
-KORSiOS Tweks apporte :
+KORSiOS Tweaks apporte :
 
 - Une interface structurée
 - Une catégorisation claire
@@ -137,6 +137,7 @@ C’est pourquoi KORSiOS Tweaks :
 
 
 Tout fonctionne localement.
+
 
 
 
