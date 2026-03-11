@@ -13,11 +13,13 @@
 
 ## 🖥️ Aperçu de l’interface
 
-![Welcome](../../screenshots/KORSiOS_Tweaks_Welcom.png)
+![Theme](../../screenshots/KORSiOS_Tweaks_theme.png)
 
 <details>
   <summary>Thème sombre</summary>
 <br>
+
+![Welcome](../../screenshots/KORSiOS_Tweaks_Welcom.png)
   
 ![Tweaks](../../screenshots/KORSiOS_Tweaks_tweaks_détail.png)
 
