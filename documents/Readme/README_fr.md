@@ -43,6 +43,22 @@
   <summary>Captures Thème Clair</summary>
 <br>
 
+![Welcome](../../screenshots/dark/fr/KORSiOS_Tweaks_Bienvenue_Light.png)
+  
+![Tweaks](../../screenshots/dark/fr/KORSiOS_Tweaks_Tweaks_Light.png)
+
+![ScriptsAppliqués](../../screenshots/dark/fr/KORSiOS_Tweaks_Scripts_Light.png)
+
+![EtatRegistre](../../screenshots/dark/fr/KORSiOS_Tweaks_Registre_Light.png)
+
+![AppUWP](../../screenshots/dark/fr/KORSiOS_Tweaks_UWP_Light.png)
+
+![RestorePoint](../../screenshots/dark/fr/KORSiOS_Tweaks_PRS_Light.png)
+
+![Settings](../../screenshots/dark/fr/KORSiOS_Tweaks_Parametres_Light.png)
+
+![InfoSystem](../../screenshots/dark/fr/KORSiOS_Tweaks_InfoSystem_Light.png)
+
 </details><br>
 
 ## 🎤 Présentation
