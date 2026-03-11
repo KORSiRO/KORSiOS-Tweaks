@@ -32,8 +32,8 @@
 <details>
   <summary>Dark Theme</summary>
 <br>
-
-![Welcome](../../screenshots/dark/en/KORSiOS_Tweaks_Welcome_Dark.png)
+  
+![Welcom](../../screenshots/dark/en/KORSiOS_Tweaks_Welcome_Dark.png)
   
 ![Tweaks](../../screenshots/dark/en/KORSiOS_Tweaks_Tweaks_Dark.png)
 
