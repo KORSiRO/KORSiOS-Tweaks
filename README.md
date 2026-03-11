@@ -26,14 +26,14 @@
 ### <p align =center>THEME</p>
 ### <p align =center>SOMBRE / CLAIR</p>
 
-![Theme](../screenshots/theme/KORSiOS_Tweaks_theme_fr.png)<br>
+![Theme](../../screenshots/theme/KORSiOS_Tweaks_theme_fr.png)<br>
 
 
 <details>
   <summary>Dark Theme</summary>
 <br>
   
-![Welcom](../screenshots/dark/en/KORSiOS_Tweaks_Welcome_Dark.png)
+![Welcom](../../screenshots/dark/en/KORSiOS_Tweaks_Welcome_Dark.png)
   
 ![Tweaks](../../screenshots/dark/en/KORSiOS_Tweaks_Tweaks_Dark.png)
 
