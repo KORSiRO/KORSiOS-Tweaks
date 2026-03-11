@@ -45,7 +45,7 @@
 
 ![RestorePoint](screenshots/dark/en/KORSiOS_Tweaks_SRP_Dark.png)
 
-![Settings](screenshots/dark/en/KORSiOS_Tweaks_Parametres_Dark.png)
+![Settings](screenshots/dark/en/KORSiOS_Tweaks_Settings_Dark.png)
 
 ![InfoSystem](screenshots/dark/en/KORSiOS_Tweaks_InfoSystem_Dark.png)
 
