@@ -1,6 +1,6 @@
 # 🧩 KORSiOS Tweaks
 <br>
-<p align="right">
+<p align="center">
   <strong>🇬🇧 English</strong> | <a href="documents/Readme/README_fr.md">🇫🇷 Français</a>
 </p><br><br>
 
