@@ -23,22 +23,54 @@
 
 ## 🖥️ Interface Preview
 
-![Welcome](screenshots/KORSiOS_Tweaks_Welcome_en.png)
+### <p align =center>THEME</p>
+### <p align =center>SOMBRE / CLAIR</p>
 
-![Tweaks](screenshots/KORSiOS_Tweaks_tweaks_détail_en.png)
+![Theme](../../screenshots/theme/KORSiOS_Tweaks_theme_fr.png)<br>
 
-![ScriptsAppliqués](screenshots/KORSiOS_Tweaks_scripts_en.png)
 
-![EtatRegistre](screenshots/KORSiOS_Tweaks_registre_en.png)
+<details>
+  <summary>Dark Theme</summary>
+<br>
 
-![AppUWP](screenshots/KORSiOS_Tweaks_AppsUWP_en.png)
+![Welcome](../../screenshots/dark/en/KORSiOS_Tweaks_Welcome_Dark.png)
+  
+![Tweaks](../../screenshots/dark/en/KORSiOS_Tweaks_Tweaks_Dark.png)
 
-![RestorePoint](screenshots/KORSiOS_Tweaks_RestorePoint_en.png)
+![ScriptsAppliqués](../../screenshots/dark/en/KORSiOS_Tweaks_Scripts_Dark.png)
 
-![Settings](screenshots/KORSiOS_Tweaks_Setting_en.png)
+![EtatRegistre](../../screenshots/dark/en/KORSiOS_Tweaks_Registry_Dark.png)
 
-![InfosSystem](screenshots/KORSiOS_Tweaks_InfosSystem_en.png)
+![AppUWP](../../screenshots/dark/en/KORSiOS_Tweaks_UWP_Dark.png)
 
+![RestorePoint](../../screenshots/dark/en/KORSiOS_Tweaks_SRP_Dark.png)
+
+![Settings](../../screenshots/dark/en/KORSiOS_Tweaks_Parametres_Dark.png)
+
+![InfoSystem](../../screenshots/dark/en/KORSiOS_Tweaks_InfoSystem_Dark.png)
+</details><br>
+
+<details>
+  <summary>Light Theme</summary>
+<br>
+
+![Welcome](../../screenshots/light/en/KORSiOS_Tweaks_Welcome_Light.png)
+  
+![Tweaks](../../screenshots/light/en/KORSiOS_Tweaks_Tweaks_Light.png)
+
+![ScriptsAppliqués](../../screenshots/light/en/KORSiOS_Tweaks_Scripts_Light.png)
+
+![EtatRegistre](../../screenshots/light/en/KORSiOS_Tweaks_Registry_Light.png)
+
+![AppUWP](../../screenshots/light/en/KORSiOS_Tweaks_UWP_Light.png)
+
+![RestorePoint](../../screenshots/light/en/KORSiOS_Tweaks_SRP_Light.png)
+
+![Settings](../../screenshots/light/en/KORSiOS_Tweaks_Settings_Light.png)
+
+![InfoSystem](../../screenshots/light/en/KORSiOS_Tweaks_InfoSystem_Light.png)
+
+</details><br>
 ## 🎤 Introduction
 
 KORSiOS Tweaks is designed for users who want control over Windows 11 behavior without running massive and questionable debloat scripts.
