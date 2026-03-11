@@ -68,10 +68,11 @@ KORSiOS Tweaks est conçu pour les utilisateurs souhaitant un contrôle du compo
 
 Il propose :
 
-- Interface utilisateur claire et structurée
+- Interface utilisateur claire et structurée (Thème Clair/Sombre)
 - Tweaks basés sur le registre
 - Tweaks basés sur des scripts
-- Système de snapshot local par tweak
+- Système de snapshot & rollback par tweak
+- Import/Export par ID des Tweaks appliqués sur la machine
 - Documentation de l’impact et du niveau de risque avant application
 - Aucun service en arrière-plan
 - Ne crée aucune tâche planifiée
@@ -112,6 +113,8 @@ Système de rollback par tweak (restaure les valeurs précédentes (avant applic
 Avant l’application d’un tweak :
 - Les valeurs originales sont sauvegardées localement
 - Le snapshot est associé uniquement à ce tweak
+
+Après l’application d’un tweak :
 - Le rollback restaure uniquement les éléments modifiés
 - Aucune dépendance à un point de restauration global n’est requise.
 
@@ -123,6 +126,7 @@ Permet de supprimer les Applications UWP présentes dans l'OS
 ### 🛠️ Paramètres
   - Permet d'effectuer la mise à jour de l'application quand une nouvelle est disponible (vérification au lancement possible)
   - Permet de modifier la langue de l'application (Fr/En)
+  - Permet de switcher entre un thème sombre ou clair
  
 ### ↩️ **Création de point de restauration système directement intégré**
   - Créez un point de restauration système avant toutes modifications
@@ -193,13 +197,16 @@ KORSiOS Tweaks modifie des paramètres avancés de Windows.
 ## ❓ FAQ
 
 <details>
-  <summary> ✔️ Comment fonctionne le rollback ?</summary>
+  <summary> ✔️ Comment fonctionne le snapshot & rollback ?</summary>
 <br>
-  KORSiOS Tweaks utilise un système de snapshots locaux par tweak.
+  KORSiOS Tweaks utilise un système de snapshot local par tweak.
 
 Avant l’application :
 
 - La valeur originale est sauvegardée localement
+
+Après l’application :
+
 - Un rollback dédié permet de restaurer uniquement ce qui a été modifié
 
 Il ne dépend pas :
