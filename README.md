@@ -72,6 +72,7 @@
 ![InfoSystem](../../screenshots/light/en/KORSiOS_Tweaks_InfoSystem_Light.png)
 
 </details><br>
+
 ## 🎤 Introduction
 
 KORSiOS Tweaks is designed for users who want control over Windows 11 behavior without running massive and questionable debloat scripts.
