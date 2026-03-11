@@ -45,10 +45,11 @@ KORSiOS Tweaks is designed for users who want control over Windows 11 behavior w
 
 It offers:
 
-- A clear and structured user interface
+- A clear and structured user interface (Light/Dark Theme)
 - Registry-based tweaks
 - Script-based tweaks
-- A local snapshot system per tweak
+- Snapshot & rollback system per tweak
+- Import/Export by ID of Tweaks applied to the machine
 - Documentation of the impact and risk level before application
 - No background services
 - Does not create any scheduled tasks
@@ -89,6 +90,8 @@ Allows you to restore previous values ​​(before applying the tweak(s))
 Before applying a tweak :
 - The original values ​​are saved locally.
 - The snapshot is associated only with that tweak.
+
+After applying a tweak :
 - The rollback restores only the modified elements.
 - No dependency on a global restore point is required.
 
@@ -100,6 +103,7 @@ Allows you to remove UWP Apps present in the OS
 ### 🛠️ Settings
   - Allows you to update the app when a new one is available (checking at launch is possible)
   - Allows you to change the app language (Fr/En)
+  - Allows you to switch between a dark or light theme
 
 ### ↩️ **Integrated System Restore Point Creation**
   - Create a system restore point before any changes
@@ -177,13 +181,15 @@ KORSiOS Tweaks modifies advanced Windows settings.
 ## ❓ FAQ
 
 <details>
-<summary> ✔️ How does rollback work?</summary><br>
+<summary> ✔️ How does snapshot & rollback work ?</summary><br>
 
 KORSiOS Tweaks uses a system of local snapshots per tweak.
 
 Before application:
 
 - The original value is saved locally.
+
+After application:
 - A dedicated rollback restores only what has been modified.
 
 It does not depend on:
@@ -195,7 +201,7 @@ It does not depend on:
 
 </details>
 <details>
-<summary> ✔️ Is rollback 100% guaranteed?</summary><br> 
+<summary> ✔️ Is rollback 100% guaranteed ?</summary><br> 
 
 The rollback restores the values ​​saved at the time the tweak was applied.
 
@@ -208,7 +214,7 @@ The result may vary.
 
 </details>
 <details>
-<summary> ✔️ Does KORSiOS Tweaks remove system applications?</summary><br>
+<summary> ✔️ Does KORSiOS Tweaks remove system applications ?</summary><br>
 
 Depending on the tweaks selected, some features may be disabled or removed.
 
