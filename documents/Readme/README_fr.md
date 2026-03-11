@@ -13,7 +13,7 @@
 
 ## 🖥️ Aperçu de l’interface
 
-|cellule 1|cellule 2|
+DARK                     LIGHT
 
 ![Theme](../../screenshots/KORSiOS_Tweaks_theme.png)
 
