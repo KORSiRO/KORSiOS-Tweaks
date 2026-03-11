@@ -33,21 +33,21 @@
   <summary>Dark Theme</summary>
 <br>
   
-![Welcom](screenshots/dark/en/KORSiOS_Tweaks_Welcome_Dark.png)
+![Welcom](screenshots/dark/en/KORSiOS_Tweaks_Welcome_Light.png)
   
-![Tweaks](screenshots/dark/en/KORSiOS_Tweaks_Tweaks_Dark.png)
+![Tweaks](screenshots/dark/en/KORSiOS_Tweaks_Tweaks_Light.png)
 
-![ScriptsAppliqués](screenshots/dark/en/KORSiOS_Tweaks_Scripts_Dark.png)
+![ScriptsAppliqués](screenshots/dark/en/KORSiOS_Tweaks_Scripts_Light.png)
 
-![EtatRegistre](screenshots/dark/en/KORSiOS_Tweaks_Registry_Dark.png)
+![EtatRegistre](screenshots/dark/en/KORSiOS_Tweaks_Registry_Light.png)
 
-![AppUWP](screenshots/dark/en/KORSiOS_Tweaks_UWP_Dark.png)
+![AppUWP](screenshots/dark/en/KORSiOS_Tweaks_UWP_Light.png)
 
-![RestorePoint](screenshots/dark/en/KORSiOS_Tweaks_SRP_Dark.png)
+![RestorePoint](screenshots/dark/en/KORSiOS_Tweaks_SRP_Light.png)
 
-![Settings](screenshots/dark/en/KORSiOS_Tweaks_Parametres_Dark.png)
+![Settings](screenshots/dark/en/KORSiOS_Tweaks_Parametres_Light.png)
 
-![InfoSystem](screenshots/dark/en/KORSiOS_Tweaks_InfoSystem_Dark.png)
+![InfoSystem](screenshots/dark/en/KORSiOS_Tweaks_InfoSystem_Light.png)
 
 </details><br>
 
