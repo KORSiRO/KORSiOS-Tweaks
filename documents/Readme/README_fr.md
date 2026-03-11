@@ -14,12 +14,12 @@
 ## 🖥️ Aperçu de l’interface
 
 ### <p align =center>THEME</p>
-### <p align =center>DARK / LIGHT</p>
+### <p align =center>SOMBRE / CLAIR</p>
 
 ![Theme](../../screenshots/KORSiOS_Tweaks_theme.png)
 
 <details>
-  <summary>Thème sombre</summary>
+  <summary>Captures Thème Sombre</summary>
 <br>
 
 ![Welcome](../../screenshots/KORSiOS_Tweaks_Welcom.png)
@@ -37,6 +37,12 @@
 ![Settings](../../screenshots/KORSiOS_Tweaks_Settings.png)
 
 ![InfoSystem](../../screenshots/KORSiOS_Tweaks_InfoSystem.png)
+</details><br>
+
+<details>
+  <summary>Captures Thème Clair</summary>
+<br>
+
 </details><br>
 
 ## 🎤 Présentation
