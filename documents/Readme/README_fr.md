@@ -16,27 +16,27 @@
 ### <p align =center>THEME</p>
 ### <p align =center>SOMBRE / CLAIR</p>
 
-![Theme](../../screenshots/KORSiOS_Tweaks_theme.png)
+![Theme](../../screenshots/dark/theme/KORSiOS_Tweaks_theme_fr.png)
 
 <details>
   <summary>Captures Thème Sombre</summary>
 <br>
 
-![Welcome](../../screenshots/KORSiOS_Tweaks_Welcom.png)
+![Welcome](../../screenshots/dark/fr/KORSiOS_Tweaks_Bienvenue_Dark.png)
   
-![Tweaks](../../screenshots/KORSiOS_Tweaks_tweaks_détail.png)
+![Tweaks](../../screenshots/dark/fr/KORSiOS_Tweaks_Tweaks_Dark.png)
 
-![ScriptsAppliqués](../../screenshots/KORSiOS_Tweaks_scripts.png)
+![ScriptsAppliqués](../../screenshots/dark/fr/KORSiOS_Tweaks_Scripts_Dark.png)
 
-![EtatRegistre](../../screenshots/KORSiOS_Tweaks_registre.png)
+![EtatRegistre](../../screenshots/dark/fr/KORSiOS_Tweaks_Registre_Dark.png)
 
-![AppUWP](../../screenshots/KORSiOS_Tweaks_AppUWP.png)
+![AppUWP](../../screenshots/dark/fr/KORSiOS_Tweaks_UWP_Dark.png)
 
-![RestorePoint](../../screenshots/KORSiOS_Tweaks_RestorePoint.png)
+![RestorePoint](../../screenshots/dark/fr/KORSiOS_Tweaks_PRS_Dark.png)
 
-![Settings](../../screenshots/KORSiOS_Tweaks_Settings.png)
+![Settings](../../screenshots/dark/fr/KORSiOS_Tweaks_Parametres_Dark.png)
 
-![InfoSystem](../../screenshots/KORSiOS_Tweaks_InfoSystem.png)
+![InfoSystem](../../screenshots/dark/fr/KORSiOS_Tweaks_InfoSystem_Dark.png)
 </details><br>
 
 <details>
