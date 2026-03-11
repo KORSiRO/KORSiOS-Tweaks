@@ -24,9 +24,9 @@
 ## 🖥️ Interface Preview
 
 ### <p align =center>THEME</p>
-### <p align =center>SOMBRE / CLAIR</p>
+### <p align =center>DARK / LIGHT</p>
 
-![Theme](../screenshots/theme/KORSiOS_Tweaks_theme_fr.png)<br>
+![Theme](screenshots/theme/KORSiOS_Tweaks_theme_en.png)<br>
 
 
 <details>
@@ -35,19 +35,19 @@
   
 ![Welcom](screenshots/dark/en/KORSiOS_Tweaks_Welcome_Dark.png)
   
-![Tweaks](../../screenshots/dark/en/KORSiOS_Tweaks_Tweaks_Dark.png)
+![Tweaks](screenshots/dark/en/KORSiOS_Tweaks_Tweaks_Dark.png)
 
-![ScriptsAppliqués](../../screenshots/dark/en/KORSiOS_Tweaks_Scripts_Dark.png)
+![ScriptsAppliqués](screenshots/dark/en/KORSiOS_Tweaks_Scripts_Dark.png)
 
-![EtatRegistre](../../screenshots/dark/en/KORSiOS_Tweaks_Registry_Dark.png)
+![EtatRegistre](screenshots/dark/en/KORSiOS_Tweaks_Registry_Dark.png)
 
-![AppUWP](../../screenshots/dark/en/KORSiOS_Tweaks_UWP_Dark.png)
+![AppUWP](screenshots/dark/en/KORSiOS_Tweaks_UWP_Dark.png)
 
-![RestorePoint](../../screenshots/dark/en/KORSiOS_Tweaks_SRP_Dark.png)
+![RestorePoint](screenshots/dark/en/KORSiOS_Tweaks_SRP_Dark.png)
 
-![Settings](../../screenshots/dark/en/KORSiOS_Tweaks_Parametres_Dark.png)
+![Settings](screenshots/dark/en/KORSiOS_Tweaks_Parametres_Dark.png)
 
-![InfoSystem](../../screenshots/dark/en/KORSiOS_Tweaks_InfoSystem_Dark.png)
+![InfoSystem](screenshots/dark/en/KORSiOS_Tweaks_InfoSystem_Dark.png)
 
 </details><br>
 
@@ -55,21 +55,21 @@
   <summary>Light Theme</summary>
 <br>
 
-![Welcome](../../screenshots/light/en/KORSiOS_Tweaks_Welcome_Light.png)
+![Welcome](screenshots/light/en/KORSiOS_Tweaks_Welcome_Light.png)
   
-![Tweaks](../../screenshots/light/en/KORSiOS_Tweaks_Tweaks_Light.png)
+![Tweaks](screenshots/light/en/KORSiOS_Tweaks_Tweaks_Light.png)
 
-![ScriptsAppliqués](../../screenshots/light/en/KORSiOS_Tweaks_Scripts_Light.png)
+![ScriptsAppliqués](screenshots/light/en/KORSiOS_Tweaks_Scripts_Light.png)
 
-![EtatRegistre](../../screenshots/light/en/KORSiOS_Tweaks_Registry_Light.png)
+![EtatRegistre](screenshots/light/en/KORSiOS_Tweaks_Registry_Light.png)
 
-![AppUWP](../../screenshots/light/en/KORSiOS_Tweaks_UWP_Light.png)
+![AppUWP](screenshots/light/en/KORSiOS_Tweaks_UWP_Light.png)
 
-![RestorePoint](../../screenshots/light/en/KORSiOS_Tweaks_SRP_Light.png)
+![RestorePoint](screenshots/light/en/KORSiOS_Tweaks_SRP_Light.png)
 
-![Settings](../../screenshots/light/en/KORSiOS_Tweaks_Settings_Light.png)
+![Settings](screenshots/light/en/KORSiOS_Tweaks_Settings_Light.png)
 
-![InfoSystem](../../screenshots/light/en/KORSiOS_Tweaks_InfoSystem_Light.png)
+![InfoSystem](screenshots/light/en/KORSiOS_Tweaks_InfoSystem_Light.png)
 
 </details><br>
 
