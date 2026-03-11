@@ -17,7 +17,7 @@
 ### <p align =center>SOMBRE / CLAIR</p>
 
 ![Theme](../../screenshots/theme/KORSiOS_Tweaks_theme_fr.png)
-
+<br>
 <details>
   <summary>Captures Thème Sombre</summary>
 <br>
