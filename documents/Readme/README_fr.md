@@ -15,7 +15,7 @@
 
 ![Welcome](../../screenshots/KORSiOS_Tweaks_Welcom.png)
 
-## <details>
+<details>
   <summary>Thème sombre</summary>
 <br>
   
