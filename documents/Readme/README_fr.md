@@ -15,6 +15,9 @@
 
 ![Welcome](../../screenshots/KORSiOS_Tweaks_Welcom.png)
 
+<details>
+  <summary>Thème sombre</summary>
+<br>
 ![Tweaks](../../screenshots/KORSiOS_Tweaks_tweaks_détail.png)
 
 ![ScriptsAppliqués](../../screenshots/KORSiOS_Tweaks_scripts.png)
@@ -28,6 +31,7 @@
 ![Settings](../../screenshots/KORSiOS_Tweaks_Settings.png)
 
 ![InfoSystem](../../screenshots/KORSiOS_Tweaks_InfoSystem.png)
+</details><br>
 
 ## 🎤 Présentation
 
