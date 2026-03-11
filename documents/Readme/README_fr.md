@@ -13,7 +13,7 @@
 
 ## 🖥️ Aperçu de l’interface
 
-### DARK / LIGHT
+<h2 style="text-align:center;">DARK / LIGHT</h2>
 
 ![Theme](../../screenshots/KORSiOS_Tweaks_theme.png)
 
