@@ -43,21 +43,21 @@
   <summary>Captures Thème Clair</summary>
 <br>
 
-![Welcome](../../screenshots/dark/fr/KORSiOS_Tweaks_Bienvenue_Light.png)
+![Welcome](../../screenshots/light/fr/KORSiOS_Tweaks_Bienvenue_Light.png)
   
-![Tweaks](../../screenshots/dark/fr/KORSiOS_Tweaks_Tweaks_Light.png)
+![Tweaks](../../screenshots/light/fr/KORSiOS_Tweaks_Tweaks_Light.png)
 
-![ScriptsAppliqués](../../screenshots/dark/fr/KORSiOS_Tweaks_Scripts_Light.png)
+![ScriptsAppliqués](../../screenshots/light/fr/KORSiOS_Tweaks_Scripts_Light.png)
 
-![EtatRegistre](../../screenshots/dark/fr/KORSiOS_Tweaks_Registre_Light.png)
+![EtatRegistre](../../screenshots/light/fr/KORSiOS_Tweaks_Registre_Light.png)
 
-![AppUWP](../../screenshots/dark/fr/KORSiOS_Tweaks_UWP_Light.png)
+![AppUWP](../../screenshots/light/fr/KORSiOS_Tweaks_UWP_Light.png)
 
-![RestorePoint](../../screenshots/dark/fr/KORSiOS_Tweaks_PRS_Light.png)
+![RestorePoint](../../screenshots/light/fr/KORSiOS_Tweaks_PRS_Light.png)
 
-![Settings](../../screenshots/dark/fr/KORSiOS_Tweaks_Parametres_Light.png)
+![Settings](../../screenshots/light/fr/KORSiOS_Tweaks_Parametres_Light.png)
 
-![InfoSystem](../../screenshots/dark/fr/KORSiOS_Tweaks_InfoSystem_Light.png)
+![InfoSystem](../../screenshots/light/fr/KORSiOS_Tweaks_InfoSystem_Light.png)
 
 </details><br>
 
