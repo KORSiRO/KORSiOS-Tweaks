@@ -21,11 +21,11 @@
 
 ![EtatRegistre](../../screenshots/KORSiOS_Tweaks_registre.png)
 
-![AppUWP](../../screenshots/KORSiOS_Tweaks_AppsUWP.png)
+![AppUWP](../../screenshots/KORSiOS_Tweaks_AppUWP.png)
 
 ![RestorePoint](../../screenshots/KORSiOS_Tweaks_RestorePoint.png)
 
-![Settings](../../screenshots/KORSiOS_Tweaks_Setting.png)
+![Settings](../../screenshots/KORSiOS_Tweaks_Settings.png)
 
 ![InfoSystem](../../screenshots/KORSiOS_Tweaks_InfoSystem.png)
 
