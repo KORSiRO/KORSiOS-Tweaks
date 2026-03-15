@@ -4,14 +4,15 @@ Première version stable de KORSiOS Tweaks.
 
 ## ✨ Inclus dans cette version :
 
-- Interface complète et structurée
+- Interface complète et structurée (Thème Clair/Sombre)
 - Tweaks système (registre .reg & scripts .ps1)
-- Système de rollback individuel par tweak
-- Sauvegarde automatique des valeurs avant application
+- Système de snapshot & rollback par tweak
+- Import/Export par ID des Tweaks appliqués sur la machine
 - Gestion des applications UWP
 - Création de point de restauration système intégré
 - Module Info Système
-- Paramètres (langue Fr/En + vérification de mise à jour)
+- Gestionnaire de démarrage (activer/désactiver les applications au démarrage)
+- Paramètres (langue Fr/En & vérification de mise à jour & Choix du thème clair/sombre)
 - Système de génération de BugReport (.zip)
 
 ## 🔐 Sécurité & Transparence :
