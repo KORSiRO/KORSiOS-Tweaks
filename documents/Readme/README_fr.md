@@ -35,6 +35,8 @@
 
 ![RestorePoint](../../screenshots/dark/fr/KORSiOS_Tweaks_PRS_Dark.png)
 
+![StartupManager](../../screenshots/dark/fr/KORSiOS_Tweaks_StartupManager_Dark.png)
+
 ![Settings](../../screenshots/dark/fr/KORSiOS_Tweaks_Parametres_Dark.png)
 
 ![InfoSystem](../../screenshots/dark/fr/KORSiOS_Tweaks_InfoSystem_Dark.png)
@@ -55,6 +57,8 @@
 ![AppUWP](../../screenshots/light/fr/KORSiOS_Tweaks_UWP_Light.png)
 
 ![RestorePoint](../../screenshots/light/fr/KORSiOS_Tweaks_PRS_Light.png)
+
+![StartupManager](../../screenshots/dark/fr/KORSiOS_Tweaks_StartupManager_Light.png)
 
 ![Settings](../../screenshots/light/fr/KORSiOS_Tweaks_Parametres_Light.png)
 
