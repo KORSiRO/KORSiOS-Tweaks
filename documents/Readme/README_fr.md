@@ -58,7 +58,7 @@
 
 ![RestorePoint](../../screenshots/light/fr/KORSiOS_Tweaks_PRS_Light.png)
 
-![StartupManager](../../screenshots/dark/fr/KORSiOS_Tweaks_StartupManager_Light.png)
+![StartupManager](../../screenshots/light/fr/KORSiOS_Tweaks_StartupManager_Light.png)
 
 ![Settings](../../screenshots/light/fr/KORSiOS_Tweaks_Parametres_Light.png)
 
