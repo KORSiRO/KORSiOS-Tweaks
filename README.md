@@ -20,7 +20,6 @@
 ## Stats
 
 ![Téléchargements totaux](https://img.shields.io/github/downloads/KORSiRO/KORSiOS-Tweaks/total)
-![Téléchargements dernière release](https://img.shields.io/github/downloads/KORSiRO/KORSiOS-Tweaks/latest/total)
 ![Visiteurs](https://visitor-badge.laobi.icu/badge?page_id=KORSiRO.KORSiOS-Tweaks)
 
 <br><br>
