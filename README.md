@@ -16,7 +16,12 @@
 ![Control](https://img.shields.io/badge/user%20controlled-Yes-success?style=flat-square) 
 ![Telemetry](https://img.shields.io/badge/telemetry-None-success?style=flat-square) 
 ![Data](https://img.shields.io/badge/data%20collection-None-success?style=flat-square)
-![Téléchargements](https://img.shields.io/github/downloads/KORSiRO/KORSiOS-Tweaks/total)
+
+## Stats
+
+![Téléchargements totaux](https://img.shields.io/github/downloads/KORSiRO/KORSiOS-Tweaks/total)
+![Téléchargements dernière release](https://img.shields.io/github/downloads/KORSiRO/KORSiOS-Tweaks/latest/total)
+![Visiteurs](https://visitor-badge.laobi.icu/badge?page_id=KORSiRO.KORSiOS-Tweaks)
 
 <br><br>
 ### KORSiOS Tweaks is a customization tool for Windows 11 designed for advanced configuration and optimization.
