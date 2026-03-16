@@ -20,7 +20,7 @@
 
 
 <details>
-  <summary>Captures Thème Sombre</summary>
+  <summary>Thème Sombre</summary>
 <br>
   
 ![Tweaks](../../screenshots/dark/fr/KORSiOS_Tweaks_Tweaks_fr_Dark.png)
@@ -41,7 +41,7 @@
 </details><br>
 
 <details>
-  <summary>Captures Thème Clair</summary>
+  <summary>Thème Clair</summary>
 <br>
   
 ![Tweaks](../../screenshots/light/fr/KORSiOS_Tweaks_Tweaks_fr_Light.png)
