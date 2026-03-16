@@ -134,6 +134,12 @@ Allows you to remove UWP Apps present in the OS
   - Click the **Refresh** button to scan the apps
   - Once loaded, you can delete them
 
+### 💼 Startup Manager
+Allows you to enable or disable applications that launch when Windows starts
+(without using Task Manager)
+  - In the "Location" column, the "Open" button provides direct access to the program's path
+  - In the "Action" column, you can enable or disable the program from launching at startup
+
 ### 🛠️ Settings
   - Allows you to update the app when a new one is available (checking at launch is possible)
   - Allows you to change the app language (Fr/En)
