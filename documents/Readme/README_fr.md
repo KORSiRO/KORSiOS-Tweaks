@@ -22,47 +22,43 @@
 <details>
   <summary>Captures Thème Sombre</summary>
 <br>
-
-![Welcome](../../screenshots/dark/fr/KORSiOS_Tweaks_Bienvenue_Dark.png)
   
-![Tweaks](../../screenshots/dark/fr/KORSiOS_Tweaks_Tweaks_Dark.png)
+![Tweaks](../../screenshots/dark/fr/KORSiOS_Tweaks_Tweaks_fr_Dark.png)
 
-![ScriptsAppliqués](../../screenshots/dark/fr/KORSiOS_Tweaks_Scripts_Dark.png)
+![ScriptsAppliqués](../../screenshots/dark/fr/KORSiOS_Tweaks_Scripts_fr_Dark.png)
 
-![EtatRegistre](../../screenshots/dark/fr/KORSiOS_Tweaks_Registre_Dark.png)
+![EtatRegistre](../../screenshots/dark/fr/KORSiOS_Tweaks_Registry_fr_Dark.png)
 
-![AppUWP](../../screenshots/dark/fr/KORSiOS_Tweaks_UWP_Dark.png)
+![AppUWP](../../screenshots/dark/fr/KORSiOS_Tweaks_UWP_fr_Dark.png)
 
-![RestorePoint](../../screenshots/dark/fr/KORSiOS_Tweaks_PRS_Dark.png)
+![RestorePoint](../../screenshots/dark/fr/KORSiOS_Tweaks_RestorePoint_fr_Dark.png)
 
-![StartupManager](../../screenshots/dark/fr/KORSiOS_Tweaks_StartupManager_Dark.png)
+![StartupManager](../../screenshots/dark/fr/KORSiOS_Tweaks_StartupManager_fr_Dark.png)
 
-![Settings](../../screenshots/dark/fr/KORSiOS_Tweaks_Parametres_Dark.png)
+![Settings](../../screenshots/dark/fr/KORSiOS_Tweaks_Settings_fr_Dark.png)
 
-![InfoSystem](../../screenshots/dark/fr/KORSiOS_Tweaks_InfoSystem_Dark.png)
+![InfoSystem](../../screenshots/dark/fr/KORSiOS_Tweaks_InfoSystem_fr_Dark.png)
 </details><br>
 
 <details>
   <summary>Captures Thème Clair</summary>
 <br>
-
-![Welcome](../../screenshots/light/fr/KORSiOS_Tweaks_Bienvenue_Light.png)
   
-![Tweaks](../../screenshots/light/fr/KORSiOS_Tweaks_Tweaks_Light.png)
+![Tweaks](../../screenshots/light/fr/KORSiOS_Tweaks_Tweaks_fr_Light.png)
 
-![ScriptsAppliqués](../../screenshots/light/fr/KORSiOS_Tweaks_Scripts_Light.png)
+![ScriptsAppliqués](../../screenshots/light/fr/KORSiOS_Tweaks_Scripts_fr_Light.png)
 
-![EtatRegistre](../../screenshots/light/fr/KORSiOS_Tweaks_Registre_Light.png)
+![EtatRegistre](../../screenshots/light/fr/KORSiOS_Tweaks_Registry_fr_Light.png)
 
-![AppUWP](../../screenshots/light/fr/KORSiOS_Tweaks_UWP_Light.png)
+![AppUWP](../../screenshots/light/fr/KORSiOS_Tweaks_UWP_fr_Light.png)
 
-![RestorePoint](../../screenshots/light/fr/KORSiOS_Tweaks_PRS_Light.png)
+![RestorePoint](../../screenshots/light/fr/KORSiOS_Tweaks_RestorePoint_fr_Light.png)
 
-![StartupManager](../../screenshots/light/fr/KORSiOS_Tweaks_StartupManager_Light.png)
+![StartupManager](../../screenshots/light/fr/KORSiOS_Tweaks_StartupManager_fr_Light.png)
 
-![Settings](../../screenshots/light/fr/KORSiOS_Tweaks_Parametres_Light.png)
+![Settings](../../screenshots/light/fr/KORSiOS_Tweaks_Settings_fr_Light.png)
 
-![InfoSystem](../../screenshots/light/fr/KORSiOS_Tweaks_InfoSystem_Light.png)
+![InfoSystem](../../screenshots/light/fr/KORSiOS_Tweaks_InfoSystem_fr_Light.png)
 
 </details><br>
 
