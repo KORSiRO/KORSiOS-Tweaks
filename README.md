@@ -6,16 +6,16 @@
 
  
 ![Platform](https://img.shields.io/badge/platform-Windows-blue) 
-![Architecture](https://img.shields.io/badge/arch-x64-lightgrey?style=flat-square) 
-![License](https://img.shields.io/badge/license-Proprietary-red?style=flat-square) 
-![Status](https://img.shields.io/badge/status-Stable-brightgreen?style=flat-square) 
-![Type](https://img.shields.io/badge/type-Desktop%20Application-informational?style=flat-square) 
-![System](https://img.shields.io/badge/system%20changes-Yes-orange?style=flat-square) 
-![Admin](https://img.shields.io/badge/admin%20rights-Required-critical?style=flat-square) 
-![Backup](https://img.shields.io/badge/registry%20backup-Supported-success?style=flat-square) 
-![Control](https://img.shields.io/badge/user%20controlled-Yes-success?style=flat-square) 
-![Telemetry](https://img.shields.io/badge/telemetry-None-success?style=flat-square) 
-![Data](https://img.shields.io/badge/data%20collection-None-success?style=flat-square)
+![Architecture](https://img.shields.io/badge/arch-x64-lightgrey) 
+![License](https://img.shields.io/badge/license-Proprietary-red) 
+![Status](https://img.shields.io/badge/status-Stable-brightgreen) 
+![Type](https://img.shields.io/badge/type-Desktop%20Application-informational) 
+![System](https://img.shields.io/badge/system%20changes-Yes-orange) 
+![Admin](https://img.shields.io/badge/admin%20rights-Required-critical) 
+![Backup](https://img.shields.io/badge/registry%20backup-Supported-success) 
+![Control](https://img.shields.io/badge/user%20controlled-Yes-success) 
+![Telemetry](https://img.shields.io/badge/telemetry-None-success) 
+![Data](https://img.shields.io/badge/data%20collection-None-success)
 
 ## Stats
 
