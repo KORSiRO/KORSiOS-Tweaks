@@ -123,6 +123,12 @@ Permet de supprimer les Applications UWP présentes dans l'OS
   - Cliquez sur le bouton **Rafraîchir** pour analyser les applications
   - Une fois chargées, vous pouvez les supprimer
 
+### 💼 Gestionnaire de démarrage 
+Permet d'activer ou désactiver les applications lancées au démarrage de Windows
+(sans passer par le Gestionnaires des Tâches)
+  - Dans la colonne "Emplacement", le bouton "Ouvrir" permet d'accéder directement au chemin du programme
+  - Dans la colonne "Action" il est possible d'activer ou désactiver le lancement du programme au démarrage
+
 ### 🛠️ Paramètres
   - Permet d'effectuer la mise à jour de l'application quand une nouvelle est disponible (vérification au lancement possible)
   - Permet de modifier la langue de l'application (Fr/En)
