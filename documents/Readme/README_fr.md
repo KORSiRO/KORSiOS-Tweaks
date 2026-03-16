@@ -29,7 +29,7 @@
 
 ![EtatRegistre](../../screenshots/dark/fr/KORSiOS_Tweaks_Registry_fr_Dark.png)
 
-![AppUWP](../../screenshots/dark/fr/KORSiOS_Tweaks_UWP_fr_Dark.png)
+![AppUWP](../../screenshots/dark/fr/KORSiOS_Tweaks_AppsUWP_fr_Dark.png)
 
 ![RestorePoint](../../screenshots/dark/fr/KORSiOS_Tweaks_RestorePoint_fr_Dark.png)
 
@@ -50,7 +50,7 @@
 
 ![EtatRegistre](../../screenshots/light/fr/KORSiOS_Tweaks_Registry_fr_Light.png)
 
-![AppUWP](../../screenshots/light/fr/KORSiOS_Tweaks_UWP_fr_Light.png)
+![AppUWP](../../screenshots/light/fr/KORSiOS_Tweaks_AppsUWP_fr_Light.png)
 
 ![RestorePoint](../../screenshots/light/fr/KORSiOS_Tweaks_RestorePoint_fr_Light.png)
 
