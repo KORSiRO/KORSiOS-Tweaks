@@ -1,0 +1,2763 @@
+Windows Registry Editor Version 5.00
+
+; KORSiOS - [Audio / Multimedia]• Stability • Disable hardware audio offload
+; ID: Audio_DisableHardwareOffload
+; DESC: Disables hardware audio offloading (offloading audio processing to the hardware).
+; IMPACT: • Forces audio processing on the CPU/Windows side rather than via dedicated hardware.
+; IMPACT: • May improve audio stability (fewer dropouts, glitches) with certain drivers/sound cards.
+; IMPACT: • Makes audio behavior more predictable, especially at low latency.
+; RISK: • Slightly higher CPU load for audio processing.
+; RISK: • Possible loss of hardware optimizations on perfectly compatible hardware.
+; RISK: • Variable impact depending on the sound card and drivers.
+; NOTE: Audio stability/compatibility setting: useful if you are experiencing audio issues (crackling, dropouts), otherwise optional.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\MMDevices\Audio]
+"DisableAudioOffload"=dword:00000001
+
+; KORSiOS - [Audio / Multimedia]• Microphone • Disable Automatic Microphone Enhancement
+; ID: Audio_DisableMicrophoneEnhancement
+; DESC: Disables audio enhancements for input devices (microphone).
+; IMPACT: • Turns off software audio processing (noise reduction, echo, AGC, effects).
+; IMPACT: • The microphone signal becomes more raw and faithful, with potentially reduced latency.
+; IMPACT: • May improve stability and avoid conflicts with certain drivers or audio software.
+; RISK: • Loss of useful automatic corrections (ambient noise, normalization).
+; RISK: • Perceived quality may depend more on the microphone and environment.
+; RISK: • No impact on stability or security.
+; NOTE: Audio setting / pro control: recommended if you are using a good microphone or external processing (DAW, audio interface), otherwise adjust as needed.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\MMDevices\Audio\Capture]
+"DisableEnhancements"=dword:00000001
+
+; KORSiOS - [Audio / Multimedia]• Stability • Force Real-Time Audio Priority
+; ID: Audio_RealTimeAudioPriority
+; DESC: Increases the priority of audio tasks for improved real-time stability.																					 
+; IMPACT: • Assigns high priority to audio tasks via MMCSS.
+; IMPACT: • Prioritizes CPU allocation for audio.
+; IMPACT: • Reduces latency, crackling, and dropouts during playback/recording (DAW, VoIP, streaming, gaming).
+; RISK: • Fewer resources available for other background tasks during sustained audio load.
+; RISK: • Gains vary depending on drivers and hardware; sometimes a neutral effect.
+; RISK: • No risk to stability or security.
+; NOTE: Real•time audio setting: recommended for audio creation and streaming to ensure smooth playback.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio]
+"Priority"=dword:00000006
+"Scheduling Category"="High"
+
+; KORSiOS - [Audio / Multimedia]• Communications • Disable automatic volume reduction (e.g., Discord/game)
+; ID: Audio_DisableVolumeReduction
+; DESC: Disables automatic volume reduction for other sounds during communications.
+; IMPACT: • Prevents Windows from lowering application volume when audio communication is detected (call, VoIP, voice chat).
+; IMPACT: • The overall volume remains constant, without automatic attenuation.
+; IMPACT: • Improves comfort for gaming, music, or streaming during communications.
+; RISK: • Communication voice less audible if the overall volume is high.
+; RISK: • Sometimes requires manual volume adjustment.
+; RISK: • No impact on stability or security.
+; NOTE: Audio/comfort setting: avoids volume fluctuations imposed by Windows, highly recommended for multimedia.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Multimedia\Audio]
+"UserDuckingPreference"=dword:00000003
+
+; KORSiOS - [Audio / Multimedia]• Comfort • Background Audio Playback
+; ID: Audio_BackgroundAudioPlayback
+; DESC: Allows background audio playback for the user.
+; IMPACT: • Allows audio applications (players, browsers, multimedia apps) to continue playing sound even when they are not in the foreground.
+; IMPACT: • Prevents audio dropouts when switching windows or changing focus.
+; IMPACT: • Improves multitasking comfort (music, podcasts, streams while gaming or working).
+; RISK: • Slightly increased CPU usage if multiple audio apps remain active.
+; RISK: • Risk of unwanted simultaneous sounds if multiple applications play audio in the background.
+; RISK: • No impact on stability or security.
+; NOTE: Multimedia comfort setting: essential for modern audio multitasking.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Multimedia\Audio]
+"AllowBackgroundAudio"=dword:00000001
+
+; KORSiOS - [Audio / Multimedia]• Stability • Disable Audio Engine Power Saving
+; ID: Audio_AudioEnginePower
+; DESC: Disables Windows audio power•saving mechanisms.
+; IMPACT: • Prevents Windows from putting audio components to sleep or reducing their activity.
+; IMPACT: • Improves audio stability (fewer dropouts, pops, and wake•up delays).
+; IMPACT: • Keeps audio devices in a constant active state, useful for real-time applications (games, DAWs, VoIP).
+; RISK: • Slightly increased power consumption, especially on laptops.
+; RISK: • Negligible impact on desktop PCs.
+; RISK: • No risk to stability or security.
+; NOTE: Audio stability/low latency setting: recommended to avoid audio issues related to sleep mode, highly relevant for gaming and professional audio.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Audio]
+"DisablePowerSaving"=dword:00000001
+
+; KORSiOS - [Audio / Multimedia]• Comfort • Disable all system sounds
+; ID: Audio_DisableSystemSound
+; DESC: Disables Windows audio power-saving mechanisms.
+; IMPACT: • Forces the Windows sound scheme to No sound.
+; IMPACT: • Suppresses event sounds (notifications, errors, shutdowns, etc.).
+; IMPACT: • Does not affect application sounds (games, Spotify, etc.), only Windows sounds.
+; RISK: • You may miss some useful audible feedback (errors, alerts).
+; RISK: • No risk to stability or performance.
+; NOTE: Silent/clean setting: ideal for a gaming or audio setup where you want no background Windows sounds.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\AppEvents\Schemes]
+@=".None"
+
+; KORSiOS - [Taskbar]• Search • "Search" icon only (magnifying glass)
+; ID: Taskbar_SearchIconOnly
+; DESC: Displays the search box as an icon in the taskbar.
+; IMPACT: • Replaces the entire search bar with a search icon.
+; IMPACT: • Keeps this choice cached to prevent visual resets.
+; IMPACT: • More compact and streamlined taskbar, while maintaining access to search.
+; RISK: • Reduced visibility of the search function (icon instead of a text field).
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Ergonomics/minimalism setting: lightens the taskbar without losing search functionality.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
+"SearchboxTaskbarMode"=dword:00000001
+"SearchboxTaskbarModeCache"=dword:00000001
+
+; KORSiOS - [Taskbar]• Search • Hidden "Search"
+; ID: Taskbar_HiddenSearch
+; DESC: Hides the search box in the taskbar.
+; IMPACT: • Replaces the entire search bar with a search icon.
+; IMPACT: • Keeps this choice cached to prevent visual resets.
+; IMPACT: • More compact and streamlined taskbar, while maintaining access to search.
+; RISK: • Reduced visibility of the search function (icon instead of a text field).
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Ergonomics/minimalism setting: lightens the taskbar without losing search functionality.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
+"SearchboxTaskbarMode"=dword:00000000
+"SearchboxTaskbarModeCache"=dword:00000000
+
+; KORSiOS - [Taskbar]• Built-in apps • Disable “Meet Now” display
+; ID: Taskbar_DisableMeetNow
+; DESC: Hides the “Meet Now” button (Instant Meeting / Skype) in the notification area.
+; IMPACT: • Removes the “Meet Now” icon from the taskbar (system area).
+; IMPACT: • Reduces bloat/unnecessary items in the taskbar.
+; IMPACT: • Does not uninstall anything: it's just a UI hider.
+; RISK: • If someone actually uses Meet Now, they will have to access it another way.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Clean taskbar setting: very safe
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"HideSCAMeetNow"=dword:00000001
+
+; KORSiOS - [Taskbar]• System interface • Disable Widgets (System)
+; ID: Taskbar_DisableWidgets
+; DESC: Completely disables Windows Widgets / News & Interests.
+; IMPACT: • Blocks the News & Interests functionality via a system policy.
+; IMPACT: • Removes the Widgets icon from the taskbar for the user.
+; IMPACT: • Prevents web widgets (weather, news, interests) from being displayed, loaded, and executed.
+; IMPACT: • Reduces network activity, background processes, and UI clutter.
+; RISK: • Loss of access to Windows widgets (weather, news, quick info).
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Anti-widget/Clean UI/Anti-web content settings: ideal combination for permanently removing widgets, very clean and long-lasting.
+; RESTART: EXPLORER
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Dsh]
+"AllowNewsAndInterests"=dword:00000000
+
+; KORSiOS - [Taskbar] • System interface • Disable Widgets icon (visual)
+; ID: Taskbar_DisableWidgetsIcon
+; DESC: Completely disables Windows Widgets / News & Interests.
+; IMPACT: • Blocks the News & Interests functionality via a system policy.
+; IMPACT: • Removes the Widgets icon from the taskbar for the user.
+; IMPACT: • Prevents web widgets (weather, news, interests) from being displayed, loaded, and executed.
+; IMPACT: • Reduces network activity, background processes, and UI clutter.
+; RISK: • Loss of access to Windows widgets (weather, news, quick info).
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Anti-widget/Clean UI/Anti-web content settings: ideal combination for permanently removing widgets, very clean and long-lasting.
+; RESTART: EXPLORER																			
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarDa"=dword:00000000	
+																						
+; KORSiOS - [Taskbar]• Built-in apps • Disable Chat/Teams Icon
+; ID: Taskbar_DisableChatIcon
+; DESC: Completely disables the Windows Chat/Teams icon.
+; IMPACT: • Completely hides the Chat icon and Teams integration.
+; IMPACT: • Does not prevent the installation or manual use of Teams.
+; IMPACT: • Prevents Teams-related UI integration and promotional elements from appearing in the taskbar.
+; RISK: • Direct access to Teams from the taskbar is removed.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Debloat/Clean UI setting: Cleans the taskbar by removing the Chat icon.
+; RESTART: EXPLORER
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Chat]
+"ChatIcon"=dword:00000003
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarMn"=dword:00000000
+
+; KORSiOS - [Taskbar]• Buttons • Disable Task View icon
+; ID: Taskbar_DisableTaskViewIcon
+; DESC: Hides the "Task View" button in the taskbar.
+; IMPACT: • Removes the Task View icon (Win+Tab remains available).
+; IMPACT: • Reduces taskbar clutter.
+; IMPACT: • No impact on performance, only visual/ergonomics.
+; RISK: • No risk.
+; NOTE: Minimal UI setting / clean taskbar: useful for a cleaner taskbar.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowTaskViewButton"=dword:00000000
+
+; KORSiOS - [Taskbar]• Built-in apps • Disable the Copilot icon
+; ID: Taskbar_DisableCopilotIcon
+; DESC: Hides the Copilot button in the taskbar.
+; IMPACT: • Does not uninstall Copilot: it primarily affects the interface.
+; IMPACT: • Makes the taskbar cleaner.
+; RISK: • No risk.
+; RISK: • Copilot remains accessible through other means if Windows has enabled it (depending on the version).
+; NOTE: UI/debloat setting: perfect for a minimalist taskbar.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowCopilotButton"=dword:00000000
+
+; KORSiOS - [Taskbar]• Options • Added "End Task" option to right click
+; ID: Taskbar_AddedEndTask
+; DESC: Enables the "End Task" option directly from the taskbar.
+; IMPACT: • Adds the "End Task" entry to the right•click menu for open applications in the taskbar.
+; IMPACT: • Allows you to force-close a frozen application without opening the Task Manager.
+; RISK: • No impact on system stability or security.
+; NOTE: Productivity tweak / quick troubleshooting: provides immediate access to force-close apps, very convenient for everyday use.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDeveloperSettings]
+"TaskbarEndTask"=dword:00000001
+
+; KORSiOS - [Taskbar]• Layout • Left Alignment of Icons
+; ID: Taskbar_AlignmentIconsLeft
+; DESC: Aligns taskbar icons to the left (classic style).
+; IMPACT: • Places taskbar icons on the left (classic behavior, like Windows 10).
+; IMPACT: • Only changes the visual layout of the taskbar.
+; RISK: • No risk.
+; NOTE: Ergonomics/habits setting: ideal for restoring a familiar and efficient layout.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarAl"=dword:00000000
+
+; KORSiOS - [Taskbar]• Layout • Center Alignment of Icons
+; ID: Taskbar_AlignmentIconsCenter
+; DESC: Aligns taskbar icons to the center.
+; IMPACT: • Places taskbar icons on the center.
+; IMPACT: • Only changes the visual layout of the taskbar.
+; RISK: • No risk.
+; NOTE: Ergonomics/habits setting: ideal for restoring a familiar and efficient layout.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarAl"=dword:00000001
+
+; KORSiOS - [Taskbar]• Layout • Disable Window Grouping
+; ID: Taskbar_DisableWindowGrouping
+; DESC: Disables window grouping in the taskbar.								   
+; IMPACT: • Displays each window separately, even for the same application.
+; IMPACT: • Makes it easier to identify and directly access each open window.
+; IMPACT: • Improves productivity when multiple instances are used (Explorer, browsers, editors).
+; RISK: • Taskbar becomes more cluttered if many windows are open.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Ergonomics/power-user setting: prioritizes clarity and direct access to windows over compact aesthetics.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarGlomLevel"=dword:00000002
+
+; KORSiOS - [Taskbar]• Notifications • Disable notification badges/dots on icons
+; ID: Taskbar_DisableNotificationBadges
+; DESC: Disables badges (small indicators) on taskbar icons.
+; IMPACT: • Removes dots/counters (e.g., message count) on pinned apps.														 
+; IMPACT: • Reduces visual distractions.
+; RISK: • You will no longer see counters/alerts directly on the icons.
+; RISK: • You may miss "silent" notifications (e.g., Mail, Teams, Messaging).
+; NOTE: UI tweak/distraction: a very good tweak to avoid visual distractions
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarBadges"=dword:00000000
+
+; KORSiOS - [BitLocker]Block automatic device encryption
+; DESC: Prevents Windows from automatically enabling device encryption.
+; IMPACT: • Blocks silent activation (Device Encryption) on compatible machines.
+; IMPACT: • Avoids automatic activation and key backup to a Microsoft account.
+; RISK: • The disk will remain unencrypted if BitLocker is not manually enabled.
+; NOTE: • Control setting: gives the choice when/how to encrypt.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker]
+"PreventDeviceEncryption"=dword:00000001
+
+; KORSiOS - [BitLocker]Allow automatic device encryption
+; DESC: Allows Windows to enable automatic encryption if eligible.
+; IMPACT: • Restores default behavior (if the device is compatible).
+; RISK: • Windows can automatically encrypt depending on the context (MS account, hardware).
+; NOTE: • Use only if you are looking for the stock behavior of Windows.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker]
+"PreventDeviceEncryption"=dword:00000000
+
+; KORSiOS - [BitLocker]Hardened configuration FVE (TPM + PIN + XTS-AES 256)
+; DESC: Tightens BitLocker policy: TPM required, PIN required, XTS-AES 256 encryption, Secure Boot integrity.
+; IMPACT: • Enhances startup protection (TPM+PIN).
+; IMPACT: • Defines the recommended encryption method XTS-AES 256.
+; IMPACT: • Increases resistance against offline/theft attacks.
+; RISK: • If PIN forgotten => recovery required (recovery key).
+; RISK: • May be too strict for some PCs (TPM missing / automated usage).
+; NOTE: Advanced security pack: ideal for laptops/professionals. Requires recovery key management.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE]
+"UseTPM"=dword:00000002
+"UseTPMPIN"=dword:00000002
+"UseTPMKey"=dword:00000001
+"UseAdvancedStartup"=dword:00000001
+"OSAllowSecureBootForIntegrity"=dword:00000001
+"EncryptionMethodWithXtsOs"=dword:00000007
+"EncryptionMethodWithXtsFdv"=dword:00000007
+"EncryptionMethodWithXtsRdv"=dword:00000007
+"OSRecovery"=dword:00000001
+"OSRecoveryPassword"=dword:00000002
+"OSRecoveryKey"=dword:00000002
+"OSHideRecoveryPage"=dword:00000000
+"FDVRecovery"=dword:00000001
+"FDVRecoveryPassword"=dword:00000002
+"FDVRecoveryKey"=dword:00000002
+"RDVRecovery"=dword:00000001
+"RDVRecoveryPassword"=dword:00000002
+"RDVRecoveryKey"=dword:00000002
+
+; KORSiOS - [BitLocker]Remove all BitLocker policies (FVE)
+; DESC: Completely removes the BitLocker Policy Key (FVE) and all its associated configurations.
+; IMPACT: • Removes all BitLocker policies configured via the registry.
+; IMPACT: • Windows reverts to default behavior (not configured by policy).
+; IMPACT: • Removes TPM/PIN/encryption method requirements.
+; IMPACT: • Does not affect the current encryption state of an already encrypted disk.
+; RISK: • If BitLocker was configured with strict requirements, these disappear.
+; RISK: • In an enterprise environment, this may conflict with GPO domains.
+; RISK: • The behavior again becomes dependent on the Windows edition (Home/Pro) and UI settings.
+; NOTE: • Clean rollback method: preferable to setting all values ​​to 0.
+; NOTE: • Do NOT disable BitLocker if it is already active on a volume.
+; RESTART: REBOOT
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE]
+
+; KORSiOS - [Privacy / Security]• CEIP • Disable Customer Experience Improvement Program
+; ID: CEIP_DisableCustomerExperience
+; DESC: Globally disables the Microsoft Customer Experience Improvement Program (CEIP/SQM).
+; IMPACT: • Cuts off participation in the Customer Experience Improvement Program for several Windows components:
+; IMPACT: - Windows (SQMClient)
+; IMPACT: - App-V
+; IMPACT: - Internet Explorer (SQM)
+; IMPACT: - Messenger Client
+; IMPACT: - Unattend/OOBE settings
+; IMPACT: • Reduces the sending of no essential usage/diagnostic data to Microsoft.
+; IMPACT: • Contributes to a more privacy-conscious/low-profile configuration.
+; RISK: • Support/diagnostics: less "feedback" data sent, therefore potentially less useful for Microsoft in the event of a global analysis (but virtually no impact on the user).
+; RISK: • No system risk
+; NOTE: Privacy setting: disables historical "CEIP" telemetry (SQM). No direct performance gain, but a quieter and more consistent Windows experience.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\SQMClient\Windows]
+"CEIPEnable"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SQMClient\Windows]
+"CEIPEnable"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AppV\CEIP]
+"CEIPEnable"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\SQM]
+"DisableCustomerImprovementProgram"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Messenger\Client]
+"CEIP"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\SQMClient]
+"CEIPEnabled"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Assistant • Disable Cortana
+; ID: Privacy_DisableCortana
+; DESC: Disables Cortana in Windows Search.
+; IMPACT: • Prevents Cortana from being integrated into the search bar and related functions.
+; IMPACT: • Windows Search remains functional for files, applications, and settings, without the voice assistant.
+; IMPACT: • Reduces background activity related to Cortana and associated cloud services.
+; RISK: • Loss of Cortana functionality.
+; RISK: • No impact on the stability, security, or performance of regular search.
+; NOTE: Debloat/Privacy setting: maintains efficient local search while removing the voice assistant.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"AllowCortana"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Data • Disable Online Speech Recognition
+; ID: Privacy_Speech
+; DESC: Disables online (cloud) speech recognition permission for the user.
+; IMPACT: • Disables dictation/voice command services that use the Microsoft cloud.
+; IMPACT: • Reduces the potential sending of voice/text samples to Microsoft servers.
+; IMPACT: • Does not necessarily disable offline speech recognition if available (varies by language/build).
+; RISK: • Voice dictation may become less accurate or unavailable if it relied on the cloud.
+; RISK: • Some voice input features may display a message prompting you to enable online speech recognition.
+; NOTE: "Strong" privacy setting: zero cloud for voice (work PC, offline, clean gaming).
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy]
+"HasAccepted"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Data • Disable Text Input Personalization (TIPC)
+; ID: Privacy_Tipc
+; DESC: Disables Text Input Personalization/collection features for the user.
+; IMPACT: • Disables TIPC (Text Input Personalization/collection).
+; IMPACT: • Reduces Windows' automatic learning of your typing style.
+; IMPACT: • May reduce some cloud interactions if they were related to personalization.
+; RISK: • Input suggestions may be less relevant.
+; RISK: • Autocorrect may be less effective.
+; RISK: • Some touch keyboard (tablet) features may be less "intelligent".
+; NOTE: "Input" privacy setting: useful for minimizing input personalization and Windows learning.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Input\TIPC]
+"Enabled"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Assistant • Disable Copilot
+; ID: Privacy_DisableCopilot
+; DESC: Disables Windows Copilot for the user.
+; IMPACT: • Prevents access to Copilot (sidebar, shortcuts, UI integration).
+; IMPACT: • Removes interface elements and calls associated with Copilot.
+; IMPACT: • Reduces cloud/AI-dependent functionality.
+; RISK: • Loss of Copilot functionality (integrated AI assistance).
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Privacy/UI minimalism setting: disables Copilot for a cleaner, more predictable Windows experience.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot]
+"TurnOffWindowsCopilot"=dword:00000001
+
+; KORSiOS - [Privacy / Security]• Data • Disable application compatibility cache
+; ID: Privacy_DisableAppCompCache
+; DESC: Disables the application compatibility cache (AppCompat Cache / Shim cache).
+; IMPACT: • Prevents Windows from maintaining the application runtime cache used for compatibility and execution tracking.
+; IMPACT: • Reduces activity related to the AppCompat / shim engine mechanisms.
+; IMPACT: • May limit some automatic compatibility optimizations.
+; IMPACT: • Slightly reduces the trace left by program execution.
+; RISK: • Some older applications may lose automatic compatibility adjustments.
+; RISK: • Windows diagnostic/forensic tools are less informative.
+; RISK: • No impact on overall system stability.
+; NOTE: Anti-compat tracking/privacy setting: useful for a clean system without automatic shims.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache]
+"AppCompatCacheEnabled"=dword:00000000
+
+; KORSiOS - [Privacy / Security] Disable Sensor Access
+; DESC: Blocks access to Windows sensors.
+; IMPACT: • May disable access to certain hardware sensors.
+; IMPACT: • Typically affects sensors such as:
+; IMPACT: - Location (position sensor)
+; IMPACT: - Motion/orientation sensor (tablets / 2 in 1s)
+; IMPACT: - Ambient light sensors (auto-brightness)
+; IMPACT: • Enhances privacy by preventing the sensor from being used by Windows and/or apps.
+; RISK: • May break sensor-dependent functions:
+; RISK: - Auto-rotate screen (Surface / tablet)
+; RISK: - Auto-brightness
+; RISK: - "Find My Device" function (if location sensor is present)
+; RISK: - Some apps (weather, maps, camera, etc.)
+; NOTE: Advanced privacy setting: very useful on laptops/tablets if you want to block sensors at the system level.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Overrides\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}]
+"SensorPermissionState"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Permissions • Disable Location
+; ID: Privacy_DisableLocation
+; DESC: Disables location access for all Windows applications.
+; IMPACT: • Forces the "Deny" value for location capability at the system level.
+; IMPACT: • Prevents applications (UWP/Store and affected Windows components) from accessing geolocation data.
+; IMPACT: • Apps using location (Weather, Maps, location-based services) will no longer receive location data.
+; RISK: • Degraded functionality for location-dependent applications.
+; RISK: • No risk to stability or security.
+; NOTE: Privacy setting: disables geolocation globally. Ideal for a privacy-oriented system, but should be avoided if apps actually need location data.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location]
+"Value"="Deny"
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lfsvc\Service\Configuration]
+"Status"=dword:00000000
+
+; KORSiOS - [Privacy / Security] • Permissions • Disable automatic updates for offline maps
+; DESC: Disables automatic updates for Windows offline maps (Maps).
+; IMPACT: • Prevents Windows from automatically downloading map updates.
+; IMPACT: • Reduces background network activity related to offline maps.
+; IMPACT: • Reduces disk writing related to Maps updates.
+; IMPACT: • Useful on PCs where you never use offline maps.
+; RISK: • If you use offline maps, they may become outdated without automatic updates.
+; RISK: • You will need to update manually via Settings / Maps if necessary.
+; NOTE: Privacy setting + background clean: useful for limiting invisible downloads and unnecessary tasks.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\Maps]
+"AutoUpdateEnabled"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Data • Disabled Telemetry & Diagnostic Collection
+; ID: Privacy_DisableTelemetry
+; DESC: Disables advanced Windows telemetry and diagnostic collection.
+; IMPACT: • Blocks system telemetry and usage data collection.
+; IMPACT: • Disables extended diagnostic logging and dump collection.
+; IMPACT: • Suppresses Microsoft feedback notifications.
+; IMPACT: • Disables Application Compatibility Analysis (AIT).
+; IMPACT: • Significantly reduces communication with Microsoft.
+; IMPACT: • Reduces background service activity.
+; IMPACT: • Enhances overall system privacy.
+; RISK: • Less accurate Microsoft support: less data sent in case of a bug.
+; RISK: • Some intelligent diagnostic features may be limited.
+; RISK: • No risk of negative stability or performance.
+; NOTE: Privacy/System Cleanliness setting: This is the core of a Windows system without telemetry.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"AllowTelemetry"=dword:00000000
+"AllowBuildPreview"=dword:00000000
+"LimitDiagnosticLogCollection"=dword:00000001
+"LimitDumpCollection"=dword:00000001
+"AllowCommercialDataPipeline"=dword:00000000
+"AllowDeviceNameInTelemetry"=dword:00000000
+"DisableTelemetryOptInChangeNotification"=dword:00000001
+"DisableTelemetryOptInSettingsUx"=dword:00000001
+"DoNotShowFeedbackNotifications"=dword:00000001
+"LimitEnhancedDiagnosticDataWindowsAnalytics"=dword:00000000
+"AllowBuildPreview"=dword:00000000
+"LimitDiagnosticLogCollection"=dword:00000001
+"LimitDumpCollection"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection]
+"AllowTelemetry"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowTelemetry]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CPSS\DevicePolicy\AllowTelemetry]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CPSS\Store\AllowTelemetry]
+"Value"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\DataCollection]
+"AllowTelemetry"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags]
+"AITEnable"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Data • Disable Autologgers Telemetry (WMI)
+; ID: Privacy_DisableWMI
+; DESC: Disables several WMI trackers (Autologgers) related to telemetry and Windows diagnostics.
+; IMPACT: • Prevents the automatic startup of Diagtrack-Listener, SQMLogger and SetupPlatformTel trackers.
+; IMPACT: • Reduces the collection of diagnostic events in the background.
+; IMPACT: • Limits certain writing related to telemetry logs.
+; IMPACT: • Reduces activity associated with the Connected User Experience (DiagTrack) service.
+; RISK: • May reduce diagnostic capabilities in case of system problems or crashes.
+; RISK: • May impact certain analysis mechanisms during Windows upgrades.
+; RISK: • Windows may reactivate these trackers after a major update.
+; NOTE: Advanced telemetry hardening setting: useful for strict privacy environments.
+; NOTE: Very low performance impact, primarily a confidentiality effect.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\Diagtrack-Listener]
+"Start"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\SQMLogger]
+"Start"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\SetupPlatformTel]
+"Start"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Advertising • Disable Advertising ID
+; ID: Privacy_DisableAdvertisingID
+; DESC: Disables the Windows Advertising ID for the user.
+; IMPACT: • Prevents Windows and apps from using a unique Advertising ID.
+; IMPACT: • Reduces ad targeting and personalization based on user activity.
+; IMPACT: • Limits data sharing for marketing purposes.
+; RISK: • Less relevant ads in some apps (Store, UWP apps).
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Privacy setting: Turns off ad tracking at the Windows level for a more privacy-friendly experience.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo]
+"Enabled"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Advertising • Disable Personalized Content / Usage•Based Suggestions
+; ID: Privacy_DisablePersonalizedContent
+; DESC: Disables personalized experiences based on diagnostic data.
+; IMPACT: • Prevents Windows from using diagnostic data to personalize content, tips, and recommendations.
+; IMPACT: • Reduces cloud personalization and user data processing.
+; IMPACT: • Makes the Windows experience more neutral and predictable.
+; RISK: • Fewer suggestions tailored to personal use.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Privacy setting / Streamlined UX: Limits the use of diagnostic data for personalization.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Privacy]
+"TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• History • Turn off Activity History (Timeline)
+; ID: Privacy_ActivityHistoryOff
+; DESC: Completely disables Windows Activity History and Timeline.
+; IMPACT: • Disables Timeline and Activity History.
+; IMPACT: • Prevents local activity from being saved.
+; IMPACT: • Blocks activity from being sent to the Microsoft cloud.
+; IMPACT: • Removes activity synchronization between devices and accounts.
+; RISK: • Loss of Timeline and cross-device activity resumption.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Privacy/Sobriety setting: Turns off activity tracking and cloud synchronization for a more discreet and controlled Windows experience.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
+"EnableActivityFeed"=dword:00000000
+"PublishUserActivities"=dword:00000000
+"UploadUserActivities"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Data • Disable DiagTrack service
+; ID: Privacy_DisableDiagTrack
+; DESC: Disables the Connected User Experiences and Telemetry (DiagTrack) service.
+; IMPACT: • Stops telemetry collection, diagnostics, and sending usage data to Microsoft.
+; IMPACT: • Reduces background CPU, disk, and network activity.
+; IMPACT: • Improves privacy and consistency with other anti-telemetry settings (CEIP, DataCollection).
+; RISK: • Loss of some automatic diagnostics used by Microsoft for fault analysis.
+; RISK: • May limit the effectiveness of some Microsoft support tools.
+; RISK: • No risk to daily system stability.
+; NOTE: Privacy/anti-telemetry setting: classic and very common, considered a basic feature in any well-maintained Windows configuration.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DiagTrack]
+"Start"=dword:00000004
+
+; KORSiOS - [Privacy / Security]• History • Disable Clipboard History & Cloud Sync
+; ID: Privacy_DisableClipboardHistory
+; DESC: Disables clipboard history and cross-device synchronization.
+; IMPACT: • Blocks the saving of copy history (Win+V).
+; IMPACT: • Prevents cloud synchronization of the clipboard between Microsoft devices.
+; IMPACT: • Reduces local collection of copied data.
+; IMPACT: • Enhances clipboard privacy and predictability.
+; RISK: • Loss of clipboard history functionality.
+; RISK: • No synchronization between PCs.
+; RISK: • No impact on stability or performance.
+; NOTE: Privacy/data security setting: useful on professional or sensitive machines. Removes a convenient but intrusive feature.
+; RESTART: EXPLORER
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
+"AllowClipboardHistory"=dword:00000000
+"AllowCrossDeviceClipboard"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Clipboard]
+"EnableClipboardHistory"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Data • Disable input personalization (inking/typing)
+; ID: Privacy_DisableInputPerso
+; DESC: Disables the collection of input data (text, ink, contacts) for personalization.
+; IMPACT: • Prevents Windows from recording keystrokes, handwriting, and contact data for local AI.
+; IMPACT: • Disables personalized learning of the predictive keyboard and handwriting.
+; IMPACT: • Reduces the collection of data related to user input.
+; IMPACT: • Improves privacy without impacting basic keyboard functions.
+; RISK: • Less intelligent text prediction and suggestions.
+; RISK: • Loss of keyboard/typing personalization.
+; RISK: • No impact on stability or performance.
+; NOTE: Input privacy setting: recommended to limit all behavioral data collection.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\InputPersonalization]
+"RestrictImplicitTextCollection"=dword:00000001
+"RestrictImplicitInkCollection"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\InputPersonalization\TrainedDataStore]
+"HarvestContacts"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Personalization • Decline Windows Personalization Policy
+; ID: Privacy_Perso
+; DESC: Marks the personalization privacy policy as not accepted for the user.
+; IMPACT: • Reduces certain Windows personalizations based on user activity.
+; IMPACT: • Strengthens privacy by preventing the implicit activation of certain personalization services.
+; RISK: • Some Windows suggestions may become less relevant (or disappear).
+; RISK: • Some Settings pages may require re-acceptance after an update or Microsoft login.
+; NOTE: "Global" privacy setting: useful for a clean setup where you want to minimize Microsoft recommendations and personalization.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Personalization\Settings]
+"AcceptedPrivacyPolicy"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Permissions • Disable "Contacts" access for apps
+; ID: Privacy_DisableContactsAccess
+; DESC: Disables access to contacts for Windows applications.
+; IMPACT: • Prevents modern apps (UWP/Store) from accessing your contacts.
+; IMPACT: • Reduces the sharing of personal data.
+; IMPACT: • Primarily impacts Microsoft apps (Mail, People, Teams, etc.).
+; RISK: • Some apps will no longer be able to automatically import your contacts.
+; RISK: • May interfere with Mail/Calendar/Teams integration.
+; RISK: • No system risk.
+; NOTE: Privacy setting: very good if you don't use the Microsoft Contacts ecosystem.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\contacts]
+"Value"="Deny"
+
+; KORSiOS - [Privacy / Security]• Permissions • Disable Calendar Access for Apps
+; ID: Privacy_DisableCalendarAccess
+; DESC: Disables calendar access for Windows applications.
+; IMPACT: • Prevents modern apps (UWP/Store) from accessing the calendar.
+; IMPACT: • Reduces the sharing of personal data.
+; IMPACT: • Primarily impacts Microsoft apps (Mail, Calendar, Teams, etc.).
+; RISK: • Some apps will no longer be able to display/sync your calendar.
+; RISK: • May break features such as reminders, Teams integration, and calendar widgets.
+; RISK: • No risk to stability.
+; NOTE: Strong privacy setting: perfect if you don't use the Windows calendar. Otherwise, it's best to leave it on "Allow" or "Ask".
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appointments]
+"Value"="Deny"
+
+; KORSiOS - [Privacy / Security]• Permissions • Disable SMS access for apps
+; ID: Privacy_DisableSMSAccess
+; DESC: Disables access to chat/messaging features for Windows applications.
+; IMPACT: • Prevents modern apps (UWP/Store) from accessing chat capabilities.
+; IMPACT: • Reduces the sharing of personal data.
+; IMPACT: • Reduces Microsoft integrations (Windows Chat, integrated Teams, etc.).
+; RISK: • Some apps will no longer be able to access certain messaging features linked to the Microsoft account.
+; RISK: • May break features such as reminders, Teams integration, and calendar widgets.
+; RISK: • No risk to stability.
+; NOTE: Privacy + debloat setting: useful if you want to remove all Windows chat integration.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\chat]
+"Value"="Deny"
+
+; KORSiOS - [Privacy / Security]• Permissions • Disable Find My Device
+; ID: Privacy_DisableFindMyDevice
+; DESC: Disables location and synchronization of "Find My Device".
+; IMPACT: • Prevents Windows from transmitting the PC's location to the Microsoft account.
+; IMPACT: • Disables the remote tracking feature in case of loss/theft.
+; IMPACT: • Reduces communication related to geolocation.
+; IMPACT: • Improves privacy.
+; RISK: • Unable to use the Find My Device feature from the Microsoft account.
+; RISK: • Loss of a convenient anti-theft mechanism.
+; RISK: • No impact on stability or performance.
+; NOTE: Hardware privacy/anti-tracking setting: good choice for a desktop PC or controlled environment. Less recommended for a mobile device.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Settings\FindMyDevice]
+"LocationSyncEnabled"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Advertising • Disable Spotlight
+; ID: Privacy_DisableSpotlight
+; DESC: Completely disables Windows Spotlight and personalized/suggested content for the user.
+; IMPACT: • Disables Windows Spotlight.
+; IMPACT: • Prevents the use of Spotlight for Business.
+; IMPACT: • Blocks third-party app suggestions.
+; IMPACT: • Prevents personalization based on diagnostic data.
+; IMPACT: • Static user experience, without cloud content or promotions.
+; RISK: • Loss of dynamic lock screen images and info (Spotlight).
+; RISK: • Fewer recommendations for novice users.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Anti-ad/privacy/clean UX setting: Completely disables Spotlight and cloud personalization for a clean, quiet, and predictable Windows experience.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CloudContent]
+"ConfigureWindowsSpotlight"=dword:00000002
+"IncludeEnterpriseSpotlight"=dword:00000000
+"DisableThirdPartySuggestions"=dword:00000001
+"DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
+"DisableWindowsSpotlightFeatures"=dword:00000001
+"DisableWindowsSpotlightWindowsWelcomeExperience"=dword:00000001
+"DisableWindowsSpotlightOnActionCenter"=dword:00000001
+"DisableWindowsSpotlightOnSettings"=dword:00000001
+
+; KORSiOS - [Privacy / Security]• Permissions • Disable microphone (apps)
+; ID: Privacy_DisableMicrophone
+; DESC: Blocks microphone access for applications (Windows permissions).
+; IMPACT: • Prevents UWP/Store apps and some modern Windows apps from using the microphone.
+; IMPACT: • Significantly improves privacy.
+; RISK: • The microphone may no longer work in:
+; RISK: - Discord (depending on version/configuration)
+; RISK: - Teams / Zoom / Store apps
+; RISK: - Windows Voice Dictation
+; RISK: • Some Win32 apps may partially bypass this depending on their audio access methods.
+; RISK: • May generate "microphone not detected" bugs.
+; NOTE: Strong privacy setting: excellent if you don't use the microphone, but avoid it on a PC where you use voice communication.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone]
+"Value"="Deny"
+
+; KORSiOS - [Privacy / Security]• Permissions • Disable webcam (apps)
+; ID: Privacy_DisableWebcam
+; DESC: Blocks webcam access for applications (Windows permissions).
+; IMPACT: • Disables camera permission at the Windows level.
+; IMPACT: • Prevents modern apps (UWP/Store) and some software from capturing via the webcam.
+; RISK: • The camera will no longer work in:
+; RISK: - Teams / Zoom / Skype
+; RISK: - Windows Camera apps
+; RISK: - Discord (depending on version)
+; RISK: • May cause "camera unavailable" errors until re-enabled.
+; NOTE: Strong privacy setting: perfect if you don't use the webcam. Otherwise, leave it on "Ask" or "Allow".
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam]
+"Value"="Deny"
+
+; KORSiOS - [Privacy / Security]• Data • Disable Windows Feedback Requests (SIUF)
+; ID: Privacy_DisableFeedback
+; DESC: Disables Windows feedback requests (“Give us your feedback”).
+; IMPACT: • Sets the frequency and duration of SIUF requests to 0.
+; IMPACT: • Greatly reduces/eliminates Microsoft feedback notifications.
+; RISK: • Disables (or significantly reduces) Windows feedback requests.
+; RISK: • No system risk.
+; NOTE: Privacy setting: does not disable all telemetry, only the “feedback” portion.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Siuf\Rules]
+"NumberOfSIUFInPeriod"=dword:00000000
+"PeriodInNanoSeconds"=qword:0000000000000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"DoNotShowFeedbackNotifications"=dword:00000001
+
+; KORSiOS - [Privacy / Security]• Lock Screen • Disable Camera Access on the Lock Screen
+; ID: Privacy_DisableCameraAccessLock
+; DESC: Prevents camera use from the Windows lock screen.
+; IMPACT: • Disables the camera shortcut/access available before login.
+; IMPACT: • Reduces camera usage without being logged in.
+; RISK: • The camera will no longer be usable from the lock screen (if you were using this feature).
+; RISK: • No impact once logged into Windows.
+; NOTE: Clean and safe security setting. Especially useful on laptops/tablets/Surfaces.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization]
+"NoLockScreenCamera"=dword:00000001
+
+; KORSiOS - [Privacy / Security]• Lock Screen • Disable Slideshow on Lock Screen
+; ID: Privacy_DisableSlideshowLock
+; DESCRIPTION: Disables the image slideshow on the Windows lock screen.
+; IMPACT: • Prevents Windows from using a rotating image folder on the lock screen.
+; IMPACT: • Reduces the risk of unintentionally exposing personal images on a shared PC.
+; IMPACT: • Prevents certain disk/SSD accesses related to image loading (very low performance impact).
+; IMPACT: • Enhances the "minimal lock screen" mode (cleaner and more minimalist).
+; RISK: • The slideshow on the lock screen will no longer function.
+; RISK: • No impact on Windows Spotlight (if enabled), unless Spotlight was configured as a slideshow.
+; NOTE: Simple security and privacy setting. Works well in a "LockScreen Hardening" package.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization]
+"NoLockScreenSlideshow"=dword:00000001
+
+; KORSiOS - [Privacy / Security]• Lockdown • Disable Automatic Restart Sign-On (ARSO)
+; ID: Privacy_DisableAutoRestart
+; DESC: Prevents Windows from automatically reconnecting after a restart to complete updates.
+; IMPACT: • Disables the ARSO (Automatic Restart Sign-On) feature.
+; IMPACT: • Windows will no longer be able to use your credentials to automatically log you in after a reboot.
+; IMPACT: • Updates will still complete, but some steps will wait until the session is unlocked.
+; IMPACT: • Reduces the risk of a session opening on its own while you are away.
+; RISK: • After some updates, Windows may require manual login to complete.
+; RISK: • May give the impression that "Windows took longer to finish an update" (because it waits for login).
+; NOTE: A clean and recommended security setting. This is the equivalent of disabling "Use my login information to automatically complete setup...".
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableAutomaticRestartSignOn"=dword:00000000
+
+; KORSiOS - [Privacy / Security]• Traces • Clear “Recent Documents” on Logoff
+; ID: Privacy_ClearRecentDoc
+; DESC: Automatically clears the recent file history each time you log off.
+; IMPACT: • Deletes the “Recent Documents” list on logout/logoff.
+; IMPACT: • Clears the history displayed in:
+; IMPACT: - Start Menu
+; IMPACT: - File Explorer
+; IMPACT: - Jump Lists
+; IMPACT: • Reduces usage traces on a shared PC.
+; IMPACT: • Reduces the risk of a session opening on its own while you are away.
+; RISK: • You lose the convenience of quick access to recently opened files.
+; RISK: • Some apps that rely on Windows history will receive fewer suggestions.
+; NOTE: Privacy setting on shared/work PC. On a personal PC, it's a choice between convenience and privacy.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"ClearRecentDocsOnExit"=dword:00000001
+
+; KORSiOS - [Privacy / Security]• NVIDIA • Disable the NVIDIA panel telemetry preference
+; ID: Privacy_Nvidia
+; DESC: Sets the NVIDIA Control Panel (NVControlPanel2) Opt-in/Opt-out preference to 0.
+; IMPACT: • Disables membership in collection/sharing options associated with the NVIDIA panel.
+; IMPACT: • Reduces certain communications related to NVIDIA panel user preferences.
+; IMPACT: • Does not affect GPU performance or drivers.
+; IMPACT: • Does not impact GeForce Experience (separate component).
+; RISK: • May disable certain recommendations or connected features of the NVIDIA control panel.
+; RISK: • Limited effect if other NVIDIA components (e.g., GeForce Experience) are installed.
+; NOTE: Light privacy setting: useful if you want to minimize all NVIDIA telemetry on the control panel side.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\NVIDIA Corporation\NVControlPanel2\Client]
+"OptInOrOutPreference"=dword:00000000
+
+; KORSiOS - [Cloud] Disable cloud•optimized content
+; ID: Cloud_DisableCloudContent
+; DESC: Disables personalized experiences and cloud-optimized content in Windows.
+; IMPACT: • Prevents Windows from using diagnostic data to personalize the experience.
+; IMPACT: • Blocks dynamic content from the cloud.
+; IMPACT: • More neutral interface, less dependent on Microsoft online services.
+; RISK: • Less automatic personalization.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Clean privacy/UX setting: Windows becomes more discreet and predictable, ideal for a controlled setup without promotional content.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
+"DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
+"DisableCloudOptimizedContent"=dword:00000001
+
+; KORSiOS - [Content Delivery Manager] Complete Disable: Sponsored Content / Suggestions / Recommended Apps
+; ID: Content_Disable
+; DESC: Disables the entire Windows sponsored content / suggestions / recommended apps system.
+; IMPACT: • Turns off Windows Spotlight, sponsored content, app suggestions, and silent app installations.
+; IMPACT: • Disables soft landing and recommendation mechanisms.
+; IMPACT: • Disables rotating images on the lock screen.
+; IMPACT: • The system becomes static, predictable, and devoid of promotional content.
+; RISK: • Loss of visual features such as dynamic lock screen images (Spotlight).
+; RISK: • Fewer discoveries/suggestions for novice users.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Anti•bloat/anti•ad/clean UX setting: removes all promotional and automated Windows content for a clean and controlled experience.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"ContentDeliveryAllowed"=dword:00000000
+"SubscribedContentEnabled"=dword:00000000
+"SubscribedContent-310093Enabled"=dword:00000000
+"SoftLandingEnabled"=dword:00000000
+"SubscribedContent-338389Enabled"=dword:00000000
+"SilentInstalledAppsEnabled"=dword:00000000
+"PreInstalledAppsEnabled"=dword:00000000
+"PreInstalledAppsEverEnabled"=dword:00000000
+"OemPreInstalledAppsEnabled"=dword:00000000
+"FeatureManagementEnabled"=dword:00000000
+"RemediationRequired"=dword:00000000
+"SubscribedContent-314559Enabled"=dword:00000000
+"SubscribedContent-280815Enabled"=dword:00000000
+"SubscribedContent-314563Enabled"=dword:00000000
+"SubscribedContent-202914Enabled"=dword:00000000
+"SubscribedContent-338387Enabled"=dword:00000000
+"SubscribedContent-280810Enabled"=dword:00000000
+"SubscribedContent-280811Enabled"=dword:00000000
+"SubscribedContent-338388Enabled"=dword:00000000
+"SubscribedContent-338393Enabled"=dword:00000000
+"RotatingLockScreenEnabled"=dword:00000000
+"RotatingLockScreenOverlayEnabled"=dword:00000000
+
+; KORSiOS - [CPU / Scheduler] CPU: Prioritize foreground applications
+; ID: CPU_PriorityForeground
+; DESC: Adjusts CPU priority and time sharing to favor foreground applications over background tasks.
+; IMPACT: • Improved responsiveness of interactive applications.
+; IMPACT: • More CPU resources allocated to the foreground, at the expense of services/background processes.
+; RISK: • Background tasks (indexing, backups, resource-intensive services) may be slightly less responsive.
+; RISK: • On some highly multitasking workloads (server, rendering, VMs), this setting may be counterproductive.
+; RISK: • Low risk and easily reversible.
+; NOTE: Classic "desktop/gaming" setting: it makes the system more responsive during active use, without critical impact, but is not ideal for server use or intensive background computing.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+"Win32PrioritySeparation"=dword:00000026
+
+; KORSiOS - [CPU / Scheduler] CPU: Favor foreground boost
+; ID: CPU_ForegroundBoost
+; DESC: Increases the CPU priority bonus given to the foreground application.
+; IMPACT: • Strengthens the priority of interactive processes.
+; IMPACT: • Improves the smoothness of the active application (game, software, UI).
+; IMPACT: • Reduces CPU competition with background tasks.
+; RISK: • Background tasks may be slowed down under heavy load.
+; RISK: • Negligible impact on a modern multi-core PC.
+; NOTE: Interactivity/gaming setting: consistent with foreground performance optimization.
+; NOTE: Complements the "CPU: Prioritize foreground applications" tweak well.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+"ForegroundBoost"=dword:00000002
+
+; KORSiOS - [CPU / Scheduler] CPU: Disable CPU Reserve
+; ID: CPU_DisableCPUReserve
+; DESC: Removes the CPU reserve that Windows keeps by default for background multimedia tasks (20%)
+; IMPACT: • Tells Windows to no longer reserve a percentage of CPU for MMCSS services.
+; IMPACT: • Active applications (games, real-time software) can use 100% of CPU resources if necessary.
+; IMPACT: • Improves responsiveness and performance under heavy load, especially in gaming.
+; RISK: • Background multimedia tasks (audio, video, secondary streaming) may become less prioritized under heavy CPU load.
+; RISK: • On some machines, this may cause minor audio glitches if the CPU is saturated at 100%.
+; RISK: • Low risk on high-performance desktop PCs, more noticeable on modest configurations.
+; NOTE: Typical performance/gaming setting: Windows no longer allocates CPU resources and allows the main application to use all available power.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"SystemResponsiveness"=dword:00000000
+
+; KORSiOS - [Explorer / UI]• Media • Disable AutoRun
+; ID: Explorer_DisableAutoRun
+; DESC: Completely disables AutoRun for all types of drives.
+; IMPACT: • Prevents Windows from automatically launching programs when media (USB, CD/DVD, etc.) is inserted.
+; IMPACT: • Enhances security by blocking auto-launching scripts or executables.
+; RISK: • No negative impact on system performance or stability.
+; NOTE: Recommended security setting; it eliminates a common source of infection while remaining completely transparent in daily use.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoDriveTypeAutoRun"=dword:000000ff
+
+; KORSiOS - [Explorer / UI]• Media • Disable AutoPlay (AutoPlay Suggestions window)
+; ID: Explorer_DisableAutoPlay
+; DESC: Disables AutoPlay when a device (USB, CD, etc.) is connected.
+; IMPACT: • Prevents Windows from automatically opening an action when you connect a device.
+; IMPACT: • Enhances security and prevents automatic pop-ups.
+; RISK: • No more "What do you want to do?" window.
+; RISK: • No risk to stability
+; NOTE: Security + convenience setting: a very good safe tweak to prevent automatic actions and limit the risks associated with removable media.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers]
+"DisableAutoplay"=dword:00000001
+
+; KORSiOS - [Explorer / UI]• Performance • Launch folder windows in a separate process
+; ID: Explorer_SeparateProcess
+; DESC: Forces Windows Explorer to open folder windows in a separate process.
+; IMPACT: • Enables the “Open folder windows in a separate process” option.
+; IMPACT: • Each folder window can work independently from the main shell.
+; IMPACT: • If an Explorer window crashes, it does not necessarily crash the entire taskbar/desktop.
+; IMPACT: • Improves the overall stability of the interface in certain scenarios (heavy copy, unstable network).
+; IMPACT: • Can reduce overall Explorer freezes in case of an error on a specific folder.
+; RISK: • Slight increase in RAM usage (additional explorer.exe processes).
+; RISK: • On small configurations (low RAM), noticeable memory impact if many windows open.
+; RISK: • No impact on stability or security.
+; NOTE: Power-user / transparency setting: essential to understand and master the file system.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"SeparateProcess"=dword:00000001
+
+; KORSiOS - [Explorer / UI]• Explorer • Force Explorer to use GPU performance
+; ID: Explorer_ExplorerGPU
+; DESC: Forces Windows Explorer to use the high-performance GPU.
+; IMPACT: • Tells Windows to use the most powerful available GPU (dedicated GPU if one exists).
+; IMPACT: • May make the Explorer interface smoother.
+; RISK: • Slightly higher power consumption.
+; RISK: • No risk to stability or security.
+; NOTE: Optimizes visual comfort/UI fluidity: useful on desktop PCs or powerful machines, optional on laptops if battery life is a priority.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\DirectX\UserGpuPreferences]
+"C:\\Windows\\explorer.exe"="GpuPreference=2;"
+
+; KORSiOS - [Explorer / UI]• Display • Prevent the "shortcut to" text from being added when creating a shortcut
+; ID: Explorer_DisableShortcutTo
+; DESC: Prevents Windows from automatically adding the "Shortcut to" text when creating a new shortcut.
+; IMPACT: • Created shortcuts are named directly filename.lnk instead of Shortcut to filename.
+; IMPACT: • Only affects new shortcuts
+; RISK: • No risk
+; NOTE: Quality of life/ergonomics setting: it avoids the systematic manual renaming of shortcuts while maintaining their normal functionality.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"Link"=hex:00,00,00,00
+
+; KORSiOS - [Explorer / UI]• View • Show file extensions
+; ID: Explorer_ShowFilesExtension
+; DESC: Displays all file extensions in Explorer.
+; IMPACT: • Displays file extensions (.exe, .txt, .reg, etc.).
+; RISK: • No impact on stability or security.
+; NOTE: Power-user/transparency setting: essential for understanding and mastering the file system.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"HideFileExt"=dword:00000000
+
+; KORSiOS - [Explorer / UI]• View • Show hidden files
+; ID: Explorer_ShowHiddenFiles
+; DESC: Displays all hidden and system files in Explorer.
+; IMPACT: • Displays hidden files, folders, and protected system files.
+; RISK: • More visually cluttered interface for inexperienced users.
+; RISK: • No impact on stability or security.
+; NOTE: Power-user/transparency setting: Use with caution on system components.
+; RESTART: EXPLORER
+"Hidden"=dword:00000001
+"ShowSuperHidden"=dword:00000001
+
+; KORSiOS - [Explorer / UI]• Navigation • Force Explorer to open to “This PC”
+; ID: Explorer_ThisPC
+; DESC: Configures File Explorer to open directly to “This PC”.
+; IMPACT: • Starts Explorer on This PC instead of Home/Quick Access.
+; IMPACT: • Immediate access to system drives, devices, and folders
+; RISK: • Loss of Home (recent files and frequently accessed folders) upon opening.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Productivity/power-user setting: prioritizes a direct, technical view of the directory tree.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"LaunchTo"=dword:00000001
+
+; KORSiOS - [Explorer / UI]• History • Disable “Show recently opened items” in Jump Lists
+; ID: Explorer_JumpLists
+; DESC: Disables Jump Lists (recent items) in the Start menu and taskbar.
+; IMPACT: • Prevents Windows from displaying:
+; IMPACT: • Recent files per application (right-click on an icon)
+; IMPACT: • Recent shortcuts in Start
+; IMPACT: • Reduces the visible activity history.
+; RISK: • Loss of a convenient feature (recent items per application).
+; RISK: • No system risk.
+; NOTE: Privacy setting + clean menu: perfect for removing recent items everywhere and keeping Windows minimal.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_JumpListItems"=dword:00000000
+
+; KORSiOS - [Explorer / UI]• History • Turn off recent document history
+; ID: Explorer_DisableDocsHistory
+; DESC: Completely disable the saving of Recent Documents history.
+; IMPACT: • Windows no longer creates a history of opened files.
+; RISK: • No system risk.
+; RISK: • Loss of the quick access to recent files function.
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoRecentDocsHistory"=dword:00000001
+
+; KORSiOS - [Explorer / UI]• History • Disable "Recent Files" + "Recent Documents" history
+; ID: Explorer_DisableRecentFiles
+; DESC: Disables the display of recent files and frequently used folders in Explorer.
+; IMPACT: • Explorer becomes more static and streamlined, with no visible usage history.
+; RISK: • Loss of quick access to recently used items.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Privacy/Minimalism setting: prevents exposure of usage history and keeps Explorer clean.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"ShowRecent"=dword:00000000
+"ShowFrequent"=dword:00000000
+
+; KORSiOS - [Explorer / UI]• Display • Enable detailed display during copying
+; ID: Explorer_ActiveEnthusiast
+; DESC: Enables detailed display of copy/move operations in Explorer.
+; IMPACT: • Forces full display of details when copying/moving.
+; IMPACT: • Directly displays real speed (MB/s), variable bitrate and detailed graph.
+; IMPACT: • Removes “simplified compact” mode from the copy window.
+; RISK: • Slightly more “technical” copy window (less minimalist).
+; RISK: • No impact on performance.
+; NOTE: Performance / sobriety UI setting: favors speed over aesthetics.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager]
+"EnthusiastMode"=dword:00000001
+
+; KORSiOS - [Explorer / UI]• Responsiveness • Disable UI Animations
+; ID: Explorer_DisableUIAnimations
+; DESC: Configures Windows visual effects to "Best Performance" mode.
+; IMPACT: • Forces Windows to disable most visual effects (animations, shadows, transparencies).
+; IMPACT: • Cleaner and more responsive interface.
+; IMPACT: • May slightly reduce CPU/GPU usage and improve perceived smoothness, especially on demanding machines.
+; RISK: • Loss of visual comfort (animations, aesthetic effects).
+; RISK: • No impact on stability, security, or basic functionality.
+; NOTE: Performance/UI simplicity setting: prioritizes speed over aesthetics.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
+"VisualFXSetting"=dword:00000002
+
+; KORSiOS - [Explorer / UI]• Responsiveness • Disable taskbar animations
+; ID: Explorer_DisableTaskbarAnimations
+; DESC: Disables taskbar animations.
+; IMPACT: • Removes visual animations (open, hover, transitions) from the taskbar.
+; IMPACT: • More responsive and immediate interface.
+; IMPACT: • May slightly reduce UI-related CPU/GPU usage.
+; RISK: • Loss of visual fluidity and aesthetic effects.
+; RISK: • No impact on stability, security, or functionality.
+; NOTE: UI responsiveness setting: improves the feeling of speed by removing unnecessary animations.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarAnimations"=dword:00000000
+
+; KORSiOS - [Explorer / UI]• Wallpaper • Increase the JPEG quality of the wallpaper
+; ID: Explorer_JpegQuality
+; DESC: Forces Windows to use maximum JPEG quality (100%) when applying a wallpaper.
+; IMPACT: • Supprime la compression agressive appliquée par Windows.
+; IMPACT: • Removes the aggressive compression applied by Windows.
+; IMPACT: • Reduces compression artifacts visible on gradients and detailed images.
+; RISK: • Very slight increase in disk space used for wallpaper cache.
+; RISK : • Requires reapplying the wallpaper for immediate effect.
+; NOTE: Purely visual setting: recommended if you are using high-quality wallpapers.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"JPEGImportQuality"=dword:00000064
+
+; KORSiOS - [Explorer / UI]• Display • Show seconds in the clock
+; ID: Explorer_SecondsClock
+; DESC: Displays seconds in the taskbar clock.
+; IMPACT: • Useful for precise timing (tests, logs, synchronization, technical tasks).
+; IMPACT: • The clock is updated more frequently (refreshing every second).
+; RISK: • Very slightly higher CPU usage (negligible on modern PCs).
+; RISK: • Slightly more visually cluttered taskbar.
+; RISK: • No impact on stability or security.
+; NOTE: Precision/power-user setting: useful for fine time tracking.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowSecondsInSystemClock"=dword:00000001
+
+; KORSiOS - [Explorer / UI]• Windows • Disable Snap Window Auto-Arrangement
+; ID: Explorer_DisableSnapWindow
+; DESC: Disables the Snap Assist pane (window suggestions) when snapping.
+; IMPACT: • Prevents window/application suggestions from appearing after snapping a window.
+; IMPACT: • Snapping still works, but without pop-ups or recommendations.
+; IMPACT: • More discreet and faster interface.
+; RISK: • Loss of visual assistance for quickly arranging multiple windows.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Minimalist UI setting: removes intrusive assistance for those already familiar with snapping.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"EnableSnapAssistFlyout"=dword:00000000
+
+; KORSiOS - [Explorer / UI]• Windows • Disable "Snap Assist"
+; ID: Explorer_DisableSnapAssist
+; DESC: Disables Snap Assist (window snap suggestions).
+; IMPACT: • Disables automatic suggestions when you snap a window.
+; IMPACT: • The basic Snap (Win+arrow keys) can still be used, but without the assistant.
+; IMPACT: • Makes the experience simpler and less intrusive.
+; RISK: • Loss of a useful feature (window placement suggestions).
+; RISK: • No risk to stability.
+; NOTE: Minimal UI setting: useful if you want a cleaner, more streamlined experience without pop-ups when snapping windows.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"SnapAssist"=dword:00000000
+
+; KORSiOS - [Explorer / UI]• Windows • Windows Anti-Focus
+; ID: Explorer_AntiFocus
+; DESC: Removes the delay preventing an application from automatically gaining focus.
+; IMPACT: • Allows an application to immediately move to the foreground when requested.
+; IMPACT: • Removes Windows anti-focus restrictions (window blinks instead of moving to the foreground).
+; IMPACT: • Improves responsiveness in certain scenarios (scripts, tools, launchers, full-screen apps).
+; RISK: • Intrusive windows may unexpectedly steal focus.
+; RISK: • Can be problematic if applications abuse focus.
+; RISK: • No impact on stability or security.
+; NOTE: UI behavior setting / advanced control: useful for expert users and automated workflows.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"ForegroundLockTimeout"=dword:00000000
+
+; KORSiOS - [Explorer / UI]• Responsiveness • Disable DWM Transitions
+; ID: Explorer_DisableDWMTransitions
+; DESC: Disables Windows interface (DWM) animations for the user.
+; IMPACT: • Removes window animations (opening, closing, transitions).
+; IMPACT: • More instant and responsive interface.
+; IMPACT: • May slightly reduce the GPU/CPU load related to UI rendering.
+; RISK: • Loss of visual fluidity and aesthetic effects.
+; RISK: • No impact on stability, security, or functionality.
+; NOTE: Simplicity/UI responsiveness setting: prioritizes speed and visual simplicity.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
+"Animations"=dword:00000000
+
+; KORSiOS - [Explorer / UI]• Responsiveness • Remove Menu Display Latency
+; ID: Explorer_DisableDisplayLatency
+; DESC: Completely removes the Windows menu display lag.
+; IMPACT: • Makes menus appear instantly, without any latency.
+; IMPACT: • Ultra-responsive interface feel (right-click, context menus, submenus).
+; RISK: • May cause a feeling of excessive nervousness or unintentional openings.
+; RISK: • No risk to system stability, security, or performance.
+; NOTE: UI responsiveness setting: prioritizes speed.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"MenuShowDelay"="0"
+
+; KORSiOS - [Explorer / UI]• Responsiveness • Disable Windows Animations
+; ID: Explorer_DisableWindowsAnimations
+; DESC: Disables window minimize/restore animations.
+; IMPACT: • Removes animation when minimizing/restored windows.
+; IMPACT: • Makes the interface more instantaneous and responsive.
+; IMPACT: • Slightly reduces the graphical load related to UI effects.
+; RISK: • Loss of visual effect/smooth transition.
+; RISK: • May appear more "raw" visually.
+; RISK: • No impact on stability or security.
+; NOTE: Snappiness UI setting: classic for a fast interface without unnecessary animations.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
+"MinAnimate"="0"
+
+; KORSiOS - [Explorer / UI]• History • Disable automatic suggestions in the address bar (AutoSuggest)
+; ID: Explorer_DisableAutoSuggest
+; DESC: Disables automatic suggestions when typing in the address bar and certain Explorer fields.
+; IMPACT: • Disables autosuggest when you type a path in the Explorer address bar.
+; IMPACT: • Reduces suggestions based on history (paths, folders, recent locations).
+; IMPACT: • Limits the display of potentially private items while typing (shared PC / streaming).
+; RISK: • Reduced convenience: less help in quickly finding previously used folders.
+; RISK: • Does not necessarily disable all Windows suggestions (e.g., Start, Run search, etc.).
+; RISK: • No impact on stability or security.
+; NOTE: Privacy setting / minimal UI: more private and less intrusive interface
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoComplete]
+"AutoSuggest"="no"
+
+; KORSiOS - [Explorer / UI]• Navigation • Enable the status bar in File Explorer
+; ID: Explorer_EnableStatusBar
+; DESC: Displays the status bar at the bottom of Explorer (file information, size, selected items).
+; IMPACT: • Enables the status bar at the bottom of Explorer windows.
+; IMPACT: • Displays useful information:
+; IMPACT: • Number of items in the folder
+; IMPACT: • Number of selected items
+; IMPACT: • Total size of selected items
+; IMPACT: • Basic information about certain files (depending on type)
+; IMPACT: • Improves productivity (sorting, copying, multiple selection).
+; RISK: • Very slight visual change: Explorer displays an area at the bottom.
+; RISK: • No system risk.
+; NOTE: Productivity UI setting: useful if you frequently perform multiple selections, copying, sorting, renaming, etc.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowStatusBar"=dword:00000001
+
+; KORSiOS - [Explorer / UI]• Windows • Disable “Aero Peek” (desktop preview on hover)
+; ID: Explorer_DisableAeroPeek
+; DESC: Disables the desktop preview when you hover over the button on the far right of the taskbar.
+; IMPACT: • Disables the “Peek” function: hovering prevents all windows from becoming transparent.
+; IMPACT: • The “Show desktop” button (far right) remains usable by clicking, but without the preview on hover.
+; IMPACT: • Reduces automatic visual effects (fewer distractions).
+; IMPACT: • May prevent micro-lags on some configurations (weak GPUs / older PCs).
+; IMPACT: • Limits unintentional display changes (accidental hovers).
+; RISK: • Loss of the convenient quick desktop preview function without minimizing.
+; RISK: • No system risk.
+; NOTE: UI setting “comfort/anti-distract”: useful if you often accidentally hover over the right corner and makes the interface more stable and minimalist.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"DisablePreviewDesktop"=dword:00000001
+
+; KORSiOS - [Explorer / UI]• Explorer • Disable network file thumbnails
+; ID: Explorer_DisableNetworkThumbnails
+; DESC: Disables thumbnails for files on network folders.
+; IMPACT: • Prevents Windows from generating image/video previews on network shares.
+; IMPACT: • Reduces unnecessary network access when browsing in Explorer.
+; IMPACT: • Improves the display speed of network folders.
+; IMPACT: • Reduces the load on NAS/servers.
+; RISK: • No visual preview of images/videos on the network.
+; RISK: • Less comfortable browsing for multimedia content.
+; RISK: • No impact on stability or security.
+; NOTE: Network/NAS performance setting: useful when handling large network folders. Reduces Explorer slowdowns.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"DisableThumbnailsOnNetworkFolders"=dword:00000001
+
+; KORSiOS - [Explorer / UI]• Navigation • Disable automatic folder type detection
+; ID: Explorer_FolderType
+; DESC: Forces Windows not to apply an automatic folder pattern (Documents, Pictures, Videos, etc.).
+; IMPACT: • Sets the global folder type to NotSpecified for all folders.
+; IMPACT: • Prevents Windows from analyzing the content and automatically changing the display.
+; IMPACT: • Makes Explorer more consistent and predictable.
+; RISK: • Loss of useful automatic optimizations for some folders.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Ergonomics setting / total control: prevents unexpected display changes in Explorer, highly recommended on a customized and consistent system.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
+"FolderType"="NotSpecified"
+
+; KORSiOS - [Explorer / UI]• Explorer • Disable Gallery
+; ID: Explorer_DisableGallery
+; DESC: Disables (hides) the Gallery section in File Explorer.
+; IMPACT: • Removes the Gallery entry from Windows Explorer.
+; IMPACT: • Makes the navigation pane cleaner and more classic.
+; IMPACT: • Does not affect files: it is purely an interface option.
+; RISK: • No technical risk.
+; RISK: • Loss of quick access to the "Gallery" view.
+; RISK: • May be ignored on some Windows 11 builds (effect varies).
+; NOTE: Minimal Explorer setting: a very good "safe" tweak to remove a feature deemed unnecessary.
+; RESTART: EXPLORER
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}]
+
+; KORSiOS - [Explorer / UI]• Explorer • Enable Gallery
+; ID: Explorer_EnableGallery
+; DESC: Enable the Gallery section in File Explorer.
+; IMPACT: • Enable the Gallery entry from Windows Explorer.
+; IMPACT: • Does not affect files: it is purely an interface option.
+; RISK: • No technical risk.
+; RISK: • Back of quick access to the "Gallery" view.
+; RISK: • May be ignored on some Windows 11 builds (effect varies).
+; NOTE: Minimal Explorer setting: a very good "safe" tweak to enable a feature.
+; RESTART: EXPLORER
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}]
+@="Gallery"
+
+; KORSiOS - [Explorer / UI]• Explorer • Disable Home
+; ID: Explorer_DisableHome
+; DESC: Disables (hides) the Home section in File Explorer.
+; IMPACT: • Removes the Home entry from Windows Explorer.
+; IMPACT: • Makes the navigation pane cleaner and more classic.
+; IMPACT: • Does not affect files: it is purely an interface option.
+; RISK: • No technical risk.
+; RISK: • Loss of quick access to the "Home" view.
+; RISK: • May be ignored on some Windows 11 builds (effect varies).
+; NOTE: Minimal Explorer setting: a very good "safe" tweak to remove a feature deemed unnecessary.
+; RESTART: EXPLORER
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{f874310e-b6b7-47dc-bc84-b9e6b38f5903}]
+
+; KORSiOS - [Explorer / UI]• Explorer • Enable Home
+; ID: Explorer_EnableHome
+; DESC: Enable the Home section in File Explorer.
+; IMPACT: • Enable the Home entry from Windows Explorer.
+; IMPACT: • Does not affect files: it is purely an interface option.
+; RISK: • No technical risk.
+; RISK: • Back of quick access to the "Home" view.
+; RISK: • May be ignored on some Windows 11 builds (effect varies).
+; NOTE: Minimal Explorer setting: a very good "safe" tweak to enable a feature.
+; RESTART: EXPLORER
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{f874310e-b6b7-47dc-bc84-b9e6b38f5903}]
+@="Home"
+
+; KORSiOS - [Explorer / UI]• Navigation • Disable File Selection Checkboxes
+; ID: Explorer_DisableCheckBoxes
+; DESC: Disables file selection checkboxes in Explorer.
+; IMPACT: • Removes the small checkboxes that appear next to files/folders.
+; IMPACT: • Makes Explorer cleaner and more classic.
+; IMPACT: • Does not affect selection (Ctrl/Shift still works).
+; RISK: • No technical risk.
+; RISK: • Less convenient for some users who prefer to select using checkboxes.
+; NOTE: Classic Explorer UI setting: ideal for a clean and visually fast Explorer experience.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"AutoCheckSelect"=dword:00000000
+
+; KORSiOS - [Explorer / UI]• Display • Disable Windows Transparency
+; ID: Explorer_DisableTransparency
+; DESC: Disables transparency for Windows visual effects (Mica/transparency).
+; IMPACT: • Removes the small boxes that appear next to files/folders.
+; IMPACT: • Turns off transparency effects in:
+; IMPACT: - Taskbar
+; IMPACT: - Start Menu
+; IMPACT: - Windows/UI surfaces
+; ​​IMPACT: • May slightly reduce GPU usage and improve readability.
+; RISK: • No technical risk.
+; RISK: • Loss of the "modern" look (Mica/transparency).
+; NOTE: Performance + minimalist setting: useful for a gaming/clean theme (or to gain a little responsiveness).
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+"EnableTransparency"=dword:00000000
+
+; KORSiOS - [Explorer / UI]• Windows • Disable “Shake to minimize”
+; ID: Explorer_DisableShakeMinimize
+; DESC: Disables the “shake to minimize” (Aero Shake) feature.
+; IMPACT: • Prevents Windows from automatically minimizing all windows when you shake a window.
+; IMPACT: • Prevents accidental minimization.
+; IMPACT: • Slightly improves usability.
+; RISK: • No technical risk.
+; RISK: • Loss of a rarely used feature.
+; NOTE: This setting is unnecessary and perfect for a more stable and predictable Windows experience.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"DisallowShaking"=dword:00000001
+
+; KORSiOS - [Explorer / UI]• Explorer • Disable online tips (Folder Options)
+; ID: Explorer_DisableOnlineTips
+; DESC: Disables tooltips (Info Tips) in Windows Explorer.
+; IMPACT: • Prevents information pop-ups from appearing when you hover over a file (size, date, details, etc.).
+; IMPACT: • Makes Explorer cleaner and sometimes a little smoother.
+; IMPACT: • Reduces the number of UI elements that appear automatically.
+; RISK: • Loss of quick access to some information via hover.
+; RISK: • No system risk.
+; NOTE: Minimal Explorer setting: useful if you want an ultra-clean Explorer without pop-ups.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowInfoTip"=dword:00000000
+
+; KORSiOS - [Explorer / UI]• Explorer • Disable "Preview Handlers" in the Preview Pane
+; ID: Explorer_DisablePreviewHandlers
+; DESC: Disables built-in Preview Handlers in Explorer.
+; IMPACT: • Disables the display of previews in the Preview pane (PDFs, images, documents, etc.).
+; IMPACT: • Reduces certain COM overhead/extensions related to previews.
+; IMPACT: • May improve stability and prevent slowdowns in certain folders.
+; RISK: • You lose the Preview pane in Explorer.
+; RISK: • No system risk.
+; NOTE: Stability setting + Explorer clean: useful if you never use the preview and want to avoid extensions that slow things down.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowPreviewHandlers"=dword:00000000
+
+; KORSiOS - [Gaming]• Optimization • Enable Game Mode
+; ID: Gaming_EnableGameMode
+; DESC: Enables Windows Game Mode.
+; IMPACT: • Allows automatic activation of Game Mode for the user.
+; IMPACT: • Forces Game Mode to be activated at the system level.
+; IMPACT: • Game Mode prioritizes CPU/GPU resources for the current game, limits certain background tasks, and can improve FPS stability.
+; RISK: • Impact varies depending on the game and configuration: some titles may show no benefit, or even a slight negative effect.
+; RISK: • May reduce the priority of useful background tasks during gameplay (streaming, encoding, saving).
+; RISK: • No risk to stability or security.
+; NOTE: Gaming setting / automatic optimization: lets Windows intelligently manage priorities during games. Generally beneficial and safe.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\GameBar]
+"AllowAutoGameMode"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowGameMode]
+"value"=dword:00000001
+
+; KORSiOS - [Gaming]• Latency • Disable dynamic timer throttling (latency)
+; ID: Gaming_DisableTimerThrottling
+; DESC: Allows applications to force a finer global system timer resolution.
+; IMPACT: • Allows apps (games, real-time audio, emulators, low-latency engines) to reduce the Windows timer resolution globally.
+; IMPACT: • Can improve responsiveness, reduce latency, and smooth frametimes in certain real-time scenarios.
+; IMPACT: • Effect depends on the applications actually capable of making these requests.
+; RISK: • Increased power consumption (CPU wakes up more often), especially on laptops.
+; RISK: • Potential impact on battery life and heat if an app continuously maintains a very low resolution.
+; RISK: • No risk to system stability.
+; NOTE: Latency/real-time setting: useful for gaming and professional audio. Best used on high-performance desktop PCs; Optional on laptops if battery life is a priority.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Kernel]
+"GlobalTimerResolutionRequests"=dword:00000001
+
+; KORSiOS - [Gaming]• Optimization • GPU/CPU/Disk priority for games (MMCSS)
+; ID: Gaming_MMCSS
+; DESC: Increases GPU/CPU & Disk priorities to favor in•game resources.
+; IMPACT: • Sets high priority for tasks classified as Games by MMCSS.
+; IMPACT: • May improve graphics responsiveness on some engines.
+; IMPACT: • Promote CPU allocation to game processes.
+; IMPACT: • Can stabilize FPS if the CPU is heavily loaded.
+; IMPACT: • Gives high I/O (disk) priority to game-related tasks.
+; IMPACT: • Can reduce certain micro-stutters related to CPU/I/O contention.
+; IMPACT: • Can improve fluidity, reduce latency and stabilize frametimes.
+; RISK: • May penalize other background processes (stream, encoding, VM).
+; RISK: • On weak CPUs, can unbalance the system planning.
+; RISK: • Some values ​​are already close to the default on Windows 10/11 (sometimes minimal impact).
+; RISK: • No risk of system stability.
+; NOTE: • Gaming / MMCSS setting: useful on dedicated gaming configuration, especially without heavy multitasking.
+; NOTE: • Avoid if you are streaming/recording at the same time (risk of starving other tasks).
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
+"GPU Priority"=dword:00000008
+"Priority"=dword:00000006
+"Scheduling Category"="High"
+"SFIO Priority"="High"
+
+; KORSiOS - [Gaming]• Latency • Disable Dynamic Window Mode (DWM) optimizations
+; ID: Gaming_DisableDWM
+; DESC: Disables fullscreen optimizations for windowed/borderless applications.
+; IMPACT: • Prevents Windows from applying DWM optimizations to windowed or borderless applications.
+; IMPACT: • Forces a more traditional behavior, close to exclusive fullscreen.
+; IMPACT: • May reduce some display bugs, latency, or performance inconsistencies (FPS, G-Sync/FreeSync, Alt-Tab).
+; RISK: • Loss of some modern advantages (better HDR handling, smoother transitions, optimized capture).
+; RISK: • Variable impact depending on the game and drivers; sometimes no gain.
+; RISK: • No risk to stability or security.
+; NOTE: Gaming compatibility/stability setting: useful for fixing issues in borderless mode or with certain graphics engines.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
+"EnableWindowedOptimizations"=dword:00000000
+
+; KORSiOS - [Gaming]• Security • HVCI / Memory Integrity
+; ID: Gaming_HVCI
+; DESC: Disables hypervisor-enforced code integrity protection (HVCI / Memory Integrity).
+; IMPACT: • Disables HVCI (Hypervisor-Enforced Code Integrity), a component of Device Guard / VBS.
+; IMPACT: • Removes security virtualization that checks drivers and code in memory.
+; IMPACT: • Can improve CPU/GPU performance, reduce latency, and prevent driver incompatibilities (old or unsigned drivers).
+; RISK: • Reduced security level: less protection against malicious drivers and certain kernel attacks.
+; RISK: • Avoid on exposed or sensitive machines (professional, enterprise, uncontrolled workstations).
+; RISK: • No direct risk to stability.
+; NOTE: Performance/Driver Compatibility Tuning: Often used for gaming, overclocking, or specific drivers. Use only in a controlled environment where you are aware of the risks.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity]
+"Enabled"=dword:00000000
+
+; KORSiOS - [GPU]• Stability • Disable MPO
+; ID: Gaming_MPO
+; DESC: Disables the Multi-Plane Overlay (MPO) of the Windows Graphics Engine (DWM).
+; IMPACT: • Forces DWM to stop using MPO for graphics rendering.
+; IMPACT: • May reduce flickering, black screens, micro-freezes, or compatibility issues (often related to GPU drivers).
+; IMPACT: • Rendering uses a more conventional and stable path.
+; RISK: • Slight loss of graphics optimization in some scenarios.
+; RISK: • On perfectly stable systems with MPO enabled, the gain may be negligible.
+; RISK: • No risk to security or critical stability.
+; NOTE: Graphics stability setting: widely used to correct display bugs (especially with certain GPU drivers), recommended if visual problems are present.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
+"OverlayTestMode"=dword:00000005
+
+; KORSiOS - [GPU]• Performance • HAGS
+; ID: Gaming_HAGS
+; DESC: Forces hardware GPU scheduling (HAGS) to the enabled state.
+; IMPACT: • Enables Hardware Accelerated GPU Scheduling.
+; IMPACT: • Offloads some GPU scheduling from the CPU to the GPU itself.
+; IMPACT: • Can reduce latency, improve smoothness, and stabilize performance in some games and graphics applications.
+; IMPACT: • Effect depends on the GPU driver and hardware (recent NVIDIA/AMD drivers).
+; RISK: • Variable compatibility: on some configurations/drivers, may cause micro-stutters, graphical glitches, or instability.
+; RISK: • No hardware risk, setting easily reversible.
+; RISK: • May have no noticeable effect depending on usage.
+; NOTE: GPU performance setting: to be tested on a case by case basis. Often beneficial on recent gaming-oriented configurations, but disable it if problems arise.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
+"HwSchMode"=dword:00000002
+
+; KORSiOS - [GPU]• Stability • TDR
+; ID: Gaming_TDR
+; DESC: Increases TDR delays to prevent GPU timeouts and unexpected graphics driver resets.
+; IMPACT: • Gives the GPU 10 seconds to respond before a reset is triggered.
+; IMPACT: • Gives the driver (DDI) an additional 20 seconds to complete its operations.
+; IMPACT: • Reduces driver crashes, black screens, and TDR errors under heavy loads (rendering, encoding, gaming, GPU computing).
+; RISK: • Longer freeze in case of a true GPU crash (the system waits longer to recover).
+; RISK: • May mask an actual hardware or driver problem.
+; RISK: • Avoid on undiagnosed unstable systems.
+; NOTE: GPU stability setting / heavy workloads: useful for preventing unexpected resets under heavy load.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
+"TdrDelay"=dword:0000000a
+"TdrDdiDelay"=dword:00000014
+
+; KORSiOS - [GPU]• Latency • Force low GPU latency for the Desktop Window Manager
+; ID: GPU_GPULatency
+; DESC: Forces a minimum latency tolerance for the DWM graphics engine.
+; IMPACT: • Tells DWM not to tolerate additional latency in the graphics composition.
+; IMPACT: • Can promote maximum display responsiveness (input → rendering → display).
+; IMPACT: • Useful in gaming, real-time, or low perceived latency scenarios.
+; RISK: • Variable stability depending on GPU/drivers: some systems may experience micro-stuttering or tearing if the pipeline is too strict.
+; RISK: • Sometimes no gain on already well optimized configurations.
+; RISK: • No risk of security or corruption.
+; NOTE: Advanced graphics latency setting: consider it a fine tuning adjustment to reduce display latency. To be tested and validated empirically (games, frametimes).
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
+"LatencyTolerance"=dword:00000000
+
+; KORSiOS - [GPU]• Performance • PCIe ASPM Power Management
+; ID: GPU_PCIeASPM
+; DESC: Disables PCIe ASPM (Active State Power Management).
+; IMPACT: • Prevents Windows from using ASPM for PCIe links.
+; IMPACT: • Keeps PCIe devices (GPU, NVMe, controllers) in high performance states.
+; IMPACT: • Can reduce latency and prevent some stability issues (freezes, link losses).
+; IMPACT: • Increases power consumption.
+; RISK: • Increased power consumption and heat, especially on laptops.
+; RISK: • Reduced battery life.
+; RISK: • No direct risk to stability or security.
+; NOTE: • PCIe stability/performance setting: useful for gaming and high-performance desktop systems, to be avoided on laptops if battery life is a priority.
+; NOTE: • BIOS add-on recommended
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
+"ASPMDisabled"=dword:00000001
+
+; KORSiOS - [Context Menu]• Classic • Enable Classic Context Menu
+; ID: ContextMenu_ClassicContextMenu
+; DESC: Restores the classic Windows 10 context menu in File Explorer.
+; IMPACT: • Forces Windows 11 to use the old right-click menu instead of the modern, simplified one.
+; IMPACT: • Directly displays all options (7-Zip, Notepad++, drivers, third-party tools, etc.) without going through "Show more options".
+; RISK: • No risk to stability.
+; NOTE: Saves time by making the full right-click menu immediately accessible.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Classes\CLSID]
+
+[HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}]
+
+[HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
+@=""
+
+; KORSiOS - [Context Menu] • Shortcuts • Adding Control Panel Access
+; ID: ContextMenu_ControlPanel
+; DESC: Adds a "Control Panel" shortcut to the Desktop right-click menu.
+; IMPACT: • Creates a new entry in the Desktop context menu.
+; IMPACT: • Displays the "Control Panel" option with its icon.
+; IMPACT: • The entry is positioned at the bottom of the menu.
+; RISK: • No technical or stability risks.
+; NOTE: Ergonomic design / quick access: ideal for instantly finding the Control Panel from the Desktop, without using search or modern settings.
+; RESTART: EXPLORER
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Panneau de configuration]
+"Icon"="control.exe"
+"MUIVerb"="Panneau de configuration"
+"Position"="Bottom"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Panneau de configuration\command]
+@="control.exe"
+
+; KORSiOS - [Context Menu] • Shortcuts • Added access to CMD Admin
+; ID: ContextMenu_CMD
+; DESC: Adds an “Open Terminal as Admin” option to the right-click menu for folders, the root directory, and drives.
+; IMPACT: • Adds a right-click → administrator elevation entry.
+; IMPACT: • Opens cmd.exe as administrator, directly in the selected path.
+; IMPACT: • Significantly improves productivity for system tasks and scripts.
+; RISK: • No technical or stability risks.
+; NOTE: Power-user/administration setting: allows instant opening of an administrator terminal in the correct folder, very useful for troubleshooting or scripting.
+; RESTART: EXPLORER
+[HKEY_CLASSES_ROOT\Directory\shell\runas]
+@="Ouvrir le Terminal en mode Admin"
+"HasLUAShield"=""
+
+[HKEY_CLASSES_ROOT\Directory\shell\runas\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\runas]
+@="Ouvrir le Terminal en mode Admin"
+"HasLUAShield"=""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\runas\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+[HKEY_CLASSES_ROOT\Drive\shell\runas]
+@="Ouvrir le Terminal en mode Admin"
+"HasLUAShield"=""
+
+[HKEY_CLASSES_ROOT\Drive\shell\runas\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+; KORSiOS - [Context Menu]• Shortcuts • Added Registry Editor Access
+; ID: ContextMenu_Registry
+; DESC: Adds a "Registry Editor" shortcut to the Desktop right-click menu.
+; IMPACT: • Adds a new entry to the Desktop background context menu.
+; IMPACT: • Launches Regedit with its official icon in a new instance.
+; IMPACT: • Significantly improves productivity for system tasks and scripts.
+; RISK: • No technical or stability risks.
+; NOTE: Administration/power-user setting: useful for quickly opening the Registry from the Desktop, use with caution due to the sensitivity of system settings.
+; RESTART: EXPLORER
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\OpenRegedit]
+"MUIVerb"="Editeur du Registre"
+"Icon"="regedit.exe,0"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\OpenRegedit\Command]
+@="regedit -m"
+
+; KORSiOS - [Context Menu]• Shortcuts • Added Firewall Access
+; ID: ContextMenu_Firewall
+; DESC: Adds a "Windows Firewall" menu to right-click on .exe files, allowing you to instantly block or allow a program through the firewall.
+; IMPACT: • Creates a context menu entry on all executables (.exe).
+; IMPACT: • Offers two actions: "Block" & "Allow"
+; IMPACT: • Actions are executed via PowerShell in administrator mode.
+; IMPACT: • Rules are created dynamically with the program name.
+; RISK: • Rule management: if multiple rules have similar names or if the path changes, deletion may not target the expected rule.
+; RISK: • No security risk
+; NOTE: Very convenient/power-user setting: allows for precise and quick control of application network access, ideal for testing, securing, or limiting traffic without using the full Windows Firewall interface.
+; RESTART: EXPLORER
+[HKEY_CLASSES_ROOT\exefile\shell\WindowsFirewall]
+@=""
+"MUIVerb"="Pare-Feu Windows"
+"icon"="%SystemRoot%\\system32\\FirewallControlPanel.dll,0"
+"subcommands"=""
+
+[HKEY_CLASSES_ROOT\exefile\shell\WindowsFirewall\Shell]
+@=""
+
+[HKEY_CLASSES_ROOT\exefile\shell\WindowsFirewall\Shell\block]
+@=""
+"MUIVerb"="Bloquer"
+"icon"="%SystemRoot%\\system32\\imageres.dll,100"
+
+[HKEY_CLASSES_ROOT\exefile\shell\WindowsFirewall\Shell\block\command]
+@="\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -Executionpolicy ByPass -WindowStyle Hidden -NoLogo -Command \"start powershell -Verb runas -ArgumentList \\\"-NoLogo -WindowStyle Hidden -command `\\\"New-NetFirewallRule -DisplayName ([System.IO.Path]::GetFilenameWithoutExtension('%1')) -Name '%1' -Enabled True -Direction Outbound -Action Block -Program '%1'`\\\"\\\"\""
+
+[HKEY_CLASSES_ROOT\exefile\shell\WindowsFirewall\Shell\Remove]
+@=""
+"MUIVerb"="Autoriser"
+"icon"="%SystemRoot%\\system32\\imageres.dll,101"
+
+[HKEY_CLASSES_ROOT\exefile\shell\WindowsFirewall\Shell\Remove\command]
+@="\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -Executionpolicy ByPass -WindowStyle Hidden -NoLogo -Command \"start powershell -Verb runas -ArgumentList \\\"-NoLogo -WindowStyle Hidden -command `\\\"Remove-NetFirewallRule -Name '%1'`\\\"\\\"\""
+
+; KORSiOS - [Context Menu]• Shortcuts • Added "Take Control" Function
+; ID: ContextMenu_Control
+; DESC: Adds the "Take Control" option to right-clicking files and folders, allowing you to take ownership and obtain full rights.
+; IMPACT: • Adds an entry to the context menu for folders and files.
+; IMPACT: • Changes the owner of the selected object.
+; IMPACT: • Grants full rights to the current user.
+; IMPACT: • For folders, the action is recursive (including files and subfolders).
+; IMPACT: • Allows modification/deletion of normally protected files (system, Program Files, etc.).
+; RISK: • High risk if misused (modifying system files can break Windows).
+; RISK: • Can create inconsistent permissions if applied extensively.
+; NOTE: Advanced administration/troubleshooting settings: extremely useful for unlocking locked files, but use with caution, especially on critical system components.
+; RESTART: EXPLORER
+[HKEY_CLASSES_ROOT\*\shell\Takeowner]
+@="Prendre le controle"
+"HasLUAShield"=""
+"NoWorkingDirectory"=""
+"Position"="middle"
+
+[HKEY_CLASSES_ROOT\*\shell\Takeowner\command]
+@="powershell -windowstyle hidden -command \"Start-Process cmd -ArgumentList '/c takeown /f \\\"%1\\\" && icacls \\\"%1\\\" /grant *S-1-3-4:F /c /l' -Verb runAs\""
+"IsolatedCommand"="powershell -windowstyle hidden -command \"Start-Process cmd -ArgumentList '/c takeown /f \\\"%1\\\" && icacls \\\"%1\\\" /grant *S-1-3-4:F /c /l' -Verb runAs\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\Takeowner]
+@="Prendre le controle"
+"HasLUAShield"=""
+"NoWorkingDirectory"=""
+"Position"="middle"
+
+[HKEY_CLASSES_ROOT\Directory\shell\Takeowner\command]
+@="powershell -windowstyle hidden -command \"Start-Process cmd -ArgumentList '/c takeown /f \\\"%1\\\" /r /d o && icacls \\\"%1\\\" /grant *S-1-3-4:F /c /l /q' -Verb runAs\""
+"IsolatedCommand"="powershell -windowstyle hidden -command \"Start-Process cmd -ArgumentList '/c takeown /f \\\"%1\\\" /r /d o && icacls \\\"%1\\\" /grant *S-1-3-4:F /t /c /l /q' -Verb runAs\""
+
+; KORSiOS - [Start Menu] Disable Recommendations/Suggestions
+; ID: StartMenu_DisableSuggestions
+; DESC: Disables recommendations in the Windows Start Menu.
+; IMPACT: • Removes suggested apps, files, or content from the Start Menu Recommendations section.
+; IMPACT: • The Start Menu becomes cleaner and more static, focused on pinned apps.
+; RISK: • Loss of useful suggestions (recent files, recently used apps).
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Minimalist UX/anti-suggestion setting: ideal for a clean and distraction-free Start Menu.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_IrisRecommendations"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SystemPaneSuggestionsEnabled"=dword:00000000
+
+; KORSiOS - [Start Menu] Disable tracking of recently used apps
+; ID: StartMenu_DisableTrackingApps
+; DESC: Disables the list of most used apps.
+; IMPACT: • Reduces suggestions and recommendations in Start.
+; IMPACT: • Slightly improves privacy (less local tracking).
+; RISK: • You lose the automatic display of "frequently used apps".
+; RISK: • No system risk.
+; NOTE: Start Menu clean + privacy setting: perfect for a minimal Start Menu.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_TrackProgs"=dword:00000000
+
+; KORSiOS - [Start Menu] Disable Recent Document Tracking
+; ID: StartMenu_DisableTrackingDoc
+; DESC: Disables recent document history in Windows.
+; IMPACT: Prevents Windows from displaying recently opened files in:
+; IMPACT: - Start Menu
+; IMPACT: - Quick Access (Explorer)
+; IMPACT: - Recent Lists (Jump Lists)
+; IMPACT: • Reduces suggestions based on your activity.
+; RISK: • You lose quick access to recent documents (less convenient).
+; RISK: • No risk to stability or performance.
+; NOTE: Privacy setting + clean interface: ideal for removing "recent" items everywhere and keeping Windows more discreet.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_TrackDocs"=dword:00000000
+
+; KORSiOS - [Metadata] Block device metadata download from the internet
+; ID: Metadata_DisableMetadata
+; DESC: Prevents Windows from downloading device metadata from the internet.
+; IMPACT: • Blocks online retrieval of device icons, names, descriptions, and manufacturer information.
+; IMPACT: • Windows uses only locally stored information.
+; IMPACT: • Reduces automatic network access when new hardware is connected.
+; IMPACT: • Applied via both policy and system key for maximum consistency.
+; RISK: • More generic display of devices (standard icons, less detailed names).
+; RISK: • No impact on the actual operation of drivers or devices.
+; NOTE: Network privacy/cleanliness setting: avoids unnecessary external requests while maintaining normal hardware operation.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Device Metadata]
+"PreventDeviceMetadataFromNetwork"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata]
+"PreventDeviceMetadataFromNetwork"=dword:00000001
+
+; KORSiOS - [Notepad++] Replace Windows Notepad with Notepad++
+; ID: Notepad_ReplaceNotepad
+; DESCRIPTION: Replaces Notepad with Notepad++ and sets Notepad++ as the default editor for most text files and scripts.
+; IMPACT: • Global Notepad redirection: opening notepad.exe launches Notepad++.
+; IMPACT: • File association.
+; IMPACT: • Creating new text files: "New > Text Document" creates a correctly associated empty file.
+; IMPACT: • Script editing.
+; IMPACT: • Allows editing/deleting normally protected files (system, Program Files, etc.).
+; RISK: • Dependence on Notepad++: if uninstalled/moved, some opening/editing operations will fail.
+; RISK: • In locked-down/corporate environments, may violate standard policies.
+; NOTE: Productivity/Power User Setting: Notepad++ becomes the system's universal editor. Very practical and consistent, provided that Notepad++ is always installed on the machine.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe]
+"Debugger"="\"C:\\Program Files\\Notepad++\\notepad++.exe\""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.txt]
+@="KORSiOS.txtfile"
+"Content Type"="text/plain"
+"PerceivedType"="text"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\KORSiOS.txtfile]
+@="Text Document (Notepad++)"
+"FriendlyTypeName"="Document texte Notepad++"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.txt\ShellNew]
+"NullFile"=""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\KORSiOS.txtfile\shell\open\command]
+@="\"C:\\Program Files\\Notepad++\\notepad++.exe\" \"%1\""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.log]
+@="KORSiOS.txtfile"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.ini]
+@="KORSiOS.txtfile"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.cfg]
+@="KORSiOS.txtfile"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.conf]
+@="KORSiOS.txtfile"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.csv]
+@="KORSiOS.txtfile"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.xml]
+@="KORSiOS.txtfile"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.json]
+@="KORSiOS.txtfile"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.yaml]
+@="KORSiOS.txtfile"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.yml]
+@="KORSiOS.txtfile"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\regfile\shell\edit\command]
+@="\"C:\\Program Files\\Notepad++\\notepad++.exe\" \"%1\""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\batfile\shell\edit\command]
+@="\"C:\\Program Files\\Notepad++\\notepad++.exe\" \"%1\""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\cmdfile\shell\edit\command]
+@="\"C:\\Program Files\\Notepad++\\notepad++.exe\" \"%1\""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VBSFile\Shell\Edit\Command]
+@="\"C:\\Program Files\\Notepad++\\notepad++.exe\" \"%1\""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Microsoft.PowerShellScript.1\Shell\Edit\Command]
+@="\"C:\\Program Files\\Notepad++\\notepad++.exe\" \"%1\""
+
+; KORSiOS - [Notifications]• Advertising • Disable “Sync Provider Notifications” in Explorer
+; ID: Notifications_DisableSyncProvider
+; DESC: Disables OneDrive/cloud notifications in Explorer.
+; IMPACT: • Removes messages such as:
+; IMPACT: - “Try OneDrive”
+; IMPACT: - “Back up your files”
+; IMPACT: - Cloud notifications in Windows Explorer
+; RISK: • You will no longer see certain OneDrive reminders (which is often the intended purpose).
+; RISK: • No system risk.
+; NOTE: Anti-ad setting / Explorer clean: excellent safe tweak to remove OneDrive pop-ups and keep Windows minimal.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowSyncProviderNotifications"=dword:00000000
+
+; KORSiOS - [Notifications]• Sounds • Disables Windows notification sounds (global).
+; ID: Notifications_DisableWindowsNotifications
+; DESC: Disables notification sounds for the user.
+; IMPACT: • Mutes all sounds associated with Windows notifications.
+; IMPACT: • Visual notifications remain displayed, but without audible alerts.
+; RISK: • Missed audible alerts (messages, reminders, important events).
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Comfort/Silent setting: Makes the system quieter while retaining visual notifications.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings]
+"NOC_GLOBAL_SETTING_ALLOW_NOTIFICATION_SOUND"=dword:00000000
+
+; KORSiOS - [Notifications]• Advertising • Disable "Suggestions" notifications
+; ID: Notifications_DisableSuggestions
+; DESC: Disables "tips," "recommendations," and Windows suggestions notifications.
+; IMPACT: • Reduces intrusive pop-ups (e.g., Microsoft recommendations, features to enable, etc.).
+; IMPACT: • Makes the experience quieter and more "professional."
+; RISK: • May miss some useful tips for new users.
+; RISK: • No risk to stability or security.
+; NOTE: Anti-nagging/pro-clean setting: a very good tweak for a minimal Windows system, especially for gaming or workstation setups.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.Suggested]
+"Enabled"=dword:00000000
+
+; KORSiOS - [Settings]Enable Classic Control Panel
+; ID: Settings_ClassicControlPanel
+; DESC: Enables the Classic Windows Control Panel
+; IMPACT: The user can open and use the Control Panel and Settings app normally.
+; RISK: No risk
+; NOTE: Ensures that Windows does not apply any restrictions to access to system settings.
+; RESTART: EXPLORER
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoControlPanel"=dword:00000000
+
+; KORSiOS - [Settings]Hide Home Page in Settings
+; ID: Settings_HomePage
+; DESC: Hides the Windows Settings app home page
+; IMPACT: • The Settings app remains accessible, but the "Home" page is no longer displayed.
+; IMPACT: • Reduces unnecessary visual elements and simplifies the interface.
+; RISK: • No impact on internal functionality or system stability.
+; RISK: • Easily reversible.
+; NOTE: Cosmetic/UX setting: It cleans up the Settings interface without blocking access to advanced options.
+; RESTART: EXPLORER
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"SettingsPageVisibility"="hide:home"
+
+; KORSiOS - [Settings]Hide Windows Insider in Settings
+; ID: Settings_Insider
+; DESC: Hide the “Windows Insider Program” section in Windows Update settings.
+; IMPACT: • Prevents quick access to Insider build signup via the UI.
+; IMPACT: • Removes the display of the Insider page in Settings.
+; RISK: • May make Insider management less accessible if the machine is already enrolled.
+; RISK: • Does not completely prevent Insider activation via other methods (policy/script).
+; NOTE: Purely UI setting: useful for locking a machine in stable mode (no preview builds).
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsSelfHost\UI\Visibility]
+"HideInsiderPage"=dword:00000001
+
+; KORSiOS - [Performance]• Memory • Disable System Cache Extended
+; ID: Performance_DisableSystemCache
+; DESC: Disables the extended system cache to prioritize application memory.
+; IMPACT: • Prioritizes RAM for applications over the system cache.
+; IMPACT: • Reserves RAM primarily for active programs.
+; IMPACT: • Optimal behavior for a desktop PC / gaming / everyday use.
+; IMPACT: • Improves memory stability with certain drivers (especially GPUs).
+; RISK: • Slight theoretical performance loss on file server workloads (very specific case).
+; RISK: • No risk or negative impact.
+; NOTE: • Optimal desktop memory setting: this is the recommended value for a high-performance PC.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"LargeSystemCache"=dword:00000000
+
+; KORSiOS - [Performance]• Memory • Disable Memory Compression
+; ID: Performance_MemoryCompression
+; DESC: Disables Windows memory compression.
+; IMPACT: • Prevents Windows from compressing RAM when it is under pressure.
+; IMPACT: • Reduces CPU usage related to memory compression/decompression.
+; IMPACT: • Can make memory usage more predictable, especially on machines with a lot of RAM.
+; RISK: • Higher RAM consumption: Windows will switch to the page file sooner.
+; RISK: • On machines with little RAM, this can degrade performance.
+; RISK: • No direct risk to stability.
+; NOTE: • CPU performance adjustment / memory control: relevant on PCs with ample RAM (gaming, workstation), to be avoided on modest configurations.
+; NOTE: • Real impact mainly on heavily loaded CPUs.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"DisableCompression"=dword:00000001
+
+; KORSiOS - [Performance]• Memory • Disable virtual memory for certain parts of the kernel
+; ID: Performance_DisableKernelVirtualMemory
+; DESC: Prevents the Windows kernel from virtualizing certain parts of the kernel.
+; IMPACT: • Forces the kernel and drivers to remain in RAM.
+; IMPACT: • Reduces access to the page file for system code.
+; IMPACT: • Can improve responsiveness and reduce some micro-latencies.
+; IMPACT: • Relevant on machines with a lot of RAM.
+; RISK: • Higher RAM consumption.
+; RISK: • Not recommended on machines with little memory.
+; RISK: • No risk of stability if RAM is sufficient (16GB+).
+; NOTE: • Low latency setting / kernel in RAM: classic tweak for 16–32+ GB machines.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"DisablePagingExecutive"=dword:00000001
+
+; KORSiOS - [Performance]• Power • Disable Power Throttling
+; ID: Performance_DisablePowerThrottling
+; DESC: Disables Windows Power Throttling.
+; IMPACT: • Prevents Windows from automatically throttling background application performance.
+; IMPACT: • Keeps processes running at a consistent performance level, even when not in the foreground.
+; IMPACT: • May improve responsiveness, performance stability, and reduce some micro-lags, especially during multitasking or gaming.
+; RISK: • Increased power consumption, especially on laptops.
+; RISK: • Potentially slightly increased heat depending on the load.
+; RISK: • No risk to stability or security.
+; NOTE: • Raw performance/anti-throttling setting: recommended for desktop PCs or performance-oriented configurations.
+; NOTE: • Actual impact mainly on heavily loaded CPUs.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
+"PowerThrottlingOff"=dword:00000001
+
+; KORSiOS - [Performance]• Optimization • Disable Fault Tolerant Heap (FTH)
+; ID: Performance_FTH
+; DESC: Disables Windows' Fault Tolerant Heap (FTH).
+; IMPACT: • Prevents Windows from automatically enabling memory compatibility mode for unstable applications.
+; IMPACT: • FTH is a mechanism that intentionally slows down certain apps to prevent crashes.
+; IMPACT: • Disabling it removes this "protection" layer, which can improve the performance of some software.
+; IMPACT: • Reduces automatic compatibility interventions.
+; RISK: • Truly unstable applications may crash instead of being slowed down.
+; RISK: • Only useful if you prioritize performance and manual control.
+; RISK: • No risk to Windows itself.
+; NOTE: Forced anti-compatibility/performance setting: intended for advanced users who want raw behavior without automatic fixes. 
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\Software\Microsoft\FTH]
+"Enabled"=dword:00000000
+
+; KORSiOS - [Performance]• Optimization • Disable background apps
+; ID: Performance_DisableBackgroundApps
+; DESC: Disables background app execution.
+; IMPACT: • Blocks UWP/Microsoft Store apps from running in the background.
+; IMPACT: • Reduces CPU activity, memory consumption, and hidden network access.
+; IMPACT: • Improves battery life (laptops) and performance stability.
+; RISK: • Some apps may no longer update in the background or send notifications (email, weather, messaging).
+; RISK: • No impact on system stability or security.
+; NOTE: • Anti-ghost apps setting / resource optimization: very effective at limiting unnecessary processes.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
+"GlobalUserDisabled"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
+"LetAppsRunInBackground"=dword:00000002
+
+; KORSiOS - [Performance]• Indexing • Adapt indexing to Power supply modes
+; ID: Performance_Indexing
+; DESC: Configure Windows Search to respect power modes (battery / power saving).
+; IMPACT: • Forces indexing to adapt to the active feeding mode.
+; IMPACT: • Reduces or suspends intensive indexing in battery mode.
+; IMPACT: • Reduces disk/CPU activity when the PC is in power saving mode.
+; IMPACT: • Does not affect the overall functioning of the research (only its aggressiveness).
+; RISK: • Indexing may be slower in battery mode.
+; RISK: • New files may appear in the search results with a slight delay.
+; NOTE: • Intelligent performance setting: recommended on laptops to optimize battery life.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Search\Gather\Windows\SystemIndex]
+"RespectPowerModes"=dword:00000001
+
+; KORSiOS - [Peripherals / Keyboard / Mouse]• Mouse • Disable Windows Mouse Acceleration (Improved Accuracy)
+; ID: Peripherals_DisableMouseAcceleration
+; DESC: Disables Windows mouse acceleration.
+; IMPACT: • Turns off software mouse acceleration.
+; IMPACT: • Removes acceleration trigger thresholds.
+; IMPACT: • Cursor movement becomes linear and predictable: the distance traveled depends solely on physical movement.
+; RISK: • Different feel for users accustomed to Windows acceleration.
+; RISK: • May require adjusting mouse DPI sensitivity.
+; RISK: • No impact on stability or security.
+; NOTE: Precision/gaming setting: essential for consistent and repeatable aiming, highly valued in FPS games and environments requiring constant precision.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Control Panel\Mouse]
+"MouseSpeed"="0"
+"MouseThreshold1"="0"
+"MouseThreshold2"="0"
+
+; KORSiOS - [Peripherals / Keyboard / Mouse]• Mouse • Disable Mouse Idle Timer
+; ID: Peripherals_DisableMouseIdleTimer
+; DESC: Disables mouse inactivity detection.
+; IMPACT: • Prevents Windows from considering the mouse inactive after a certain period of time.
+; IMPACT: • Prevents certain automatic behaviors related to inactivity (reduced polling, micro-pauses).
+; IMPACT: • May improve consistent mouse responsiveness, especially in games.
+; RISK: • Slightly higher power consumption (negligible) because the "idle" state is never reached.
+; RISK: • No impact on stability or security.
+; NOTE: Input/Consistency setting: ensures consistently active and predictable mouse behavior, appreciated in gaming and precise use.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Control Panel\Mouse]
+"MouseIdleThreshold"=dword:00000000
+
+; KORSiOS - [Peripherals / Keyboard / Mouse]• Keyboard • Optimize Key Repeat
+; ID: Peripherals_KeyRepeat
+; DESC: Increases keyboard responsiveness by reducing latency and maximizing repeat rate.
+; IMPACT: • Faster, more responsive typing, useful for intensive typing and some games.
+; RISK: • Unintentional key repeats may occur if a key is held down for too long.
+; RISK: • May require an adjustment period for sensitive users.
+; RISK: • No impact on stability or security.
+; NOTE: Precision/Gaming setting: Makes the keyboard more responsive and pleasant for fast typing or data entry.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Control Panel\Keyboard]
+"KeyboardDelay"="0"
+"KeyboardSpeed"="31"
+
+; KORSiOS - [Peripherals / Keyboard / Mouse]• Keyboard • Disable Sticky Keys (Remote Keys / Filters)
+; ID: Peripherals_StickyKeys
+; DESC: Disables keyboard accessibility features (Stick Keys, Filter Keys, Toggle Keys).
+; IMPACT: • Disables Sticky Keys (prevents activation via repeated Shift key presses).
+; IMPACT: • Disables Filter Keys (no delay or filtering of keystrokes).
+; IMPACT: • Disables Toggle Keys (no sounds when activating Caps Lock, Num Lock, etc.).
+; IMPACT: • Prevents accessibility pop-ups and unintentional interruptions during gameplay or rapid typing.
+; RISK: • Accessibility features unavailable for users who need them.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Gaming/Keyboard Comfort setting: prevents accidental activation of accessibility options, highly recommended for gaming and intensive typing.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys]
+"Flags"="506"
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
+"Flags"="122"
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys]
+"Flags"="58"
+
+; KORSiOS - [Peripherals / Keyboard / Mouse]• USB • Disable HID Device Sleep Mode
+; ID: Peripherals_DisableHIDSpleepMode
+; DESC: Disables USB selective sleep mode for HID devices (keyboard, mouse, controllers).
+; IMPACT: • Prevents Windows from automatically putting USB-connected HID devices to sleep.
+; IMPACT: • Reduces temporary disconnections, latency, or loss of response (mouse/keyboard/controllers/steering wheel going to sleep).
+; IMPACT: • Improves the responsiveness and stability of input devices, especially during gaming or intensive use.
+; RISK: • Slightly higher power consumption, especially on laptops.
+; RISK: • No impact on system stability or security.
+; NOTE: Stability/Input setting: very useful for avoiding USB issues with mice and keyboards, recommended for desktop PCs or performance-oriented configurations.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HidUsb\Parameters]
+"SelectiveSuspendEnabled"=dword:00000000
+
+; KORSiOS - [Peripherals / Keyboard / Mouse]• USB • Disable USB Hub Sleep Mode
+; ID: Peripherals_DisableUSBHubSleepMode
+; DESC: Disables idle power management for USB 3.x controllers.
+; IMPACT: • Prevents the USBHUB3 controller from entering a low-power state when inactive.
+; IMPACT: • Reduces USB disconnections, wake-up delays, and micro-interruptions (mouse, keyboard, DAC, gaming peripherals).
+; IMPACT: • Improves the stability and responsiveness of USB devices, especially under load or in light sleep mode.
+; RISK: • Slightly higher power consumption, especially on laptops.
+; RISK: • No impact on system stability or security.
+; NOTE: USB stability/performance setting: very useful for avoiding intermittent USB issues, recommended for desktop PCs or performance-oriented configurations.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USBHUB3\Parameters]
+"DisableIdlePowerManagement"=dword:00000001
+
+; KORSiOS - [Power]• Wake-up • Prevent PC Wake-up by Automatic Maintenance
+; ID: Power_WakeupMaintenance
+; DESC: Prevents automatic maintenance from waking the PC.
+; IMPACT: • Prevents Windows from waking the PC from sleep to perform scheduled maintenance.
+; IMPACT: • Maintenance will only run when the PC is already powered on.
+; IMPACT: • Reduces unexpected nighttime wake-ups.
+; IMPACT: • Prevents unnecessary power consumption in sleep mode.
+; RISK: • Some maintenance tasks may be delayed if the PC is frequently turned off.
+; RISK: • No impact on stability or security.
+; NOTE: Anti•ghost wake-up setting: ideal for preventing the PC from turning itself back on.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance]
+"WakeUp"=dword:00000000
+
+; KORSiOS - [Power]• Sleep • Disable Hibernation
+; ID: Power_Hibernation
+; DESC: Completely disables Windows hibernation.
+; IMPACT: • Prevents the use of hibernation and its dependent functions (Fast Startup).
+; IMPACT: • Removes the use of the hiberfil.sys file, freeing up several GB of disk space.
+; IMPACT: • The system will only use regular shutdown and sleep.
+; RISK: • Loss of fast startup and full session recovery after shutdown.
+; RISK: • On laptops, may reduce battery life in hibernation mode.
+; RISK: • No risk to stability or security.
+; NOTE: System performance/cleanup setting: useful on desktop PCs to save disk space and avoid hybrid states, less recommended on laptops where hibernation can be useful.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
+"HibernateEnabled"=dword:00000000
+"HibernateEnabledDefault"=dword:00000000
+
+; KORSiOS - [Power]• Sleep • Disable Fast Startup / Hybrid Boot
+; ID: Power_FastStartUp
+; DESC: Disables Windows Fast Startup / Hybrid Boot.
+; IMPACT: • Prevents Windows from using hibernation-based hybrid boot.
+; IMPACT: • Forces a true full shutdown on every power off.
+; IMPACT: • Improves the stability of drivers, USB/GPU/network devices after reboot.
+; IMPACT: • Avoids some bugs related to hybrid states (dual boot, updates, overclocking, drivers).
+; IMPACT: • Boot time may be slightly longer.
+; RISK: • Slightly longer boot time.
+; RISK: • No impact on security or stability.
+; NOTE: Boot stability setting: recommended on optimized, overclocked, or multi-OS machines. Eliminates unusual hybrid states.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power]
+"HiberbootEnabled"=dword:00000000
+
+; KORSiOS - [Windows Search]• Web • Disable web/Bing search in the Start menu
+; ID: Search_DisableBingStart
+; DESC: Disables online suggestions in the Windows search bar.
+; IMPACT: • Prevents the display of web results, trends, and Bing suggestions in search.
+; IMPACT: • Search remains local (applications, files, settings).
+; IMPACT: • Reduces network queries and promotional content.
+; RISK: • Loss of integrated web search from the search bar.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Privacy/Clean Search setting: Keeps searches fast and local without web clutter.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
+"DisableSearchBoxSuggestions"=dword:00000001
+
+; KORSiOS - [Windows Search]• Web • Disable Search Highlights
+; ID: Search_DisableHighlights
+; DESC: Disables the dynamic search bar (Smart Search Box).
+; IMPACT: • Prevents Windows from displaying an "adaptive" search (content, suggestions, highlights).
+; IMPACT: • Makes the search area simpler/more neutral.
+; IMPACT: • Reduces promotional/trending elements related to search.
+; RISK: • No risk.
+; RISK: • May remove some "modern" search features (topics, visual suggestions).
+; NOTE: Clean UI setting + light privacy: good tweak to limit "assisted" search and maintain a clean interface.
+; RESTART: EXPLORER
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"EnableDynamicContentInWSB"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SearchSettings]
+"IsDynamicSearchBoxEnabled"=dword:00000000
+
+; KORSiOS - [Windows Search] • Indexing • Disable Windows Search
+; ID: Search_DisableWS
+; DESC: Completely disables Windows Search service
+; IMPACT: • Stops file indexing.
+; IMPACT: • Reduces background disk activity.
+; IMPACT: • Reduces CPU usage related to indexing.
+; IMPACT: • Can improve responsiveness on old PCs or mechanical drives.
+; RISK: • Windows search becomes much slower (raw search without index).
+; RISK: • Start Menu may become slow during searches.
+; RISK: • Some index-dependent UWP apps may malfunction.
+; NOTE: • Performance adjustment: useful especially on very limited HDDs or PCs.
+; NOTE: • On modern SSD, the gain is often low, and the loss of comfort is significant.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WSearch]
+"Start"=dword:00000004
+
+; KORSiOS - [Windows Search]• Web • Disable Cloud Search
+; ID: Search_DisableCloudSearch
+; DESC: Disables cloud search in Windows Search.
+; IMPACT: • Prevents Windows Search from displaying results from the cloud (e.g., OneDrive / connected content).
+; IMPACT: • Makes searching more local and simpler.
+; IMPACT: • Reduces network traffic related to search.
+; RISK: • No risk to stability.
+; RISK: • OneDrive files or cloud content may be less well indexed/less visible via Windows Search.
+; NOTE: Privacy setting + local search: perfectly complements the "Disable Bing / Web in Windows Search" tweak.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"AllowCloudSearch"=dword:00000000
+
+; KORSiOS - [Windows Search]• Web • Disable Bing/Web in Windows Search
+; ID: Search_DisableBingSearch
+; DESC: Disables web search in Windows Search (Start menu/search bar).
+; IMPACT: • Cuts off Bing/Web integration in Windows Search.
+; IMPACT: • Prevents the use of the internet for search.
+; IMPACT: • Search becomes local only (apps, files, settings).
+; RISK: • Loss of web results (Bing, suggestions, news).
+; RISK: • On some versions of Windows 11, Microsoft may partially work around this via updates (variable effect).
+; RISK: • No risk to stability.
+; NOTE: Privacy + debloat setting: makes search cleaner, faster, and less "connected".
+; RESTART: EXPLORER
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"DisableWebSearch"=dword:00000001
+"ConnectedSearchUseWeb"=dword:00000000
+"ConnectedSearchUseWebOverMeteredConnections"=dword:00000000
+
+; KORSiOS - [Windows Search]• History • Disable search history
+; ID: Search_DisableSearchHistory
+; DESC: Disables search history on the device.
+; IMPACT: • Prevents Windows from remembering searches performed in the Start menu / Windows Search.
+; IMPACT: • Reduces suggestions based on your previous searches.
+; IMPACT: • Slightly improves privacy.
+; RISK: • Loss of the convenience of recent searches (autocomplete / history).
+; RISK: • No impact on performance or stability.
+; NOTE: Simple privacy setting: a good complement to tweaks that make search 100% local and minimalist.
+; RESTART: EXPLORER
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SearchSettings]
+"IsDeviceSearchHistoryEnabled"=dword:00000000
+
+; KORSiOS - [Network]• Latency • Disable Network Throttling
+; ID: Network_DisableNetworkThrottling
+; DESC: Disables the software throttling of network traffic imposed by Windows for multimedia applications.
+; IMPACT: • Removes the network throttling applied by the multimedia scheduler (MMCSS).
+; IMPACT: • Allows real-time applications (online games, streaming, audio/video, VoIP) to fully utilize available bandwidth.
+; RISK: On slow or shared networks, this may cause latency spikes for secondary tasks.
+; NOTE: Very common setting in gaming/streaming profiles: Windows no longer throttles the network for multimedia tasks and prioritizes active applications.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"NetworkThrottlingIndex"=dword:ffffffff
+
+; KORSiOS - [Network]• Control • Disable OEM imposed automatic WiFi connection
+; ID: Network_DisableAutoWiFi
+; DESC: Disables OEM imposed automatic WiFi connection.
+; IMPACT: • Prevents Windows from using OEM rules to automatically connect to WiFi networks.
+; IMPACT: • Windows no longer automatically connects to manufacturer preconfigured networks.
+; IMPACT: • The user retains full control over WiFi connections.
+; RISK: • Manual connection required on some previously auto-connected networks.
+; RISK: • No impact on network stability, security, or performance.
+; NOTE: Network control/privacy setting: Prevents unwanted automatic WiFi connections defined by the OEM.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\config]
+"AutoConnectAllowedOEM"=dword:00000000
+
+; KORSiOS - [Network]• Control • Disable paid Wi-Fi network management
+; ID: Network_PaidWiFi
+; DESC: Disables the detection/management feature for paid Wi-Fi networks (Hotspot 2.0 / Paid WiFi).
+; IMPACT: • Windows will no longer automatically offer connections to compatible commercial hotspots.
+; IMPACT: • Does not affect regular Wi-Fi connection (standard SSID).
+; RISK: • It is not possible to automatically use certain integrated paid public hotspots.
+; RISK: • May require manual login via browser if using a captive hotspot.
+; NOTE: “Clean network” setting: useful if you never use paid Wi-Fi/operator hotspot.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\features]
+"PaidWifi"=dword:00000000
+
+; KORSiOS - [Network]• Control • Disable Wi-Fi Sense (open networks suggested)
+; ID: Network_SenseWiFi
+; DESC: Disables the Wi-Fi Sense feature that offered/allowed automatic connection to suggested open networks.
+; IMPACT: • Reduces unsolicited automatic Wi-Fi connections.
+; IMPACT: • Limits exposure to potentially unsecured public networks.
+; RISK: • Less practical when travelling if you want to have an automatic connection to open hotspots.
+; NOTE:  Network setting “privacy / security”: recommended to avoid automatic connections to open networks.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\features]
+"WiFiSenseOpen"=dword:00000000
+
+; KORSiOS - [Network]• Monitoring • Disable NDU (Network Data Usage Monitoring)
+; ID: Network_DisableNDU
+; DESC: Disables the Windows NDU (Network Data Usage Monitoring) service.
+; IMPACT: • May reduce micro-latency (especially in online games).
+; IMPACT: • Prevents network usage monitoring and recording by application.
+; IMPACT: • May slightly reduce CPU/RAM usage and some disk writes related to network monitoring.
+; IMPACT: • Network usage statistics in Settings may become incomplete or missing.
+; RISK: • Loss of detailed network usage statistics by application.
+; RISK: • No impact on connectivity, actual network performance, or security.
+; RISK: • Some advanced network diagnostic features may be limited.
+; NOTE: Low power/anti local telemetry setting: Turns off no essential network usage monitoring for a more discreet and lightweight system.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Ndu]
+"Start"=dword:00000004
+
+; KORSiOS - [Network]• Latency • Disable Nagle to Reduce TCP Latency
+; ID: Network_DisableNagle
+; DESC: Reduces network latency by disabling certain TCP delays (Nagle/ACK batching).
+; IMPACT: • Forces ACKs to be sent immediately instead of batching them.
+; IMPACT: • Disables the Nagle algorithm (no waiting to batch packets).
+; IMPACT: • Reduces latency in online games and real-time applications.
+; IMPACT: • May improve network responsiveness on stable connections.
+; IMPACT: • Applied per network interface (related to the card's GUID).
+; RISK: • Increases the number of network packets sent.
+; RISK: • May slightly increase network/CPU load on slow connections.
+; RISK: • No risk to system stability.
+; NOTE: Classic low latency gaming setting: widely used to optimize online games. Gains vary depending on ISP and game.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{NIC_GUID}]
+"TcpAckFrequency"=dword:00000001
+"TCPNoDelay"=dword:00000001
+
+; KORSiOS - [SSD / HDD]• NTFS • Disable NTFS “Last Access Time”
+; ID: Drive_DisableNTFSLastAccess
+; DESC: Disables updating the last access time of NTFS files.
+; IMPACT: • Prevents Windows from updating the Last Access timestamp each time a file is opened.
+; IMPACT: • Reduces unnecessary disk writes and may slightly improve performance, especially on large volumes.
+; IMPACT: • No impact on file access, modification, or creation.
+; RISK: Very specific applications that may depend on the “last access” field (rare) will see this information frozen.
+; RISK: • No impact on data stability, security, or integrity.
+; NOTE: Performance/disk efficiency setting: classic and recommended on modern systems to limit unnecessary writes.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisableLastAccessUpdate"=dword:00000001
+
+; KORSiOS - [SSD / HDD]• SysMain • Disable SysMain (Superfetch) (perf/SSD option)
+; ID: Drive_DisableSysMain
+; DESC: Disables the SysMain service (formerly Superfetch).
+; IMPACT: • Completely disables SysMain.
+; IMPACT: • Prevents usage pattern analysis and application preloading into memory.
+; IMPACT: • May reduce background disk and CPU activity.
+; IMPACT: • Effect most noticeable on fast SSDs and already high-performance systems.
+; RISK: • Slight increase in launch times for some applications on HDDs or less powerful machines.
+; RISK: • On modern SSDs, the impact is generally negligible.
+; RISK: • No risk to stability or security.
+; NOTE: Low power consumption/controlled performance setting: often unnecessary on recent SSDs, disabling SysMain makes system behavior more predictable.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SysMain]
+"Start"=dword:00000004
+
+; KORSiOS - [SSD / HDD]• CHKDSK • Reduce the waiting time before the automatic execution of CHKDSK
+; ID: Drive_Chkdsk
+; DESC: Sets the waiting time before CHKDSK is automatically run at startup to 5 seconds.
+; IMPACT: • Windows waits 5 seconds before starting the disk check.
+; RISK: • No direct risk.
+; RISK: • If the time frame is too short, it can be difficult to cancel an automatic chkdsk.
+; NOTE: This setting does not affect performance, only the wait time before a disk scan.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager]
+"AutoChkTimeOut"=dword:00000005
+
+; KORSiOS - [SSD / HDD]• Prefetch • Disable Application Prefetch
+; ID: Drive_DisablePrefetch
+; DESC: Disables the Windows Prefetcher.
+; IMPACT: • Prevents Windows from preloading application and system data into memory.
+; IMPACT: • Reduces disk access and background activity related to prefetching.
+; IMPACT: • Impact is most noticeable on fast SSDs where the benefit of prefetching is small.
+; RISK: • Slightly longer launch times for some applications, especially on HDDs or less powerful machines.
+; RISK: • On modern SSDs, the impact is generally negligible.
+; RISK: • No risk to stability or security.
+; NOTE: Memory management/control setting: often unnecessary on recent SSDs, disabling the Prefetcher makes system behavior more predictable.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
+"EnablePrefetcher"=dword:00000000
+
+; KORSiOS - [SSD / HDD]• Prefetch • Reduce Prefetch
+; ID: Drive_ReducePrefetchStart
+; DESC: Enables Prefetch only for Windows startup.
+; IMPACT: • Optimizes boot time by preloading system files.
+; IMPACT: • Does not prefetch applications.
+; IMPACT: • Reduces disk activity compared to full mode.
+; IMPACT: • Good compromise between fast boot and a clean system.
+; RISK: • Applications no longer benefit from prefetching → first launch may be slightly slower.
+; RISK: • Virtually no impact on modern SSDs.
+; RISK: • No risk to stability or security.
+; NOTE: Intelligent SSD compromise setting: maintains optimized boot without unnecessary disk noise.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
+"EnablePrefetcher"=dword:00000002
+
+; KORSiOS - [SSD / HDD]• NTFS • Disable 8.3 Short Filenames
+; ID: Drive_DisableShortFilenames
+; DESC: Disables the creation of 8.3 short filenames on NTFS volumes.
+; IMPACT: • Prevents Windows from generating DOS 8.3 aliases for new files/folders.
+; IMPACT: • Reduces file system overhead during file creation.
+; IMPACT: • Slightly improves I/O performance, especially on volumes containing many small files.
+; IMPACT: • Does not affect existing files.
+; RISK: • Very old (DOS / legacy) software that may rely on 8.3 filenames may no longer function correctly.
+; RISK: • No impact on modern software.
+; RISK: • No risk to system stability.
+; NOTE: NTFS performance/legacy cleanup tweak: a clean and recommended tweak on modern systems. Removes unnecessary legacy compatibility.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisable8dot3NameCreation"=dword:00000001
+
+; KORSiOS - [System]• Diagnostics • Disable Windows Error Reporting
+; ID: System_DisableErrorReporting
+; DESC: Completely disables Windows Error Reporting (WER).
+; IMPACT: • Prevents Windows from collecting and sending error/crash reports to Microsoft.
+; IMPACT: • Suppresses pop-ups prompting you to send a report after a crash.
+; IMPACT: • Reduces background activity related to dump and diagnostic collection.
+; RISK: • Less diagnostic information available in case of a crash.
+; RISK: • Some applications that rely on WER for reporting may provide less detail.
+; RISK: • No impact on system stability or security.
+; NOTE: Privacy/Sobriety setting: disables error reporting while allowing the system to function normally.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting]
+"Disabled"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting]
+"Disabled"=dword:00000001
+
+; KORSiOS - [System]• Notifications • Disable Action Center Panel + toast notifications
+; ID: System_DisableActionCente
+; DESC: Completely disables the Windows Action Center/Notifications.
+; IMPACT: • Removes access to the Action Center/Notifications.
+; IMPACT: • No system or application notifications are displayed.
+; IMPACT: • Applied at both the system and user levels for complete and consistent blocking.
+; RISK: • Loss of important information (security alerts, battery, network, updates).
+; RISK: • May disrupt some notification dependent workflows.
+; RISK: • No impact on stability or performance.
+; NOTE: Anti-distraction/minimalism setting: ideal for a quiet and focused environment; use with caution on a well-managed system.
+; RESTART: EXPLORER
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
+"DisableNotificationCenter"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PushNotifications]
+"ToastEnabled"=dword:00000000
+
+; KORSiOS - [System]• Security • Disable Admin Approval Mode
+; ID: System_DisableAdminApproval
+; DESC: Disables User Account Control (UAC) mode for the built-in Administrator account.
+; IMPACT: • Allows the built-in Administrator account to use a full administrator token permanently.
+; IMPACT: • Suppresses UAC elevation requests for this specific account.
+; IMPACT: • Other administrator accounts are not affected by this key.
+; RISK: • Increased security risk : any application launched under this account immediately has full privileges.
+; RISK: • An error, script, or malware would have maximum impact.
+; NOTE: Advanced administration setting: useful for controlled environments, system scripts, or installation phases, but should only be used with caution.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"FilterAdministratorToken"=dword:00000000
+
+; KORSiOS - [System]• Boot • Remove the startup application launch delay
+; ID: System_DisableAppsBootDelay
+; DESC: Removes the delay that Windows applies before launching applications at startup.
+; IMPACT: • Windows launches startup programs immediately after login instead of spreading them out over a few seconds.
+; IMPACT: • The desktop loads faster.
+; IMPACT: • Startup apps appear earlier.
+; RISK: • If many programs are starting up, they will all launch at the same time, which can cause:
+; RISK: - a CPU/disk spike
+; RISK: - The desktop experience was less fluid for a few seconds.
+; NOTE: By default, Windows adds a small launch delay to prevent everything from starting simultaneously.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
+"StartupDelayInMSec"=dword:00000000
+
+; KORSiOS - [System]• Shutdown • Time to Kill Apps > 3000
+; ID: System_TimeToKillApps
+; DESC: Reduces the wait time before services are forcibly shut down when Windows is shut down or restarted.
+; IMPACT: • Sets the wait time to 3 seconds (3000 ms) before Windows forces services to stop.
+; IMPACT: • Speeds up system shutdowns and restarts.
+; IMPACT: • Limits the time allowed for services to shut down cleanly.
+; RISK: • Low risk of data corruption or loss if a critical service does not have enough time to shut down properly.
+; RISK: • May affect some resource intensive services (local databases, network services, VMs, indexing).
+; RISK: • Avoid on server machines or with sensitive services.
+; NOTE: Speed/Comfort setting: makes shutdowns faster, recommended for well maintained personal PCs, use with caution if complex services are running in the background.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"WaitToKillServiceTimeout"="3000"
+
+; KORSiOS - [System]• Shutdown • Time to Kill Apps Timeout > 3000
+; ID: System_TimeToKillAppsTimeout
+; DESC: Reduces the wait time before forcibly closing unresponsive applications.
+; IMPACT: • Windows considers an application frozen after 2 seconds of inactivity.
+; IMPACT: • Windows waits 3 seconds before forcibly closing an application during logoff, shutdown, or restart.
+; IMPACT: • Makes logoffs and shutdowns faster.
+; RISK: • Loss of unsaved data if an application is closed too quickly.
+; RISK: • Some resource intensive applications (video editing, rendering, VMs, IDEs) may require more time to close properly.
+; RISK: • Not recommended for users who frequently leave critical tasks running.
+; NOTE: Responsiveness/Speed ​​setting: speeds up Windows shutdown and reduces freezes caused by unresponsive apps, ideal for daily use provided you save your work regularly.
+; RESTART: REBOOT
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"WaitToKillAppTimeout"="3000"
+"HungAppTimeout"="2000"
+
+; KORSiOS - [System]• Maintenance • Prevent certain reinstallations / Microsoft suggestions
+; ID: System_ConsumerFeatures
+; DESC: Disables consumer features and suggested Windows apps.
+; IMPACT: • Prevents Windows from installing or promoting consumer apps (games, App Store, Microsoft services).
+; IMPACT: • Reduces suggestions, promotional content, and automatic installations after updates.
+; IMPACT: • Contributes to a cleaner, more business oriented Windows experience.
+; RISK: • Fewer app discoveries for consumer users.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Debloat/system cleanup setting: Prevents automatic addition of "consumer" content.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
+"DisableWindowsConsumerFeatures"=dword:00000001
+
+; KORSiOS - [System]• Compatibility • Enable Long File Paths
+; ID: System_EnableLongFilesPaths
+; DESC: Enables support for long file paths (beyond 260 characters).
+; IMPACT: • Removes the historical 260 character limit (MAX_PATH) for compatible applications.
+; IMPACT: • Facilitates working with deep directory trees (development, scripts, archives, complex projects).
+; RISK: • Compatibility: Some older, incompatible applications may still fail with long paths.
+; RISK: • No impact on system stability or security.
+; NOTE: Compatibility/productivity setting: essential for development and technical environments; removes an archaic Windows limitation.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"LongPathsEnabled"=dword:00000001
+
+; KORSiOS - [System]• Security • Disables Windows SmartScreen
+; ID: System_DisableSmartScreen
+; DESC: Disables Windows SmartScreen at the system level.
+; IMPACT: • Prevents SmartScreen from checking the reputation of downloaded applications and files.
+; IMPACT: • Suppresses "unrecognized application" alerts and blocks based on cloud reputation.
+; IMPACT: • Facilitates the execution of custom tools, scripts, and unsigned software.
+; RISK: • Increased security risk: less protection against malware or unknown software.
+; RISK: • Dangerous downloads and executions may proceed without warning.
+; RISK: • Strongly discouraged without user vigilance or an alternative security solution.
+; NOTE: Freedom/Advanced Control setting: useful for expert users and controlled environments, but use with caution on exposed systems.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
+"EnableSmartScreen"=dword:00000000
+"ShellSmartScreenLevel"="Off"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"SmartScreenEnabled"="Off"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppHost]
+"EnableWebContentEvaluation"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"SmartScreenEnabled"=dword:00000000
+
+; KORSiOS - [System]• Maintenance • Disable Windows Auto-Maintenance
+; ID: System_DisableAutoMaintenance
+; DESC: Disables Windows automatic maintenance.
+; IMPACT: • Prevents scheduled maintenance tasks from running (optimization, diagnostics, updates for certain apps, background scans).
+; IMPACT: • Reduces automatic CPU/disk activity when the PC is idle.
+; IMPACT: • Prevents system tasks from starting without user action.
+; RISK: • No automatic maintenance (disk optimization, checks, certain updates).
+; RISK: • May lead to gradual degradation if maintenance is not performed manually.
+; RISK: • No immediate risk to stability.
+; NOTE: Full control : useful for preventing unwanted automatic activity. For users who perform regular manual maintenance only.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance]
+"MaintenanceDisabled"=dword:00000001
+
+; KORSiOS - [System]• Diagnostics • Disable automatic reboot for BSODs
+; ID: System_DisableAutoReboot
+; DESC: Prevents automatic restart after a crash (BSOD).
+; IMPACT: • Forces Windows to remain stuck on the blue screen after a crash.
+; IMPACT: • Allows reading the error code and diagnosing the problem.
+; IMPACT: • Useful for debugging, overclocking, and unstable drivers.
+; RISK: • The PC no longer restarts automatically after a crash.
+; RISK: • Requires manual intervention.
+; RISK: • No risk to stability.
+; NOTE: Debug/diagnostic setting: essential for analyzing BSODs.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
+"AutoReboot"=dword:00000000
+
+; KORSiOS - [Tips / Tricks] Disable Windows Tips & Tricks
+; ID: Tips_DisableTips
+; DESC: Disables "Soft Landing," i.e., promotional suggestions and content after updates or upon first use.
+; IMPACT: • Prevents Windows from displaying recommendations, sponsored tips, and suggested apps.
+; IMPACT: • Reduces notifications and "discovery" screens after a Windows upgrade or a new session.
+; IMPACT: • Contributes to a cleaner and less intrusive experience.
+; RISK: • Loss of discovery information for new users.
+; RISK: • No impact on stability, security, or performance.
+; NOTE: Anti-promotional content setting / Clean UX: Prevents Windows from "pushing" apps or services after updates, perfect for a clean and controlled setup.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
+"DisableSoftLanding"=dword:00000001
+
+; KORSiOS - [Windows Defender]• Notifications • Disables Windows Defender notifications
+; ID: Defender_DisableNotifications
+; DESC: Disables notifications from the Windows Defender Security Center.
+; IMPACT: • Suppresses security related alerts and notifications (antivirus, firewall, account protection).
+; IMPACT: • The Security Center continues to function and protect the system, but without visible notifications.
+; RISK: • Missed critical security alerts (threats detected, protection disabled).
+; RISK: • May delay the user's response to a security issue.
+; RISK: • No impact on stability or performance.
+; NOTE: Silence/Control setting: Reduces the noise of security notifications; use only on an actively monitored or controlled system.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications]
+"DisableNotifications"=dword:00000001
+
+; KORSiOS - [Windows Defender]• Cloud • Disables participation in Microsoft Defender Cloud
+; ID: Defender_DisableDefenderCloud
+; DESC: Disables participation in Microsoft Defender Cloud (SpyNet) and automatic sample submission.
+; IMPACT: • Disables membership in Microsoft Defender Cloud Protection (SpyNet).
+; IMPACT: • Prevents the automatic submission of suspicious files to Microsoft.
+; IMPACT: • Defender's local protection remains active, but without cloud scanning or sample submission.
+; RISK: • Potentially slower detection of very recent (zero-day) threats without the cloud.
+; RISK: • Fewer real-time alerts based on online reputation.
+; RISK: • No impact on stability or performance.
+; NOTE: Privacy setting / security control: limits data exchange with Microsoft while keeping the local antivirus.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet]
+"SpyNetReporting"=dword:00000000
+"SubmitSamplesConsent"=dword:00000002
+
+; KORSiOS - [Windows Defender]• Real-time • Reduce real-time protection
+; ID: Defender_ReduceProtection
+; DESC: Disables several components of Microsoft Defender's real•time protection.
+; IMPACT: • Disables behavioral monitoring (detection based on process activity).
+; IMPACT: • Disables file scanning on open/execution.
+; IMPACT: • Prevents automatic scanning when real-time protection is enabled.
+; IMPACT: • Significantly reduces Defender's background activity (CPU, disk, I/O latency).
+; RISK: • High security risk: threats can execute without being blocked in real time.
+; RISK: • Primarily reactive protection instead of preventative.
+; RISK: • Strongly discouraged without an alternative security solution or a highly controlled environment.
+; NOTE: Advanced antivirus disabling setting: reserved for expert users (lab, VM, extreme gaming, offline systems). Use only if safety is ensured by other means.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection]
+"DisableBehaviorMonitoring"=dword:00000001
+"DisableOnAccessProtection"=dword:00000001
+"DisableScanOnRealtimeEnable"=dword:00000001
+
+; KORSiOS - [Windows Defender]• Scan • Disable scheduled scans
+; ID: Defender_DisableScheduledScans
+; DESC: Disables scheduled scans by Microsoft Defender.
+; IMPACT: • Prevents Defender from running scheduled automatic scans.
+; IMPACT: • Reduces background CPU/disk activity at potentially inconvenient times.
+; IMPACT: • Manual scans are still possible if Defender is still active.
+; RISK: • Less proactive threat detection without regular scans.
+; RISK: • Persistent infections may remain undetected for longer.
+; RISK: • To be avoided without regular manual scans or an alternative security solution.
+; NOTE: Performance setting / antivirus control: useful for avoiding resource intensive automatic scans, but should be combined with a clear security strategy.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Scan]
+"DisableScheduledScans"=dword:00000001
+
+; KORSiOS - [Windows Defender]• Detection • Disable protection against potentially unwanted applications
+; ID: Defender_DisableUnwantedApps
+; DESC: Disables Microsoft Defender's protection against potentially unwanted applications (PUAs).
+; IMPACT: • Prevents Defender from blocking or reporting PUAs (adware, toolbars, intrusive software).
+; IMPACT: • Reduces alerts and blocks when installing certain unsigned or borderline software.
+; IMPACT: • May facilitate the installation of custom or outdated tools.
+; RISK: • Increased risk of installing unwanted or adware software.
+; RISK: • Less protection against bundlers and dubious installers.
+; RISK: • No direct impact on system stability.
+; NOTE: Installation freedom/control setting: useful for advanced users who know what they are installing, but should be avoided on exposed systems or by inexperienced users.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender]
+"PUAProtection"=dword:00000000
+
+; KORSiOS - [Windows Defender]• Scan • Disable CPU throttling
+; ID: Defender_DisableCPUThrottling
+; DESC: Disables the CPU throttling applied by Microsoft Defender during background scans.
+; IMPACT: • Prevents Defender from reducing CPU usage during so-called "idle" scans.
+; IMPACT: • Scans run faster, even in the background.
+; IMPACT: • May reduce the total scan time, at the cost of a more noticeable CPU load.
+; RISK: • Higher CPU spikes during automatic or manual scans.
+; RISK: • May temporarily impact responsiveness if a scan starts during heavy activity.
+; RISK: • No direct security or stability risk.
+; NOTE: Performance setting / fast scans: speeds up Defender scans at the expense of discretion.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Performance]
+"DisableCpuThrottleOnIdleScans"=dword:00000001
+
+; KORSiOS - [Windows Update]• Notifications • Disable notifications
+; ID: Update_DisableNotifications
+; DESC: Disables the indication of availability for a major Windows upgrade.
+; IMPACT: • Forces Windows to consider that no upgrade is available.
+; IMPACT: • Prevents the display of notifications and prompts offering a Windows upgrade.
+; IMPACT: • Reduces prompts related to version changes.
+; RISK: • Intentionally delays new versions: the user can remain on a given version longer.
+; RISK: • Major upgrades will need to be initiated manually if desired.
+; RISK: • No impact on regular security updates.
+; NOTE: Anti-push upgrade setting: useful for keeping a stable system locked onto a known version, while continuing to receive security patches.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SYSTEM\Setup\UpgradeNotification]
+"UpgradeAvailable"=dword:00000000
+
+; KORSiOS - [Windows Update]• Privacy • Disable diagnostic data (MRT)
+; ID: Update_DisableMRT
+; DESC: Prevents the Malware Removal Tool (MRT) from sending information to Microsoft.
+; IMPACT: • Disables the sending of infection reports detected by MRT during its monthly run.
+; IMPACT: • MRT malware scanning and removal continue to function normally.
+; IMPACT: • Reduces security related telemetry sent to Microsoft.
+; RISK: • Less data reported to Microsoft, which may reduce the overall improvement of the tool.
+; RISK: • No impact on local protection or system stability.
+; NOTE: Privacy setting: maintains MRT protection while blocking external reporting, consistent with a more discreet Windows approach.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MRT]
+"DontReportInfectionInformation"=dword:00000001
+
+; KORSiOS - [Windows Update]• Stability • Disable the Windows Insider Program
+; ID: Update_DisableInsiderProgram
+; DESC: Disables participation in Windows preview builds (Insider/Preview Builds).
+; IMPACT: • Prevents Windows from offering or installing test builds and Insider builds.
+; IMPACT: • The system remains only on stable and officially released versions.
+; IMPACT: • Prevents notifications prompting you to join preview programs.
+; RISK: • Loss of early access to new Windows features.
+; RISK: • No impact on stability, security, or regular security updates.
+; NOTE: Stability/Production setting: ensures a stable Windows, without experimental builds, ideal for a controlled and reliable configuration.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds]
+"AllowBuildPreview"=dword:00000000
+
+; KORSiOS - [Windows Update]• Notifications • Disable Windows upgrade/restart notifications
+; ID: Update_DisableRestartNotification
+; DESC: Hides the link to the Media Creation Tool and disables restart notifications related to Windows Update.
+; IMPACT: • Hides the link to the Media Creation Tool in the Windows Update interface.
+; IMPACT: • Disables notifications prompting a restart after updates.
+; IMPACT: • A more discreet Windows Update experience, with fewer pop-ups and prompts.
+; RISK: • Less visibility into the need to restart.
+; RISK: • Manual access to the Media Creation Tool is still possible.
+; NOTE: Comfort/Anti-notification setting: Reduces the noise of Windows Update and prevents unwanted restarts.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
+"HideMCTLink"=dword:00000001
+"RestartNotificationsAllowed2"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"SetAutoRestartNotificationDisable"=dword:00000001
+
+; KORSiOS - [Windows Update]• Restart • Disable automatic restart when the user is logged in
+; ID: Update_DisableRestartUserLog
+; DESC: Prevents Windows from automatically restarting after an update when a user is logged in.
+; IMPACT: • Blocks forced Windows Update restarts as long as a user session is active.
+; IMPACT: • Updates are still installed, but a restart must be initiated manually.
+; IMPACT: • Prevents sudden interruptions during work, gaming, or rendering.
+; RISK: • Delayed restart: Some critical updates are only fully active after a reboot.
+; RISK: • If the user forgets to restart, the system may temporarily remain in a "waiting" state.
+; NOTE: Comfort/Anti-interruption setting: Protects the user session from unexpected restarts.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAutoRebootWithLoggedOnUsers"=dword:00000001
+
+; KORSiOS - [Windows Update]• Update • Disable automatic updates
+; ID: Update_DisableUpdate
+; DESC: Prevents Windows Update from automatically downloading and installing updates.
+; IMPACT: • Disables automatic installation of updates via Windows Update.
+; IMPACT: • Windows will no longer automatically download updates in the background.
+; IMPACT: • Updates will have to be launched manually from Settings.
+; RISK: • Risk of delay in security patches.
+; RISK: • Vulnerabilities not fixed if user forgets to update manually.
+; RISK: • Some versions of Windows 11 partially ignore this key (Microsoft bypasses certain policies).
+; RISK: • Windows may reactivate certain behaviors after a major update (feature update).
+; NOTE: Not recommended on a permanently connected PC without regular maintenance.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAutoUpdate"=dword:00000001
+
+; KORSiOS - [Windows Update]• Update • Configure Windows Update in “Notify before download”
+; ID: Update_NotifUpdate
+; DESC: Configures Windows Update to notify the user before downloading updates.
+; IMPACT: • Windows displays a notification before downloading updates.
+; IMPACT: • Updates are no longer downloaded automatically.
+; IMPACT: • Reduces unwanted background downloads.
+; RISK: • Risk of delayed updates if the user ignores notifications.
+; RISK: • On certain Home editions, Windows may partially ignore the policy.
+; RISK: • Some versions of Windows 11 partially ignore this key (Microsoft bypasses certain policies).
+; RISK: • Windows may reactivate certain behaviors after a major update (feature update).
+; NOTE: Balanced “Update Control” setting: Recommended for maintaining control without completely disabling Windows Update.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"AUOptions"=dword:00000002
+
+; KORSiOS - [Windows Update]• Stockage • Disable storage reserved for Windows Update
+; ID: Update_DisableReservedStockage
+; DESC: Disables the “Reserved Storage” mechanism used by Windows to reserve disk space for updates.
+; IMPACT: • Prevent Windows from maintaining a reserved disk space for future updates.
+; IMPACT: • Can free up several GB of disk space (depending on configuration).
+; IMPACT: • Reduce the “invisible” disk consumption associated with Windows Update.
+; RISK: • May cause Windows Update errors if disk space becomes insufficient.
+; RISK: • Windows can recreate the reserved storage after certain feature updates.
+; NOTE: A useful setting on small capacity SSDs (128/256 GB) to recover space.
+; RESTART: REBOOT
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ReserveManager]
+"ShippedWithReserves"=dword:00000000
